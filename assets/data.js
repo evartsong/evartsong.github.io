@@ -26,6 +26,36 @@ window.PROJECTS = [
     cover: '', video: '', images: []
   },
   {
+    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: 'ARTCENTER', season: '',
+    when: 'ArtCenter College of Design', role: '3D designer + animator', color: '#8A5F0E', badge: '',
+    desc: 'A satirical ad on how brands turn everyday items into must-haves.',
+    brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
+    did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
+    tools: ['Cinema 4D', 'After Effects'],
+    type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
+    cover: '', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
+  },
+  {
+    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: 'ARTCENTER', season: 'TRAINING ARC · ARTCENTER',
+    when: 'ArtCenter College of Design', role: 'Designer + animator', color: '#0F6E4D', badge: 'GALLERY PICK',
+    desc: 'Spotify’s instant access, told through a reversed animal food chain.',
+    brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
+    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
+    tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
+    type: 'Spotify · concept spot', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
+    cover: '', video: '', images: []
+  },
+  {
+    id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
+    when: 'ArtCenter College of Design', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
+    desc: 'Inviting streamers to find their inner conductor in live video.',
+    brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
+    did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
+    tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
+    type: 'Live streaming software', collaborators: '', recognition: '',
+    cover: '', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
+  },
+  {
     id: 'warp', title: 'WARP', genre: 'Digital marketing', era: '2024', season: 'SEASON 2024',
     when: '03.2024 – 12.2024', role: 'Digital Marketing Specialist', color: '#3326B8', badge: '',
     desc: 'Website, landing pages, decks and B2B campaigns, leading marketing and revenue with the co-founders.',
@@ -41,26 +71,6 @@ window.PROJECTS = [
     cover: '', video: '', images: []
   },
   {
-    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: 'ARTCENTER', season: 'TRAINING ARC · ARTCENTER',
-    when: 'ArtCenter College of Design', role: 'Designer + animator', color: '#0F6E4D', badge: 'GALLERY PICK',
-    desc: 'Spotify’s instant access, told through a reversed animal food chain.',
-    brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
-    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
-    tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
-    type: 'Spotify · concept spot', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
-    cover: '', video: '', images: []
-  },
-  {
-    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: '3D designer + animator', color: '#8A5F0E', badge: '',
-    desc: 'A satirical ad on how brands turn everyday items into must-haves.',
-    brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
-    did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
-    tools: ['Cinema 4D', 'After Effects'],
-    type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
-    cover: '', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
-  },
-  {
     id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: 'ARTCENTER', season: '',
     when: 'ArtCenter College of Design', role: 'Designer + animator', color: '#8A3A1C', badge: '',
     desc: 'Light as imagination in Sam and Suzy’s runaway love story.',
@@ -71,25 +81,14 @@ window.PROJECTS = [
     cover: '', video: '', images: []
   },
   {
-    id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
-    desc: 'Inviting streamers to find their inner conductor in live video.',
-    brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
-    did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
-    tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
-    type: 'Live streaming software', collaborators: '', recognition: '',
-    cover: '', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
-  },
-  {
-    id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Graphic designer', color: '#7A2E5A', badge: '',
-    desc: 'An exhibition and book for six South Korean contemporary artists, colored by traditional hanbok silk.',
-    brief: 'A group exhibition and publication featuring six South Korean contemporary artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
-    did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
-    tools: ['InDesign', 'Illustrator', 'Photoshop'],
-    type: 'Exhibition + publication', collaborators: '', recognition: '',
-    tile: 'images/hanbok/02.jpg',
-    cover: 'images/hanbok/01.jpg', video: '', images: []
+    id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
+    when: 'ArtCenter College of Design', role: 'Brand designer', color: '#9E1F18', badge: '',
+    desc: 'An identity for an arena where gamers compete for prizes and rep.',
+    brief: 'A brand identity for GSArena, powered by GameStop: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
+    did: ['Name and position the venue: GSArena, powered by GameStop', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
+    tools: ['InDesign', 'Photoshop', 'After Effects'],
+    type: 'Esports venue', collaborators: '', recognition: '',
+    cover: '', video: '', images: []
   },
   {
     id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion graphics', era: 'ARTCENTER', season: '',
@@ -112,14 +111,15 @@ window.PROJECTS = [
     cover: '', video: '', images: []
   },
   {
-    id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Brand designer', color: '#9E1F18', badge: '',
-    desc: 'An identity for an arena where gamers compete for prizes and rep.',
-    brief: 'A brand identity for GSArena, powered by GameStop: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
-    did: ['Name and position the venue: GSArena, powered by GameStop', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
-    tools: ['InDesign', 'Photoshop', 'After Effects'],
-    type: 'Esports venue', collaborators: '', recognition: '',
-    cover: '', video: '', images: []
+    id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: 'ARTCENTER', season: '',
+    when: 'ArtCenter College of Design', role: 'Graphic designer', color: '#7A2E5A', badge: '',
+    desc: 'An exhibition and book for six South Korean contemporary artists, colored by traditional hanbok silk.',
+    brief: 'A group exhibition and publication featuring six South Korean contemporary artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
+    did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
+    tools: ['InDesign', 'Illustrator', 'Photoshop'],
+    type: 'Exhibition + publication', collaborators: '', recognition: '',
+    tile: 'images/hanbok/02.jpg',
+    cover: 'images/hanbok/01.jpg', video: '', images: []
   }
 ];
 

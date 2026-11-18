@@ -76,12 +76,14 @@
   }
   var tiersEl = document.getElementById('tiers');
   if (tiersEl && P.length) {
-    /* newest season = big featured tile; the rest fill the grid around it */
+    /* ranked layout, biggest first: 01 featured, 02–03 beside it, 04–06 in thirds, 07–10 in quarters */
+    var rank = function (i) { return i === 0 ? 1 : i < 3 ? 2 : i < 6 ? 3 : 4; };
     tiersEl.innerHTML = P.map(function (p, i) {
       var feat = i === 0;
-      var meta = 'TIER ' + num(i) + ' · ' + (p.season || upper(p.era));
-      return '<a class="es-tile' + (feat ? ' es-tile--feat' : '') + '" href="' + projectUrl(p) + '" style="--c:' + p.color + '">' +
-        '<img src="' + esc(tileImg(p)) + '" alt="" loading="' + (i < 3 ? 'eager' : 'lazy') + '" decoding="async">' +
+      var meta = p.season || upper(p.era); /* the tier number sits in the corner badge */
+      return '<a class="es-tile es-tile--r' + rank(i) + (feat ? ' es-tile--feat' : '') + '" href="' + projectUrl(p) + '" style="--c:' + p.color + '">' +
+        '<span class="es-tile__num" aria-hidden="true">' + num(i) + '</span>' +
+        '<img src="' + esc(feat ? (p.cover || tileImg(p)) : tileImg(p)) + '" alt="" loading="' + (i < 3 ? 'eager' : 'lazy') + '" decoding="async">' +
         '<span class="es-tile__cap">' +
           '<span class="es-tile__text">' +
             '<span class="es-tile__meta">' + esc(meta) + (feat && p.badge ? ' <b>' + esc(p.badge) + '</b>' : '') + '</span>' +
