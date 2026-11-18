@@ -419,7 +419,7 @@
   var boardEl = document.getElementById('quest-board');
   var filtersEl = document.getElementById('quest-filters');
   if (boardEl && filtersEl) {
-    var TYPES = [['all', 'ALL'], ['painting', 'PAINTING'], ['drawing', 'DRAWING'], ['ink', 'INK'], ['digital', 'DIGITAL ART'], ['sketch', 'SKETCHBOOK'], ['3d', '3D + SCULPTURE'], ['graphic', 'GRAPHIC DESIGN'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
+    var TYPES = [['all', 'ALL'], ['painting', 'PAINTING'], ['drawing', 'DRAWING'], ['ink', 'INK'], ['digital', 'DIGITAL ART'], ['sketch', 'SKETCHBOOK'], ['3d', '3D, SCULPTURE'], ['graphic', 'GRAPHIC DESIGN'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
     var NAME = {}; TYPES.forEach(function (t) { NAME[t[0]] = t[1]; });
     var want = new URLSearchParams(location.search).get('type');
     var current = TYPES.some(function (t) { return t[0] === want; }) ? want : 'all';
