@@ -186,7 +186,7 @@ body { background: var(--es-bg); }
   .es-hud { padding-top: 18px; padding-bottom: 18px; font-size: 9px; letter-spacing: 0.08em; }
   .es-title__main { text-align: left; padding: 0 16px; }
   .es-title__kicker { font-size: 10px; letter-spacing: 0.2em; margin-bottom: 18px; }
-  .es-title__name { font-size: 80px; line-height: 0.86; }
+  .es-title__name { font-size: min(80px, 22vw); line-height: 0.86; }
   .es-title__name span { display: block; }
   .es-title__sub { margin-top: 20px; font-size: 17px; max-width: 220px; line-height: 1.4; }
   .es-start { display: flex; justify-content: center; margin-top: 32px; padding: 20px; font-size: 16px; gap: 12px; }
@@ -448,7 +448,7 @@ body { background: var(--es-bg); }
 .es-over .es-btn { margin-top: 36px; }
 
 @media (max-width: 767px) {
-  .es-h1 { font-size: 52px; }
+  .es-h1 { font-size: min(52px, 13.5vw); }
   .es-intro { margin-top: 18px; font-size: 16px; }
   .es-pagehero .es-wrap { padding-top: 48px; padding-bottom: 44px; }
   .es-pass .es-tier { flex-basis: 112px; }
@@ -471,7 +471,7 @@ body { background: var(--es-bg); }
   .es-phero::before { background-size: 40px 40px; }
   .es-phero__num { font-size: 240px; right: -24px; bottom: -50px; }
   .es-phero .es-wrap { min-height: 460px; padding-top: 36px; padding-bottom: 32px; gap: 36px; }
-  .es-phero h1 { margin-top: 22px; font-size: 44px; line-height: 0.95; }
+  .es-phero h1 { margin-top: 22px; font-size: min(44px, 10.5vw); line-height: 0.95; }
   .es-phero__desc { margin-top: 18px; font-size: 17px; }
   .es-phero .es-chip { font-size: 9px; padding: 5px 8px; }
   .es-phero dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
