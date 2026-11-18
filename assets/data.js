@@ -342,9 +342,7 @@ window.QUESTS = [
   { type: 'drawing', title: 'Figure study', image: 'images/play/045.jpg', ratio: '936 / 1242', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Figure study', image: 'images/play/046.jpg', ratio: '936 / 1250', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings', image: 'images/play/047.jpg', ratio: '1247 / 936', tools: ['Pencil'], color: '#2A2A2A' },
-  { type: 'graphic', title: 'Woobofood', sub: 'Freelance · brand identity, website and launch materials', color: '#B5651D', ratio: '4 / 3', link: '' },
   { type: 'graphic', title: 'SquareOne', sub: 'Freelance · brand identity, website and launch materials', color: '#1F5F7A', ratio: '4 / 3', link: '' },
-  { type: 'creator', title: 'Short-form clips', sub: 'Viral gaming content: TikTok 1M+ views, YouTube 500K+', color: '#9C2A4A', ratio: '3 / 4', link: '' }
 ];
 
 /* Play: Story mode. Multi-part pieces shown as slideshows (arrows, swipe, autoplay).
@@ -353,6 +351,7 @@ window.STORIES = [
   { id: 'akkurat', title: 'Akkurat type specimen', type: 'Graphic design', text: 'A type specimen for LL Akkurat: its history, weights and glyphs, told across seven spreads.', tools: ['InDesign', 'Illustrator'] },
   { id: 'metamorphosis', title: 'Riot Games: Metamorphosis', type: 'Digital art', text: 'Illustrated frames of light, hands and transformation, ending on a Riot Games reveal.', tools: ['Procreate', 'Photoshop'] },
   { id: 'eve-arnold', title: 'Eve Arnold', type: 'Editorial', text: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.', tools: ['InDesign'] },
+  { id: 'woobofood', title: 'Woobofood + Bullbop', type: 'Web design', text: 'Websites for Woobofood, an international Korean food company, its brands Purunchon, Lechi and Ocean Snack, and Bullbop, its Korean BBQ food truck.', tools: ['Wix'] },
   { id: 'snowstorm', title: 'Snowstorm', type: 'Digital art', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'] }
 ];
 
@@ -390,6 +389,9 @@ window.SECTIONS = {
   ],
   warp: [
     { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile.', imgs: [1, 14] },
+    { g: 'final', title: 'Blog + social graphics', text: 'B2B blog and LinkedIn graphics for WARP LTL Freight, built on the brand’s blue, yellow and black.', imgs: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34] },
+    { g: 'final', title: 'Network maps + data', text: 'Monthly lane and cross-dock maps and city delivery totals for the blog and LinkedIn.', imgs: [35, 36, 37, 38, 39, 40, 41, 42], cols: 2 },
+    { g: 'final', title: 'Blog illustrations', text: 'Isometric illustrations and product visuals for blog headers and case studies.', imgs: [43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54], cols: 2 },
     { g: 'final', title: 'Company pages', text: 'About us, our technology and sustainability.', imgs: [2, 3, 4] },
     { g: 'final', title: 'Service pages', text: 'Store replenishments, inbound freight optimization, pool distribution, LTL, perishable freight and national distribution.', imgs: [5, 6, 7, 8, 9, 10] },
     { g: 'final', title: 'Contact', imgs: [13] }
