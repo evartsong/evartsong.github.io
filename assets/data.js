@@ -237,7 +237,6 @@ window.EXTRAS = [
    image + ratio: the picture on the card. tools: shown as MADE WITH on the back.
    id: a video side quest above (Voyage, Karaoke Cube). */
 window.QUESTS = [
-  { type: 'ink', title: 'Billie Eilish tour merch', sub: 'Where Do We Go? world tour, sold globally · Interscope Records', image: 'images/sketchbook/12.jpg', ratio: '1600 / 1280', tools: ['Pen', 'Ink'], color: '#2F5D3A' },
   { type: 'painting', title: 'Viking portrait', image: 'images/ig-paintings/01.jpg', ratio: '1440 / 1800', tools: ['Acrylic painting'], color: '#2A2A2A' },
   { type: 'ink', title: 'Courtside', image: 'images/ig-ink/01.jpg', ratio: '1439 / 1669', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Bust study', image: 'images/ig-drawing/03.jpg', ratio: '1080 / 1080', tools: ['Charcoal'], color: '#2A2A2A' },
