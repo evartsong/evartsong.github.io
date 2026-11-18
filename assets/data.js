@@ -297,7 +297,6 @@ window.QUESTS = [
   { type: 'ink', title: 'Comic page', image: 'images/ig-ink/12.jpg', ratio: '1440 / 1711', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Reclining on checkers', image: 'images/play/021.jpg', ratio: '654 / 1080', tools: ['Marker'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Perspective study', image: 'images/sketchbook/02.jpg', ratio: '1600 / 1166', tools: ['Colored pencil'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Coastal landscape II', image: 'images/play/033.jpg', ratio: '1161 / 936', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'digital', title: 'Duck character', image: 'images/ig-characters/02.jpg', ratio: '1440 / 1439', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Comic page II', image: 'images/ig-ink/13.jpg', ratio: '1440 / 1440', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Tree study', image: 'images/play/023.jpg', ratio: '723 / 723', tools: ['Pencil'], color: '#2A2A2A' },
