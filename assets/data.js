@@ -352,18 +352,18 @@ window.QUESTS = [
 /* Play: Story mode. Multi-part pieces shown as slideshows (arrows, swipe, autoplay).
    id: images come from assets/media.js for that id. Order here = order on the page. */
 window.STORIES = [
-  { id: 'snowstorm', title: 'Snowstorm', type: 'Digital art', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'] },
-  { id: 'akkurat', title: 'Akkurat type specimen', type: 'Graphic design', text: 'A type specimen for LL Akkurat: its history, weights and glyphs, told across seven spreads.', tools: ['InDesign', 'Illustrator'] },
-  { id: 'eve-arnold', title: 'Eve Arnold', type: 'Editorial', text: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.', tools: ['InDesign'] },
-  { id: 'metamorphosis', title: 'Riot Games: Metamorphosis', type: 'Digital art', text: 'Illustrated frames of light, hands and transformation, ending on a Riot Games reveal.', tools: ['Procreate', 'Photoshop'] },
-  { id: 'squareone', title: 'SquareOne', type: 'Web design', text: 'A fashion resale marketplace: the homepage, menswear and womenswear shops, and the page that invites people to sell.', tools: ['Adobe XD', 'Illustrator'] },
-  { id: 'woobofood', title: 'Woobofood, Bullbop', type: 'Web design', text: 'Websites for Woobofood, an international Korean food company, its brands Purunchon, Lechi and Ocean Snack, and Bullbop, its Korean BBQ food truck.', tools: ['Wix', 'Illustrator'] }
+  { id: 'snowstorm', title: 'Snowstorm', type: 'Digital art', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'], start: 1 },
+  { id: 'akkurat', title: 'Akkurat type specimen', type: 'Graphic design', text: 'A type specimen for LL Akkurat: its history, weights and glyphs, told across seven spreads.', tools: ['InDesign', 'Illustrator'], start: 4 },
+  { id: 'eve-arnold', title: 'Eve Arnold', type: 'Editorial', text: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.', tools: ['InDesign'], start: 4 },
+  { id: 'metamorphosis', title: 'Riot Games: Metamorphosis', type: 'Digital art', text: 'Illustrated frames of light, hands and transformation, ending on a Riot Games reveal.', tools: ['Procreate', 'Photoshop'], start: 2 },
+  { id: 'squareone', title: 'SquareOne', type: 'Web design', text: 'A fashion resale marketplace: the homepage, menswear and womenswear shops, and the page that invites people to sell.', tools: ['Adobe XD', 'Illustrator'], start: 5 },
+  { id: 'woobofood', title: 'Woobofood, Bullbop', type: 'Web design', text: 'Websites for Woobofood, an international Korean food company, its brands Purunchon, Lechi and Ocean Snack, and Bullbop, its Korean BBQ food truck.', tools: ['Wix', 'Illustrator'], start: 1 }
 ];
 
 /* Play: Cutscenes. Animations shown as video players with sound (no autoplay). */
 window.CUTSCENES = [
-  { title: 'Voyage', type: '3D animation', text: 'A short 3D motion piece.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
-  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube.jpg', tools: ['Cinema 4D', 'Redshift'] }
+  { title: 'Voyage', type: '3D animation', text: 'A short 3D motion piece.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage-poster.jpg', tools: ['Cinema 4D', 'Redshift'] },
+  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube-poster.jpg', tools: ['Cinema 4D', 'Redshift'] }
 ];
 /* Links used across the site */
 window.LINKS = {
