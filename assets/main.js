@@ -182,7 +182,7 @@
           if (r.k === 'tall') media += '<div class="es-longs">' + cells + '</div>';
           else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
-          else media += '<div class="es-set ' + (g === 'final' || n === 1 ? 'es-set--full' : 'es-set--2') + '">' + cells + '</div>';
+          else media += '<div class="es-set ' + (n === 1 ? 'es-set--full' : s.cols ? 'es-set--' + s.cols : g === 'final' ? 'es-set--full' : 'es-set--2') + '">' + cells + '</div>';
         });
         return '<div class="es-sec">' +
           '<div class="es-sec__head"><h3 class="es-sec__title">' + esc(s.title) + '</h3>' + (s.text ? '<p class="es-sec__text">' + esc(s.text) + '</p>' : '') + '</div>' +

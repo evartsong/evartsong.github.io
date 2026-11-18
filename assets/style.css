@@ -16,7 +16,7 @@ body { margin: 0; }
 @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --es-bg: #F3F4F6; --es-panel: #FFFFFF; --es-line: #E2E5EA; --es-line2: #DADDE3; --es-line3: #B8BFCA; --es-text: #0B0D10; --es-muted: #5A6371; --es-soft: #343B46; --es-dim: #4A5361; --es-accent: #F15A2B; --es-on-accent: #0B0D10; --es-accent-text: #C2410C; --es-grid: #E4E7EC; --es-strong: #0B0D10; --es-body2: #2B313A; --es-faint: #6B7381; --es-ph: #E6E9EE; --es-shotbg: #ECEEF2; --es-chipbg: #DADDE3; --es-glass: rgba(243, 244, 246, 0.94); --es-ring: #0B0D10; color-scheme: light; } }
 :root[data-theme="light"] { --es-bg: #F3F4F6; --es-panel: #FFFFFF; --es-line: #E2E5EA; --es-line2: #DADDE3; --es-line3: #B8BFCA; --es-text: #0B0D10; --es-muted: #5A6371; --es-soft: #343B46; --es-dim: #4A5361; --es-accent: #F15A2B; --es-on-accent: #0B0D10; --es-accent-text: #C2410C; --es-grid: #E4E7EC; --es-strong: #0B0D10; --es-body2: #2B313A; --es-faint: #6B7381; --es-ph: #E6E9EE; --es-shotbg: #ECEEF2; --es-chipbg: #DADDE3; --es-glass: rgba(243, 244, 246, 0.94); --es-ring: #0B0D10; color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
-.es-q-3d { --c: #5B2BB5; } .es-q-graphic { --c: #0E6B8C; } .es-q-illo { --c: #A0371C; } .es-q-hanbok { --c: #7A2E5A; }
+.es-q-3d { --c: #5B2BB5; } .es-q-graphic { --c: #0E6B8C; } .es-q-illo { --c: #A0371C; } .es-q-paint { --c: #7A2E5A; }
 
 /* ---------- Base ---------- */
 body { background: var(--es-bg); }
@@ -654,8 +654,8 @@ body { background: var(--es-bg); }
 .es-clips video { display: block; width: 100%; max-height: 520px; border-radius: 14px; background: #000; border: 1px solid var(--es-line2); }
 .es-q-3d { --img: url('../images/covers/voyage.jpg'); }
 .es-q-graphic { --img: url('../images/akkurat/04.png'); }
-.es-q-illo { --img: url('../images/metamorphosis/03.jpg'); }
-.es-q-hanbok { --img: url('../images/hanbok/01.jpg'); }
+.es-q-illo { --img: url('../images/college/01.jpg'); }
+.es-q-paint { --img: url('../images/ig-paintings/01.jpg'); }
 .es-quest { background-blend-mode: normal; }
 .es-quest::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55)); pointer-events: none; }
 .es-quest > * { position: relative; }
