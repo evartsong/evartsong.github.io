@@ -26,8 +26,8 @@ window.PROJECTS = [
     cover: 'images/bibi/06.jpg', coverRatio: '1200 / 553', video: '', images: []
   },
   {
-    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: '3D designer + animator', color: '#8A5F0E', badge: '',
+    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2025', season: 'SEASON 2025',
+    when: '2025', role: '3D designer + animator', color: '#8A5F0E', badge: '',
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
     brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
@@ -37,8 +37,8 @@ window.PROJECTS = [
     cover: 'images/label-lunacy/08.jpg', coverRatio: '1920 / 1080', video: 'videos/label-lunacy.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=fuxI35rUmUM */, images: []
   },
   {
-    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: 'ARTCENTER', season: 'TRAINING ARC · ARTCENTER',
-    when: 'ArtCenter College of Design', role: 'Designer + animator', color: '#0F6E4D', badge: 'GALLERY PICK',
+    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: 'Designer + animator', color: '#0F6E4D', badge: 'GALLERY PICK',
     desc: 'Spotify’s instant access, told through a reversed animal food chain.',
     brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
     did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
@@ -48,8 +48,8 @@ window.PROJECTS = [
     cover: 'images/soundtrack/01.png', coverRatio: '2000 / 1125', video: '', images: []
   },
   {
-    id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
+    id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
     desc: 'Inviting streamers to find their inner conductor in live video.',
     brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
     did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
@@ -75,8 +75,8 @@ window.PROJECTS = [
     cover: 'images/warp/19.jpg', coverRatio: '1200 / 1200', video: '', images: []
   },
   {
-    id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Designer + animator', color: '#8A3A1C', badge: '',
+    id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: '2022', season: 'SEASON 2022',
+    when: '2022', role: 'Designer + animator', color: '#8A3A1C', badge: '',
     desc: 'Light as imagination in Sam and Suzy’s runaway love story.',
     brief: 'A title sequence for Moonrise Kingdom. Sam and Suzy fall in love and run away into the wilderness; light becomes the symbol of imagination at the story’s turning point.',
     did: ['Use light as the symbol of imagination', 'Design and animate the title sequence'],
@@ -86,8 +86,8 @@ window.PROJECTS = [
     cover: 'images/covers/moonrise.jpg', coverRatio: '2000 / 1125', video: '', images: []
   },
   {
-    id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Brand designer', color: '#9E1F18', badge: '',
+    id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: '2022', season: 'SEASON 2022',
+    when: '2022', role: 'Brand designer', color: '#9E1F18', badge: '',
     desc: 'An identity for an arena where gamers compete for prizes and rep.',
     brief: 'A brand identity for GSArena, powered by GameStop: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
     did: ['Name and position the venue: GSArena, powered by GameStop', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
@@ -97,8 +97,8 @@ window.PROJECTS = [
     cover: 'images/gsa/01.jpg', coverRatio: '2000 / 900', video: '', images: []
   },
   {
-    id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion graphics', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: '3D designer + animator', color: '#146A75', badge: 'GALLERY PICK',
+    id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion graphics', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: '3D designer + animator', color: '#146A75', badge: 'GALLERY PICK',
     desc: 'A 3D short nudging people from plastic bottles to waste-free bars.',
     brief: 'A short 3D animation encouraging people to switch from plastic bottles to waste-free shampoo bars, told through two characters with front-camera framing, facial expressions and body motion.',
     did: ['Tell a sustainability message through two characters', 'Stage it in front-camera framing with expressive faces and body motion', 'Model, light and render in Cinema 4D and Redshift'],
@@ -108,8 +108,8 @@ window.PROJECTS = [
     cover: 'images/shampoo-bar/01.jpg', coverRatio: '1920 / 1080', video: 'https://www.youtube.com/watch?v=Tv06w4CawK4', images: []
   },
   {
-    id: 'minari', title: 'Minari', genre: 'Title sequence', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Designer', color: '#3F6420', badge: '',
+    id: 'minari', title: 'Minari', genre: 'Title sequence', era: '2021', season: 'SEASON 2021',
+    when: '2021', role: 'Designer', color: '#3F6420', badge: '',
     desc: 'A seed carries growth and hope through the film’s burning-crops scene.',
     brief: 'A title sequence for Minari that visualizes growth and hope through a seed, framed around the scene where the crops burn and Jacob and Monica try to save them.',
     did: ['Use a seed as the framing device for growth and hope', 'Build the sequence around the burning-crops scene'],
@@ -119,8 +119,8 @@ window.PROJECTS = [
     cover: 'images/minari/01.jpg', coverRatio: '2000 / 1125', video: '', images: []
   },
   {
-    id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: 'ARTCENTER', season: '',
-    when: 'ArtCenter College of Design', role: 'Graphic designer', color: '#7A2E5A', badge: '',
+    id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: '2021', season: 'SEASON 2021',
+    when: '2021', role: 'Graphic designer', color: '#7A2E5A', badge: '',
     desc: 'An exhibition and book for six South Korean contemporary artists, colored by traditional hanbok silk.',
     brief: 'A group exhibition and publication featuring six South Korean contemporary artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
     did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
