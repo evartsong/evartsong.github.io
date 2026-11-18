@@ -143,13 +143,13 @@ window.EXTRAS = [
     id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal', role: '3D artist', color: '#5B2BB5', badge: '',
     desc: 'A short 3D motion piece.',
     brief: 'A short 3D motion experiment.',
-    did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D animation', collaborators: '', recognition: '', video: 'https://vimeo.com/816708659'
+    did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D animation', collaborators: '', recognition: '', video: 'videos/voyage.mp4'
   },
   {
     id: 'karaoke-cube', title: 'Karaoke Cube', genre: '3D motion', when: 'Personal', role: '3D artist', color: '#3E2A8C', badge: '',
     desc: 'A 10-second 3D loop.',
     brief: 'A short 3D motion loop.',
-    did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D loop', collaborators: '', recognition: '', video: 'https://vimeo.com/816614157'
+    did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D loop', collaborators: '', recognition: '', video: 'videos/karaoke-cube.mp4'
   },
   {
     id: 'metamorphosis', title: 'Metamorphosis', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#6B3FB8', badge: '',

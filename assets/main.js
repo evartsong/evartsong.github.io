@@ -123,12 +123,12 @@
   }
 
   /* ---------- Media helpers (images come from assets/media.js) ---------- */
-  function embedHtml(v, title) {
+  function embedHtml(v, title, poster) {
     var yt = /(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([\w-]{6,})/.exec(v);
     var vm = /vimeo\.com\/(?:video\/)?(\d+)/.exec(v);
     if (yt) return '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] + '?rel=0&modestbranding=1&playsinline=1" title="' + esc(title) + ' video" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy"></iframe>';
     if (vm) return '<iframe src="https://player.vimeo.com/video/' + vm[1] + '?title=0&byline=0&portrait=0&dnt=1" title="' + esc(title) + ' video" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
-    return '<video src="' + esc(v) + '" controls playsinline preload="metadata"></video>';
+    return '<video src="' + esc(v) + '"' + (poster ? ' poster="' + esc(poster) + '"' : '') + ' controls playsinline preload="metadata"></video>';
   }
   function imgTag(im, alt) {
     return '<img src="' + esc(im[0]) + '"' + (im[1] ? ' width="' + im[1] + '" height="' + im[2] + '"' : '') + ' alt="' + esc(alt) + '" loading="lazy" decoding="async">';
@@ -161,7 +161,7 @@
     var wide = imgs.filter(function (im) { return !(im[1] && im[2] > im[1] * 2.2); });
     var tall = imgs.filter(function (im) { return im[1] && im[2] > im[1] * 2.2; });
     var showcase = '';
-    if (p.video) showcase += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title) + '</div>';
+    if (p.video) showcase += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
     if (p.clips && p.clips.length) {
       showcase += '<p class="es-label es-media-label">VIDEOS · ' + String(p.clips.length).padStart(2, '0') + '</p><div class="es-clips">' +
         p.clips.map(function (v) { return '<video src="' + esc(v) + '" controls playsinline muted loop preload="metadata"></video>'; }).join('') + '</div>';
