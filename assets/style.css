@@ -1009,3 +1009,23 @@ body { background: var(--es-bg); }
 #stories .es-story__view { aspect-ratio: 16 / 10; }
 #stories .es-story__slide img { object-fit: cover; object-position: center; }
 #stories.es-stories__grid { grid-auto-rows: 1fr; }
+
+/* looping mp4s that replaced GIFs sit exactly like images */
+.es-g video, .es-long video, .es-pic video { display: block; width: 100%; height: auto; }
+
+/* Home: availability status under the title */
+.es-status { display: inline-flex; align-items: center; gap: 10px; margin: clamp(14px, 1.6vw, 20px) 0 0; padding: 8px 14px; border: 1px solid var(--es-line3); border-radius: 999px;
+  font-family: var(--es-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--es-text); }
+.es-status__dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+@media (prefers-reduced-motion: no-preference) {
+  .es-status__dot { animation: es-live 2.2s ease-out infinite; }
+  @keyframes es-live { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); } 70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+}
+.es-title__main .es-status + .es-start { margin-top: clamp(22px, 3.5vh, 40px); }
+@media (max-width: 767px) { .es-status { font-size: 11px; padding: 7px 12px; } }
+.es-status { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+@media (max-width: 767px) { .es-status { margin-left: 0; margin-right: 0; } }
+
+/* Light mode: Play cards wait on a light placeholder instead of dark grey */
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .es-flip__front { background-color: var(--es-line); } }
+:root[data-theme="light"] .es-flip__front { background-color: var(--es-line); }

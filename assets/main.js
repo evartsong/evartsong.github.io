@@ -128,6 +128,8 @@
     return '<video src="' + esc(v) + '"' + (poster ? ' poster="' + esc(poster) + '"' : '') + ' controls playsinline preload="metadata"></video>';
   }
   function imgTag(im, alt) {
+    /* former GIFs are now small looping mp4s: play them silently, like a GIF */
+    if (/\.mp4$/i.test(im[0])) return '<video src="' + esc(im[0]) + '"' + (im[1] ? ' width="' + im[1] + '" height="' + im[2] + '"' : '') + ' autoplay muted loop playsinline preload="metadata" aria-label="' + esc(alt) + '"></video>';
     return '<img src="' + esc(im[0]) + '"' + (im[1] ? ' width="' + im[1] + '" height="' + im[2] + '"' : '') + ' alt="' + esc(alt) + '" loading="lazy" decoding="async">';
   }
 
