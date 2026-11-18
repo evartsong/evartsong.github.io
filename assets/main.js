@@ -146,7 +146,7 @@
         p.clips.map(function (v) { return '<video src="' + esc(v) + '" controls playsinline muted loop preload="metadata"></video>'; }).join('') + '</div>';
     }
     if (tall.length) {
-      showcase += '<p class="es-label es-media-label">EMAILS + LONG PAGES · SCROLL INSIDE</p><div class="es-longs">' +
+      showcase += '<p class="es-label es-media-label">EMAILS + LONG PAGES</p><div class="es-longs">' +
         tall.map(function (im, i) { return '<a class="es-long" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, p.title + ', long page ' + (i + 1)) + '</a>'; }).join('') + '</div>';
     }
     if (wide.length) {
@@ -313,6 +313,25 @@
     });
   }
 
+  /* ---------- Play: Cutscenes (animations as video players with sound, no autoplay) ---------- */
+  var cutsEl = document.getElementById('cutscenes');
+  var C = window.CUTSCENES || [];
+  if (cutsEl && C.length) {
+    cutsEl.innerHTML = C.map(function (c) {
+      return '<article class="es-story es-cut">' +
+        '<div class="es-story__view es-cut__view"><video src="' + esc(c.video) + '"' + (c.poster ? ' poster="' + esc(c.poster) + '"' : '') + ' controls playsinline preload="metadata" aria-label="' + esc(c.title) + ' (video with sound)"></video></div>' +
+        '<div class="es-story__info">' +
+          '<p class="es-story__meta">' + esc(upper(c.type)) + '</p>' +
+          '<h3 class="es-story__title">' + esc(c.title) + '</h3>' +
+          (c.text ? '<p class="es-story__text">' + esc(c.text) + '</p>' : '') +
+          (c.tools && c.tools.length ? '<p class="es-story__tools"><span class="es-flip__label">MADE WITH</span>' + c.tools.map(function (t) { return '<span class="es-pill">' + esc(t) + '</span>'; }).join('') + '</p>' : '') +
+        '</div></article>';
+    }).join('');
+    /* one cutscene at a time: starting one pauses the others */
+    var vids = cutsEl.querySelectorAll('video');
+    vids.forEach(function (v) { v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v) o.pause(); }); }); });
+  }
+
   /* ---------- Play: Story mode slideshows (arrows, dots, swipe, keyboard, autoplay) ---------- */
   var storiesEl = document.getElementById('stories');
   var S = window.STORIES || [];
@@ -329,7 +348,6 @@
           }).join('') + '</div>' +
           '<button type="button" class="es-story__arrow es-story__arrow--prev" aria-label="Previous slide">←</button>' +
           '<button type="button" class="es-story__arrow es-story__arrow--next" aria-label="Next slide">→</button>' +
-          '<span class="es-story__count" aria-live="polite">01 / ' + String(ims.length).padStart(2, '0') + '</span>' +
         '</div>' +
         '<div class="es-story__info">' +
           '<div class="es-story__dots" role="tablist" aria-label="Choose a slide">' + ims.map(function (im, k) { return '<button type="button" role="tab" aria-label="Slide ' + (k + 1) + '" aria-selected="' + (k === 0) + '"></button>'; }).join('') + '</div>' +
@@ -345,7 +363,6 @@
       var track = card.querySelector('.es-story__track');
       var slides = card.querySelectorAll('.es-story__slide');
       var dots = card.querySelectorAll('.es-story__dots button');
-      var count = card.querySelector('.es-story__count');
       var n = slides.length, at = 0, timer = null, hover = false, seen = false;
       /* lazy images inside a sliding track never "scroll into view", so load the current + next slide by hand */
       var warm = function (j) { var im = slides[(j + n) % n] && slides[(j + n) % n].querySelector('img'); if (im && im.loading !== 'eager') im.loading = 'eager'; };
@@ -355,7 +372,6 @@
         track.style.transform = 'translateX(' + (-100 * at) + '%)';
         slides.forEach(function (s, j) { if (j === at) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
         dots.forEach(function (d, j) { d.setAttribute('aria-selected', String(j === at)); });
-        count.textContent = String(at + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
       };
       var stop = function () { clearInterval(timer); timer = null; };
       var start = function () { stop(); if (n > 1 && seen && !hover && !calm.matches && !document.hidden) timer = setInterval(function () { go(at + 1); }, 4000); };
@@ -390,7 +406,9 @@
     var current = TYPES.some(function (t) { return t[0] === want; }) ? want : 'all';
     var count = function (t) { return String(t === 'all' ? Q.length : Q.filter(function (q) { return q.type === t; }).length).padStart(2, '0'); };
     var setCount = document.getElementById('quest-total');
-    if (setCount) setCount.textContent = String(Q.length).padStart(2, '0');
+    if (setCount) setCount.textContent = String(Q.length + (window.STORIES || []).length + (window.CUTSCENES || []).length).padStart(2, '0');
+    var typeTotal = document.getElementById('type-total');
+    if (typeTotal) typeTotal.textContent = String(TYPES.filter(function (t) { return t[0] !== 'all' && +count(t[0]) > 0; }).length).padStart(2, '0');
     /* One plain image (or a looping video) per piece. Click / tap flips the card to show
        the title and what it was made with. Cards keep the art's shape, clamped to 3:4 – 4:3. */
     var still = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -418,9 +436,8 @@
       var said = q.title + '. ' + NAME[q.type].toLowerCase() + (q.sub ? '. ' + q.sub : '') + (tools.length ? '. Made with ' + tools.join(', ') : '');
       return '<button type="button" class="es-flip" aria-pressed="false" data-say="' + esc(said) + '" aria-label="' + esc(q.title + ': show details') + '" style="--c:' + q.color + ';aspect-ratio:' + ratioOf(q, x).toFixed(4) + '">' +
         '<span class="es-flip__inner">' +
-          '<span class="es-flip__front">' + front + '<span class="es-flip__hint" aria-hidden="true">↻ INFO</span></span>' +
+          '<span class="es-flip__front">' + front + '</span>' +
           '<span class="es-flip__back" aria-hidden="true">' +
-            '<span class="es-flip__back-hint">↺ FLIP BACK</span>' +
             '<span class="es-flip__meta">' + esc(meta) + '</span>' +
             '<span class="es-flip__title">' + esc(q.title) + '</span>' + made +
           '</span>' +
@@ -436,7 +453,7 @@
       });
     }, { rootMargin: '120px' }) : null;
     var renderBoard = function () {
-      filtersEl.innerHTML = TYPES.map(function (t) {
+      filtersEl.innerHTML = TYPES.filter(function (t) { return t[0] === 'all' || +count(t[0]) > 0; }).map(function (t) {
         return '<button type="button" class="es-filter" data-f="' + t[0] + '" aria-pressed="' + (t[0] === current) + '">' + t[1] + ' <span>' + count(t[0]) + '</span></button>';
       }).join('');
       /* fill columns shortest-first so the grid stays even and reads left to right */

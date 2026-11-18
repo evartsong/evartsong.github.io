@@ -229,13 +229,11 @@ window.EXTRAS = [
    image + ratio: the picture on the card. tools: shown as MADE WITH on the back.
    id: a video side quest above (Voyage, Karaoke Cube). */
 window.QUESTS = [
-  { id: 'karaoke-cube', type: '3d', title: 'Karaoke Cube', sub: '3D motion', color: '#3E2A8C', ratio: '16 / 9' },
   { type: 'ink', title: 'Billie Eilish tour merch', sub: 'Where Do We Go? world tour, sold globally · Interscope Records', image: 'images/sketchbook/12.jpg', ratio: '1600 / 1280', tools: ['Pen + ink'], color: '#2F5D3A' },
   { type: 'painting', title: 'Viking portrait', image: 'images/ig-paintings/01.jpg', ratio: '1440 / 1800', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'ink', title: 'Courtside', image: 'images/ig-ink/01.jpg', ratio: '1439 / 1669', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Bust study', image: 'images/ig-drawing/03.jpg', ratio: '1080 / 1080', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Rhino studies', image: 'images/play/018.jpg', ratio: '1080 / 1080', tools: ['Pencil'], color: '#2A2A2A' },
-  { id: 'voyage', type: '3d', title: 'Voyage', sub: '3D motion', color: '#3E2A8C', ratio: '16 / 9' },
   { type: 'painting', title: 'Portrait in blue', image: 'images/ig-paintings/04.jpg', ratio: '1440 / 1800', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'ink', title: 'Crowd of faces', image: 'images/ig-ink/02.jpg', ratio: '1440 / 1800', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Hand studies', image: 'images/ig-drawing/04.jpg', ratio: '1440 / 1117', tools: ['Colored pencil'], color: '#2A2A2A' },
@@ -358,6 +356,11 @@ window.STORIES = [
   { id: 'snowstorm', title: 'Snowstorm', type: 'Digital art', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'] }
 ];
 
+/* Play: Cutscenes. Animations shown as video players with sound (no autoplay). */
+window.CUTSCENES = [
+  { title: 'Voyage', type: '3D animation', text: 'A short 3D motion piece.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
+  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube.jpg', tools: ['Cinema 4D', 'Redshift'] }
+];
 /* Links used across the site */
 window.LINKS = {
   email: 'mailto:evartsong@gmail.com',
@@ -377,7 +380,7 @@ window.SECTIONS = {
   bibi: [
     { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 2, 3, 4, 5, 6, 7, 8] },
     { g: 'final', title: 'Collections', text: 'Collection pages and graphics, including Early Black Friday and Best Sellers.', imgs: [9, 10, 11] },
-    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO. Scroll inside each one to see the full email.', imgs: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21] },
+    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO.', imgs: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21] },
     { g: 'final', title: 'Social posts + stories', imgs: [22, 23, 24, 25, 26, 27, 28, 29, 30] },
     { g: 'final', title: 'Video', text: 'Social reels, AI-styled product videos and the Dallas Market Center booth.', clips: [1, 2, 3, 4, 5, 6, 7] },
     { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the marketplaces and social.', imgs: [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] },
@@ -386,7 +389,7 @@ window.SECTIONS = {
     { g: 'ref', title: 'Fabric + style references', text: 'Fabric swatches and style references used to guide the AI styling.', imgs: [141, 142, 143, 144, 145, 146, 147, 148] }
   ],
   warp: [
-    { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile. Scroll inside each page.', imgs: [1, 14] },
+    { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile.', imgs: [1, 14] },
     { g: 'final', title: 'Company pages', text: 'About us, our technology and sustainability.', imgs: [2, 3, 4] },
     { g: 'final', title: 'Service pages', text: 'Store replenishments, inbound freight optimization, pool distribution, LTL, perishable freight and national distribution.', imgs: [5, 6, 7, 8, 9, 10] },
     { g: 'final', title: 'Contact', imgs: [13] }
