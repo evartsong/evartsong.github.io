@@ -9,18 +9,18 @@
 <meta property="og:title" content="Eva Song &mdash; Brand Designer + Marketing Specialist">
 <meta property="og:description" content="Eva Song is a Los Angeles brand designer and marketing specialist. A playable portfolio: work, history and side quests.">
 <meta name="theme-color" content="#0B0D10" data-theme-meta>
-<link rel="icon" href="assets/logo.svg?v=202611172046" type="image/svg+xml">
+<link rel="icon" href="assets/logo.svg?v=202611172158" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Manrope:wght@400;500;700;800&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202611172046">
+<link rel="stylesheet" href="assets/style.css?v=202611172158">
 </head>
 <body>
 <div class="es">
 <a class="es-skip" href="#main">Skip to content</a>
 <header class="es-header">
   <div class="es-wrap es-header__row">
-    <a class="es-logo" href="index.html" aria-label="Eva Song, home"><img src="assets/logo.svg?v=202611172046" alt="Eva Song logo" width="36" height="46"></a>
+    <a class="es-logo" href="index.html" aria-label="Eva Song, home"><img src="assets/logo.svg?v=202611172158" alt="Eva Song logo" width="36" height="46"></a>
     <div class="es-header__right">
       <nav class="es-nav" aria-label="Main">
       <a href="index.html#work"><span>[W]</span> Work</a>
@@ -49,50 +49,37 @@
       <p class="es-title__kicker">A PLAYABLE PORTFOLIO</p>
       <h1 class="es-title__name"><span>EVA</span> <span>SONG</span></h1>
       <p class="es-title__sub">Brand Designer + Marketing Specialist</p>
-      <a class="es-start" href="#menu"><svg class="es-blink" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>PRESS START</a>
+      <a class="es-start" href="#work"><svg class="es-blink" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>PRESS START</a>
     </div>
-    <p class="es-scroll"><span class="es-d">SCROLL TO CONTINUE</span><span class="es-m">SWIPE UP</span> ↓</p>
+    <!-- latest work, straight from data.js -->
+    <div class="es-reel" id="reel" role="list" aria-label="Latest work"></div>
   </section>
 
-  <!-- MAIN MENU + PATCH NOTES -->
-  <section class="es-wrap es-menu" id="menu" aria-label="Main menu">
-    <div class="es-menu__list">
-      <p class="es-kicker">MAIN MENU</p>
-      <nav aria-label="Game menu">
-        <a class="es-menu__item is-active" href="#work"><span class="es-menu__num">01</span><span><span class="es-menu__title">Season pass</span><span class="es-menu__desc">My work, tier by tier</span></span><span class="es-menu__arrow" aria-hidden="true">▶</span></a>
-        <a class="es-menu__item" href="#profile"><span class="es-menu__num">02</span><span><span class="es-menu__title">Player profile</span><span class="es-menu__desc">Who’s on the controller</span></span><span class="es-menu__arrow" aria-hidden="true">▶</span></a>
-        <a class="es-menu__item" href="#achievements"><span class="es-menu__num">03</span><span><span class="es-menu__title">Achievements</span><span class="es-menu__desc">Trophies unlocked so far</span></span><span class="es-menu__arrow" aria-hidden="true">▶</span></a>
-        <a class="es-menu__item" href="#play"><span class="es-menu__num">04</span><span><span class="es-menu__title">Side quests</span><span class="es-menu__desc">3D, graphics, illustration and more</span></span><span class="es-menu__arrow" aria-hidden="true">▶</span></a>
-        <a class="es-menu__item" href="#contact"><span class="es-menu__num">05</span><span><span class="es-menu__title">Multiplayer</span><span class="es-menu__desc">Team up with me</span></span><span class="es-menu__arrow" aria-hidden="true">▶</span></a>
-      </nav>
+  <!-- QUICK SELECT (was the main menu screen) -->
+  <nav class="es-quick" id="menu" aria-label="Jump to a section">
+    <div class="es-wrap es-quick__row">
+      <div class="es-quick__links">
+        <a href="#work">Season pass</a>
+        <a href="#profile">Player profile</a>
+        <a href="#achievements">Trophy case</a>
+        <a href="#play">Side quests</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="es-quick__patch"><span>PATCH 26.11</span> BiBi season is live · open to full-time roles and freelance</p>
     </div>
-    <aside class="es-panel es-patch" aria-label="Patch notes">
-      <p class="es-kicker">PATCH NOTES · NOV 2026</p>
-      <p class="es-patch__title">Season 2026 is live</p>
-      <ul>
-        <li><span class="es-tag">NEW</span><span>BiBi season: brand, email, e-commerce and ads for a fashion wholesale brand.</span></li>
-        <li><span class="es-tag">NEW</span><span>Portfolio rebuilt as a playable game.</span></li>
-        <li><span class="es-tag es-tag--soft">BUFF</span><span>AI video and graphics workflow.</span></li>
-        <li><span class="es-tag">LIVE</span><span>Open to new squads: full-time roles and freelance.</span></li>
-      </ul>
-    </aside>
-  </section>
+  </nav>
 
-  <!-- 01 SEASON PASS (WORK): tiers are built from assets/data.js?v=202611172046 -->
+  <!-- 01 SEASON PASS (WORK): tiles are built from assets/data.js?v=202611172158 -->
   <section class="es-section es-pass" id="work" aria-label="Season pass">
     <div class="es-wrap es-headrow">
       <div>
         <p class="es-kicker">01 · WORK</p>
         <h2 class="es-h2">Season pass</h2>
-        <p class="es-lede">Every project is a tier. Newest season first. <span class="es-m">Swipe, then tap a tier.</span></p>
+        <p class="es-lede">Every project is a tier. Newest season first.</p>
       </div>
-      <div class="es-progress">
-        <p>09 / 09 TIERS UNLOCKED</p>
-        <span aria-hidden="true"></span>
-      </div>
+      <nav class="es-passnums" id="pass-nums" aria-label="Jump to a project"></nav>
     </div>
-    <div class="es-track"><div class="es-track__inner" id="tiers" role="group" aria-label="Tiers"></div></div>
-    <div class="es-wrap"><div class="es-panel es-detail" id="tier-detail" aria-live="polite"></div></div>
+    <div class="es-wrap"><div class="es-bento" id="tiers"></div></div>
   </section>
 
   <!-- 02 PLAYER PROFILE -->
@@ -185,7 +172,7 @@
           <h2 class="es-contact__head">Ready up?</h2>
           <p class="es-contact__text">Brand refresh, launch campaign or a full-time role: invite me to your squad.</p>
         </div>
-        <a class="es-btn es-btn--big" href="mailto:evartsong@gmail.com">Send a squad invite →</a>
+        <a class="es-btn es-btn--big" href="mailto:evartsong@gmail.com">Email me →</a>
       </div>
       <div class="es-foot">
         <span>© 2026 EVA SONG · THANKS FOR PLAYING</span>
@@ -201,8 +188,8 @@
 
 </main>
 </div>
-<script src="assets/media.js?v=202611172046"></script>
-<script src="assets/data.js?v=202611172046"></script>
-<script src="assets/main.js?v=202611172046"></script>
+<script src="assets/media.js?v=202611172158"></script>
+<script src="assets/data.js?v=202611172158"></script>
+<script src="assets/main.js?v=202611172158"></script>
 </body>
 </html>

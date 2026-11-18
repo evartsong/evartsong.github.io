@@ -63,63 +63,40 @@
     if (/^https?:/.test(url) || /\.pdf$/i.test(url)) { a.target = '_blank'; a.rel = 'noopener'; }
   });
 
-  /* ---------- Home: season pass ---------- */
+  /* ---------- Home: work reel (title screen) + season pass tiles ---------- */
+  var tileImg = function (p) { return p.tile || p.cover || (p.images && p.images[0] && p.images[0][0]) || ''; };
+  var reelEl = document.getElementById('reel');
+  if (reelEl && P.length) {
+    reelEl.innerHTML = P.slice(0, 5).map(function (p, i) {
+      return '<a class="es-reel__card" role="listitem" href="' + projectUrl(p) + '" style="--c:' + p.color + '">' +
+        '<img src="' + esc(tileImg(p)) + '" alt="" decoding="async">' +
+        '<span class="es-reel__tag">TIER ' + num(i) + (p.era ? ' · ' + esc(upper(p.era)) : '') + '</span>' +
+        '<span class="es-reel__name">' + esc(p.title) + '</span></a>';
+    }).join('');
+  }
   var tiersEl = document.getElementById('tiers');
-  var detailEl = document.getElementById('tier-detail');
-  if (tiersEl && detailEl && P.length) {
-    var sel = 0;
-    var renderTiers = function () {
-      tiersEl.innerHTML = '<span class="es-track__line" aria-hidden="true"></span>' + P.map(function (p, i) {
-        var on = i === sel;
-        return '<button type="button" class="es-tier' + (on ? ' is-selected' : '') + '" data-i="' + i + '" aria-pressed="' + on + '" aria-label="Tier ' + num(i) + ': ' + esc(p.title) + '">' +
-          '<span class="es-tier__season">' + esc(p.season) + '</span>' +
-          '<span class="es-tier__num">' + num(i) + '</span>' +
-          '<span class="es-tier__card">' +
-            '<span class="es-tier__art" style="' + artStyle(p.color, p.cover) + '"><span class="es-chip">' + esc(upper(p.era)) + '</span></span>' +
-            '<span class="es-tier__body"><span class="es-tier__title">' + esc(p.title) + '</span><span class="es-tier__genre">' + esc(upper(p.genre)) + '</span></span>' +
-          '</span></button>';
-      }).join('');
-    };
-    var renderDetail = function () {
-      var p = P[sel];
-      detailEl.innerHTML =
-        '<div class="es-detail__main">' +
-          '<p class="es-detail__meta"><span>TIER ' + num(sel) + ' REWARD · ' + esc(upper(p.era)) + ' · ' + esc(upper(p.genre)) + '</span>' +
-          (p.badge ? '<span class="es-chip es-chip--accent">' + esc(p.badge) + '</span>' : '') + '</p>' +
-          '<p class="es-detail__title">' + esc(p.title) + '</p>' +
-          '<p class="es-detail__role">' + esc(p.role) + ' · ' + esc(p.when) + '</p>' +
-          '<p class="es-detail__desc">' + esc(p.desc) + '</p>' +
-        '</div>' +
-        '<div class="es-detail__actions">' +
-          '<a class="es-btn" href="' + projectUrl(p) + '">Claim reward →</a>' +
-          '<button type="button" class="es-iconbtn" data-step="-1" aria-label="Previous tier">‹</button>' +
-          '<button type="button" class="es-iconbtn" data-step="1" aria-label="Next tier">›</button>' +
-        '</div>';
-    };
-    var select = function (i, scroll) {
-      sel = (i + P.length) % P.length;
-      renderTiers(); renderDetail();
-      if (scroll) {
-        var b = tiersEl.querySelector('[data-i="' + sel + '"]');
-        if (b) b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
-      }
-    };
-    tiersEl.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-i]');
-      if (b) { select(+b.getAttribute('data-i'), true); tiersEl.querySelector('[data-i="' + sel + '"]').focus(); }
-    });
-    tiersEl.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-        e.preventDefault();
-        select(sel + (e.key === 'ArrowRight' ? 1 : -1), true);
-        tiersEl.querySelector('[data-i="' + sel + '"]').focus();
-      }
-    });
-    detailEl.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-step]');
-      if (b) select(sel + (+b.getAttribute('data-step')), true);
-    });
-    select(0, false);
+  if (tiersEl && P.length) {
+    /* newest season = big featured tile; the rest fill the grid around it */
+    tiersEl.innerHTML = P.map(function (p, i) {
+      var feat = i === 0;
+      var meta = 'TIER ' + num(i) + ' · ' + (p.season || upper(p.era));
+      return '<a class="es-tile' + (feat ? ' es-tile--feat' : '') + '" href="' + projectUrl(p) + '" style="--c:' + p.color + '">' +
+        '<img src="' + esc(tileImg(p)) + '" alt="" loading="' + (i < 3 ? 'eager' : 'lazy') + '" decoding="async">' +
+        '<span class="es-tile__cap">' +
+          '<span class="es-tile__text">' +
+            '<span class="es-tile__meta">' + esc(meta) + (feat && p.badge ? ' <b>' + esc(p.badge) + '</b>' : '') + '</span>' +
+            '<span class="es-tile__title">' + esc(p.title) + '</span>' +
+            '<span class="es-tile__genre">' + esc(feat ? p.desc : p.genre) + '</span>' +
+          '</span>' +
+          (feat ? '<span class="es-btn">View project →</span>' : '') +
+        '</span></a>';
+    }).join('');
+  }
+  var numsEl = document.getElementById('pass-nums');
+  if (numsEl && P.length) {
+    numsEl.innerHTML = P.map(function (p, i) {
+      return '<a href="' + projectUrl(p) + '" title="' + esc(p.title) + '" aria-label="Tier ' + num(i) + ': ' + esc(p.title) + '">' + num(i) + '</a>';
+    }).join('');
   }
 
   /* ---------- Media helpers (images come from assets/media.js) ---------- */
@@ -218,11 +195,20 @@
     var group = function (key, title, kicker) {
       if (!groupHtml[key]) return '';
       part++;
-      return '<section class="es-section es-group es-group--' + key + '" aria-labelledby="grp-' + key + '"><div class="es-wrap">' +
+      return '<section class="es-section es-group es-group--' + key + '" id="part-' + key + '" aria-labelledby="grp-' + key + '"><div class="es-wrap">' +
         '<div class="es-group__head"><p class="es-kicker">PART ' + String(part).padStart(2, '0') + ' · ' + kicker + '</p><h2 class="es-h2" id="grp-' + key + '">' + title + '</h2></div>' +
         groupHtml[key] +
       '</div></section>';
     };
+
+    /* hero art = the project's cover at its own shape (kept between 4:5 and 12:5) */
+    var heroImg = p.cover || (imgs[0] && imgs[0][0]) || '';
+    var heroRatio = p.coverRatio || (!p.cover && imgs[0] && imgs[0][1] ? imgs[0][1] + ' / ' + imgs[0][2] : '16 / 10');
+    var hr = String(heroRatio).split('/');
+    heroRatio = Math.min(2.4, Math.max(0.8, (parseFloat(hr[0]) / parseFloat(hr[1] || 1)) || 1.6)).toFixed(3);
+    var jumps = SEC ? [['part-final', 'Final work'], ['brief', 'Brief'], ['part-process', 'Process'], ['part-ref', 'Moodboard']].filter(function (j) {
+      return j[0] === 'brief' || groupHtml[j[0].slice(5)];
+    }) : [];
 
     var did = (p.did && p.did.length)
       ? '<p class="es-label">WHAT I DID</p><ul class="es-did">' + p.did.map(function (d) { return '<li><span class="es-check" aria-hidden="true">✓</span><span>' + esc(d) + '</span></li>'; }).join('') + '</ul>'
@@ -243,20 +229,25 @@
         '<a class="is-next" href="' + urlOf(next) + '"><small>NEXT · ' + num(ni) + ' →</small><b>' + esc(next.title) + '</b></a>' +
       '</nav>' +
 
-      '<section class="es-phero" style="--c:' + p.color + '" aria-label="' + (isQuest ? 'Side quest' : 'Project') + '">' +
+      '<section class="es-phero' + (heroImg ? ' es-phero--art' : '') + '" style="--c:' + p.color + '" aria-label="' + (isQuest ? 'Side quest' : 'Project') + '">' +
         '<span class="es-phero__num" aria-hidden="true">' + num(idx) + '</span>' +
-        '<div class="es-wrap"><div>' +
+        '<div class="es-wrap"><div class="es-phero__text"><div>' +
           '<div class="es-pills"><span class="es-chip">' + (isQuest ? 'SIDE QUEST · ' + esc(upper(p.genre)) : 'TIER ' + num(idx) + ' · REWARD UNLOCKED') + '</span>' + (p.badge ? '<span class="es-chip es-chip--light">' + esc(p.badge) + '</span>' : '') + '</div>' +
           '<h1>' + esc(p.title) + '</h1>' +
           '<p class="es-phero__desc">' + esc(p.desc) + '</p>' +
         '</div>' +
-        '<dl><div><dt>ROLE</dt><dd>' + esc(p.role) + '</dd></div><div><dt>CLASS</dt><dd>' + esc(p.genre) + '</dd></div><div><dt>SEASON</dt><dd>' + esc(p.when) + '</dd></div></dl>' +
+        '<dl><div><dt>ROLE</dt><dd>' + esc(p.role) + '</dd></div><div><dt>CLASS</dt><dd>' + esc(p.genre) + '</dd></div><div><dt>SEASON</dt><dd>' + esc(p.when) + '</dd></div>' +
+          (p.tools && p.tools.length ? '<div class="es-phero__tools"><dt>TOOLS</dt><dd>' + esc(p.tools.join(' · ')) + '</dd></div>' : '') + '</dl>' +
+        '</div>' +
+        (heroImg ? '<a class="es-phero__art" href="' + esc(heroImg) + '" target="_blank" rel="noopener" style="aspect-ratio:' + heroRatio + '"><img src="' + esc(heroImg) + '" alt="' + esc(p.title) + ': the final result" decoding="async" fetchpriority="high"></a>' : '') +
         '</div>' +
       '</section>' +
 
+      (SEC ? '<nav class="es-jump" aria-label="On this page"><div class="es-wrap es-jump__row">' + jumps.map(function (j) { return '<a href="#' + j[0] + '">' + j[1] + '</a>'; }).join('') + '</div></nav>' : '') +
+
       (SEC ? group('final', 'Final work', 'THE RESULT') : '') +
 
-      '<section class="es-wrap es-brief' + (SEC ? ' es-brief--mid' : '') + '" aria-label="The brief">' +
+      '<section class="es-wrap es-brief' + (SEC ? ' es-brief--mid' : '') + '" id="brief" aria-label="The brief">' +
         '<div class="es-brief__main">' +
           '<p class="es-kicker">MISSION BRIEFING</p><h2 class="es-h2">The brief</h2>' +
           '<p class="es-brief__text">' + esc(p.brief || p.desc) + '</p>' +
@@ -285,9 +276,32 @@
           '<a class="es-cont es-cont--prev" href="' + urlOf(prev) + '"><span class="es-cont__label">← PREVIOUS ' + unit + ' · ' + num(pi) + '</span><span class="es-cont__title">' + esc(prev.title) + '</span><span class="es-cont__genre">' + esc(upper(prev.genre)) + '</span></a>' +
           '<a class="es-cont es-cont--next" style="--c:' + next.color + '" href="' + urlOf(next) + '"><span class="es-cont__num" aria-hidden="true">' + num(ni) + '</span><span class="es-cont__label">NEXT ' + unit + ' · ' + num(ni) + ' →</span><span class="es-cont__title">' + esc(next.title) + '</span><span class="es-cont__genre">' + esc(upper(next.genre)) + '</span></a>' +
         '</div>' +
-        '<div class="es-btnrow"><a class="es-btn" href="' + (isQuest ? 'play.html' : 'index.html#work') + '">' + (isQuest ? 'Back to side quests' : 'Back to season pass') + '</a><a class="es-btn es-btn--ghost" href="index.html#contact">Send a squad invite</a></div>' +
+        '<div class="es-btnrow"><a class="es-btn" href="' + (isQuest ? 'play.html' : 'index.html#work') + '">' + (isQuest ? 'All side quests' : 'All projects') + '</a><a class="es-btn es-btn--ghost" href="index.html#contact">Contact me</a></div>' +
       '</div></section>';
     projEl.closest('main').classList.add('has-pbar');
+
+    /* jump bar: sits under the sticky header and marks the part you're reading */
+    var jumpEl = projEl.querySelector('.es-jump');
+    var headerEl = document.querySelector('.es-header');
+    var setHeadH = function () { if (headerEl) root.style.setProperty('--es-headh', headerEl.offsetHeight + 'px'); };
+    setHeadH(); window.addEventListener('resize', setHeadH);
+    if (jumpEl) {
+      var links = jumpEl.querySelectorAll('a');
+      var parts = jumps.map(function (j) { return document.getElementById(j[0]); }).filter(Boolean);
+      var lastId = '';
+      var markJump = function () {
+        /* the part whose top has passed the line just under the jump bar */
+        var line = jumpEl.getBoundingClientRect().bottom + 120, id = parts[0].id;
+        parts.forEach(function (el) { if (el.getBoundingClientRect().top <= line) id = el.id; });
+        if (id === lastId) return;
+        lastId = id;
+        links.forEach(function (a) { if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+      };
+      var ticking = false;
+      window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; markJump(); }); } }, { passive: true });
+      window.addEventListener('resize', markJump);
+      markJump();
+    }
 
     /* keyboard: left / right arrows move between entries, like a game menu */
     document.addEventListener('keydown', function (e) {

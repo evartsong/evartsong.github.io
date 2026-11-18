@@ -22,6 +22,7 @@ window.PROJECTS = [
     ],
     tools: ['Photoshop', 'Mailchimp', 'Faire', 'FashionGo', 'AI video + graphics'],
     type: 'Fashion wholesale · e-commerce', collaborators: '', recognition: '',
+    tile: 'images/bibi/14.jpg', /* home tiles: a social post crops better than the wide banner */
     cover: '', video: '', images: []
   },
   {
