@@ -1005,3 +1005,7 @@ body { background: var(--es-bg); }
 .es-title { min-height: 0; justify-content: flex-start; }
 .es-title__main { padding-top: clamp(28px, 4vw, 56px); padding-bottom: clamp(48px, 6vw, 88px); }
 @media (max-width: 767px) { .es-title__main { padding-top: 36px; padding-bottom: 48px; } }
+/* Story mode: every slideshow the same 16:10 frame; slides fill it (small edge crops) */
+#stories .es-story__view { aspect-ratio: 16 / 10; }
+#stories .es-story__slide img { object-fit: cover; object-position: center; }
+#stories.es-stories__grid { grid-auto-rows: 1fr; }

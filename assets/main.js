@@ -357,9 +357,8 @@
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
     storiesEl.innerHTML = S.map(function (st, si) {
       var ims = (M[st.id] && M[st.id].images) || [];
-      var r = ims[0] && ims[0][1] ? (ims[0][1] / ims[0][2]).toFixed(4) : '1.6';
       return '<article class="es-story" data-i="' + si + '" aria-roledescription="carousel" aria-label="' + esc(st.title) + '">' +
-        '<div class="es-story__view" style="aspect-ratio:' + r + '" tabindex="0" aria-label="' + esc(st.title) + ' slides. Use left and right arrow keys.">' +
+        '<div class="es-story__view" tabindex="0" aria-label="' + esc(st.title) + ' slides. Use left and right arrow keys.">' +
           '<div class="es-story__track">' + ims.map(function (im, k) {
             return '<figure class="es-story__slide" role="group" aria-roledescription="slide" aria-label="' + (k + 1) + ' of ' + ims.length + '"' + (k ? ' aria-hidden="true"' : '') + '>' +
               '<img src="' + esc(im[0]) + '" alt="' + esc(st.title + ', part ' + (k + 1) + ' of ' + ims.length) + '" loading="' + (k ? 'lazy' : 'eager') + '" decoding="async" draggable="false"></figure>';
