@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>(function(){var r=document.documentElement,p="auto";try{p=localStorage.getItem("es-theme")||"auto"}catch(e){}if(p==="light"||p==="dark"){r.setAttribute("data-theme",p)}else{p="auto"}r.setAttribute("data-theme-pref",p)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>History &mdash; Eva Song</title>
 <meta name="description" content="Campaign log: Eva Song experience, skills and recognition.">
 <meta property="og:title" content="History &mdash; Eva Song">
 <meta property="og:description" content="Campaign log: Eva Song experience, skills and recognition.">
-<meta name="theme-color" content="#0B0D10">
-<link rel="icon" href="assets/logo.svg?v=202611171734" type="image/svg+xml">
+<meta name="theme-color" content="#0B0D10" data-theme-meta>
+<link rel="icon" href="assets/logo.svg?v=202611171747" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Manrope:wght@400;500;700;800&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202611171734">
+<link rel="stylesheet" href="assets/style.css?v=202611171747">
 </head>
 <body>
 <div class="es">
 <a class="es-skip" href="#main">Skip to content</a>
 <header class="es-header">
   <div class="es-wrap es-header__row">
-    <a class="es-logo" href="index.html" aria-label="Eva Song, home"><img src="assets/logo.svg?v=202611171734" alt="Eva Song logo" width="36" height="46"></a>
-    <nav class="es-nav" aria-label="Main">
+    <a class="es-logo" href="index.html" aria-label="Eva Song, home"><img src="assets/logo.svg?v=202611171747" alt="Eva Song logo" width="36" height="46"></a>
+    <div class="es-header__right">
+      <nav class="es-nav" aria-label="Main">
       <a href="index.html#work"><span>[W]</span> Work</a>
       <a href="history.html" aria-current="page"><span>[H]</span> History</a>
       <a href="play.html"><span>[P]</span> Play</a>
     </nav>
+      <button type="button" class="es-theme" data-theme-toggle aria-label="Color theme: auto. Change theme">
+        <svg class="es-ti es-ti--auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <svg class="es-ti es-ti--light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="es-ti es-ti--dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+        <span class="es-theme__label"></span>
+      </button>    </div>
   </div>
 </header>
 <main id="main">
@@ -201,7 +209,7 @@
 </main>
 
 </div>
-<script src="assets/data.js?v=202611171734"></script>
-<script src="assets/main.js?v=202611171734"></script>
+<script src="assets/data.js?v=202611171747"></script>
+<script src="assets/main.js?v=202611171747"></script>
 </body>
 </html>
