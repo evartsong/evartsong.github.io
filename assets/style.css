@@ -712,3 +712,35 @@ body { background: var(--es-bg); }
   .es-flip__tools .es-pill { font-size: 9px; padding: 4px 6px; }
   .es-flip__sub { font-size: 11px; line-height: 1.4; }
 }
+
+/* ---------- Project pages: Final work -> brief -> Process -> Moodboard + references ---------- */
+.es-brief--mid { border-top: 1px solid var(--es-line); }
+.es-group__head { margin-bottom: 56px; }
+.es-sec + .es-sec { margin-top: 96px; }
+.es-sec__head { max-width: 760px; margin-bottom: 24px; }
+.es-sec__title { font-family: var(--es-head); font-weight: 900; font-size: calc(clamp(22px, 2.2vw, 30px) * 0.9); line-height: 1.1; letter-spacing: -0.04em; color: var(--es-strong); padding-bottom: 0.08em; }
+.es-sec__text { margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--es-body2); }
+.es-sec__media { display: flex; flex-direction: column; gap: 16px; }
+.es-sec__media > .es-video { margin-top: 0; }
+.es-set { display: grid; gap: 16px; align-items: start; }
+.es-set--full { grid-template-columns: minmax(0, 1fr); }
+.es-set--one { grid-template-columns: minmax(0, 560px); }
+.es-set--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.es-set--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.es-set--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.es-pic { display: block; border-radius: 14px; overflow: hidden; background: var(--es-shotbg); border: 1px solid var(--es-line2); transition: border-color 0.15s; }
+.es-pic:hover { border-color: var(--es-accent); }
+.es-pic img { display: block; width: 100%; height: auto; }
+.es-group--process .es-sec__title, .es-group--ref .es-sec__title { font-size: calc(clamp(20px, 1.8vw, 26px) * 0.9); }
+@media (max-width: 767px) {
+  .es-group__head { margin-bottom: 32px; }
+  .es-sec + .es-sec { margin-top: 56px; }
+  .es-sec__head { margin-bottom: 16px; }
+  .es-sec__title, .es-group--process .es-sec__title, .es-group--ref .es-sec__title { font-size: 20px; }
+  .es-sec__text { margin-top: 10px; font-size: 15px; }
+  .es-sec__media, .es-set { gap: 10px; }
+  .es-set--2, .es-set--one { grid-template-columns: minmax(0, 1fr); }
+  .es-set--3, .es-set--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .es-set--3 > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
+  .es-pic { border-radius: 12px; }
+}

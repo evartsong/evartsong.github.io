@@ -45,8 +45,8 @@ window.PROJECTS = [
     desc: 'Spotify’s instant access, told through a reversed animal food chain.',
     brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
     did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
-    tools: [],
-    type: 'Spotify · concept spot', collaborators: '', recognition: 'ArtCenter Student Gallery, 2023',
+    tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
+    type: 'Spotify · concept spot', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
     cover: '', video: '', images: []
   },
   {
@@ -55,8 +55,8 @@ window.PROJECTS = [
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
     brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
-    tools: [],
-    type: 'Satirical ad', collaborators: '', recognition: '',
+    tools: ['Cinema 4D', 'After Effects'],
+    type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
     cover: '', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
   },
   {
@@ -65,8 +65,8 @@ window.PROJECTS = [
     desc: 'Light as imagination in Sam and Suzy’s runaway love story.',
     brief: 'A title sequence for Moonrise Kingdom. Sam and Suzy fall in love and run away into the wilderness; light becomes the symbol of imagination at the story’s turning point.',
     did: ['Use light as the symbol of imagination', 'Design and animate the title sequence'],
-    tools: [],
-    type: 'Film title sequence', collaborators: '', recognition: '',
+    tools: ['Cinema 4D', 'Arnold', 'Photoshop'],
+    type: 'Film title sequence', collaborators: 'Jason Kim', recognition: '',
     cover: '', video: '', images: []
   },
   {
@@ -75,7 +75,7 @@ window.PROJECTS = [
     desc: 'Inviting streamers to find their inner conductor in live video.',
     brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
     did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
-    tools: [],
+    tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
     type: 'Live streaming software', collaborators: '', recognition: '',
     cover: '', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
   },
@@ -251,4 +251,101 @@ window.LINKS = {
   linkedin: 'https://www.linkedin.com/in/eva-song-5261561b7/',
   instagram: 'https://www.instagram.com/evartsong',
   resume: 'evasong_resume.pdf' /* drop the PDF into the site folder with this name */
+};
+
+/* How each project page is laid out, top to bottom:
+   final  = Final work (shown first and biggest)
+   process = Process (storyboards, sketches, renders, strategy)
+   ref    = Moodboard + references
+   imgs: image numbers in images/<id>/ (01.jpg = 1). clips: video numbers in videos/<id>/.
+   video: true puts the project's main video (from PROJECTS) in that spot.
+   Titles and captions come from the old Cargo pages. */
+window.SECTIONS = {
+  bibi: [
+    { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 2, 3, 4, 5, 23] },
+    { g: 'final', title: 'Faire collections', text: 'Collection pages and graphics for Faire, including Early Black Friday and Best Sellers.', imgs: [6, 7, 8] },
+    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails. Scroll inside each one to see the full email.', imgs: [9, 10, 11, 12] },
+    { g: 'final', title: 'Social posts', imgs: [13, 14, 15, 16, 17, 18, 19, 20] },
+    { g: 'final', title: 'Stories', imgs: [21, 22] },
+    { g: 'final', title: 'Video', text: 'Product videos, social reels and the Dallas Market Center booth.', clips: [1, 2, 3, 4, 5, 6, 7, 8, 9] }
+  ],
+  warp: [
+    { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile. Scroll inside each page.', imgs: [1, 14] },
+    { g: 'final', title: 'Company pages', text: 'About us, our technology and sustainability.', imgs: [2, 3, 4] },
+    { g: 'final', title: 'Service pages', text: 'Store replenishments, inbound freight optimization, pool distribution, LTL, perishable freight and national distribution.', imgs: [5, 6, 7, 8, 9, 10] },
+    { g: 'final', title: 'News, blog + contact', imgs: [11, 12, 13] }
+  ],
+  soundtrack: [
+    { g: 'final', title: 'Styleframes', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten about how strong his ancestors used to be. As Pet Lion gets instant access to his favorite music, he awakens his instinct and feels empowered to become the king.', imgs: [1, 2, 3, 4, 5] },
+    { g: 'process', title: 'Storyboard process', text: 'Starting with line sketches of our storyboard, we established values and then flat colors before diving into details.', imgs: [9, 10, 11] },
+    { g: 'process', title: '3D process', text: 'When it came to the details of our execution, we used Cinema 4D as a guide. We quickly blocked out the environment, placements of the characters, and in this case, flying objects to help us get the perfect perspective and scale. This was our most essential tool and was very beneficial for our workflow. It helped us illustrate without struggling with perspective.', imgs: [12, 13, 14] },
+    { g: 'ref', title: 'Moodboard', text: 'Taking inspiration from the execution of flat colors with hard light and shadow forms, we incorporated playful color palettes and shape language into our styleframes.', imgs: [6, 7, 8] }
+  ],
+  'label-lunacy': [
+    { g: 'final', title: 'The ad', video: true },
+    { g: 'process', title: 'Storyboard', imgs: [4] },
+    { g: 'ref', title: 'Moodboard', imgs: [1] },
+    { g: 'ref', title: 'Lighting + texture references', imgs: [2] },
+    { g: 'ref', title: 'Environment references', imgs: [3] }
+  ],
+  moonrise: [
+    { g: 'final', title: 'Title sequence frames', text: 'We used a warm yellow tone for inside the tent, where Sam and Suzy feel the most comfort and true love. In contrast, we used a cool tone of blue and purple for the final scene, where it is revealed that the tent is placed in the room that represents the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },
+    { g: 'process', title: '3D typography treatment', text: 'Taking inspiration from the 3D film titles, we designed a backlit of the 3D title reveal for our hero frame.', imgs: [9] },
+    { g: 'process', title: 'Typography', text: 'We chose type treatment to go along with the soft mood of our sequences and the consistent size of the type.', imgs: [10] },
+    { g: 'process', title: 'Storyboard sketch', text: 'Before modeling, we sketched out the scenes with values to anticipate the lighting and details.', imgs: [11] },
+    { g: 'process', title: 'Render process', text: 'Our initial composition, lighting, and type treatment before adding texture and adjusting the intensity of the light.', imgs: [12] },
+    { g: 'ref', title: 'Moodboard (warm)', text: 'We gathered tone references that give cozy feelings portraying the characters’ emotions and thoughts.', imgs: [7] },
+    { g: 'ref', title: 'Moodboard (cool + warm)', text: 'We studied the contrast between cold night tones and cozy light which shows the reality of the situation in the story.', imgs: [8] }
+  ],
+  vmix: [
+    { g: 'final', title: 'Brand video', video: true },
+    { g: 'final', title: 'Logo', text: 'vMix allows users to produce like a director and a conductor. The main form of the mark was inspired by the positioning and stroke of the orchestra baton.', imgs: [1, 2] },
+    { g: 'final', title: 'Opening animation', imgs: [3] },
+    { g: 'final', title: 'Closing animation', imgs: [4] },
+    { g: 'final', title: 'Graphic elements', text: 'Created a custom brand shapes as my own definition of conducting movements. Which led me to create patterns using the stroke of the logo mark in its own unique rhythms.', imgs: [5] },
+    { g: 'final', title: 'Identity posters', imgs: [6, 7] },
+    { g: 'final', title: 'Content posters', imgs: [8, 9, 10] },
+    { g: 'final', title: 'Environment', imgs: [11, 12] },
+    { g: 'final', title: 'Website', imgs: [13, 14, 15, 16] },
+    { g: 'final', title: 'App', imgs: [17, 18, 19, 20, 21, 22] }
+  ],
+  'shampoo-bar': [
+    { g: 'final', title: 'The animation', video: true },
+    { g: 'final', title: 'Styleframes', imgs: [1, 2, 3, 4, 5, 6] },
+    { g: 'process', title: 'Storyboard', text: 'We sketched scene by scene storyboard every time there were camera transitions and changes in facial expression.', imgs: [7] },
+    { g: 'process', title: 'Character design', text: 'Before modeling, we divided our parts to sketch all the characters and bathroom elements in the animation.', imgs: [8] },
+    { g: 'process', title: 'Character modeling', text: 'Referencing the sketch, all the characters were modeled and colored while showing the scale differences.', imgs: [9, 10] },
+    { g: 'process', title: 'Modeling process', text: 'Using the Miro collaboration tool while on a call, we discussed taking side notes on the board.', imgs: [11] }
+  ],
+  minari: [
+    { g: 'final', title: 'Title sequence frames', imgs: [1, 2, 3, 4, 5, 6, 7] },
+    { g: 'process', title: 'Storyboard', text: 'Sketched out variations of camera angles to tell the narrative of this seed’s growth and hope.', imgs: [9] },
+    { g: 'process', title: 'Typography', text: 'Using simple sans serif font throughout my sequences, scale differences to show the hierarchy, and lighting effect on the type.', imgs: [10] },
+    { g: 'ref', title: 'Moodboard', text: 'Gathering photograph references to study the intense lighting that I want to capture.', imgs: [8] }
+  ],
+  gsa: [
+    { g: 'final', title: 'The arena', imgs: [1] },
+    { g: 'final', title: 'Logo', text: 'GSA is spelled out to help recognize the new GameStop Arena.', imgs: [2, 3] },
+    { g: 'final', title: 'Lock up', imgs: [4] },
+    { g: 'final', title: 'Clear space', imgs: [5] },
+    { g: 'final', title: 'Typography', imgs: [6] },
+    { g: 'final', title: 'Color', imgs: [7] },
+    { g: 'final', title: 'Promotional posters', imgs: [10, 11, 12] },
+    { g: 'final', title: 'Digital stand', imgs: [13] },
+    { g: 'final', title: 'Banners', imgs: [14] },
+    { g: 'final', title: 'Environment (exterior)', imgs: [15] },
+    { g: 'final', title: 'Environment (interior)', imgs: [16] },
+    { g: 'final', title: 'Website', imgs: [17] },
+    { g: 'final', title: 'App', imgs: [18] },
+    { g: 'final', title: 'Motion', imgs: [19, 20, 21] },
+    { g: 'process', title: 'Brand steering wheel + keywords', imgs: [8] },
+    { g: 'process', title: 'Brand driver', imgs: [9] }
+  ],
+  hanbok: [
+    { g: 'final', title: 'Publication', imgs: [1, 2, 3, 4, 5, 6, 7, 8] },
+    { g: 'final', title: 'Promotional poster', imgs: [9] },
+    { g: 'final', title: 'Exhibition wall', imgs: [10] },
+    { g: 'final', title: 'Exhibition poster series', text: 'Each artist is given a color, shape, and poster colors are complementary to each other.', imgs: [11, 12, 13, 14] },
+    { g: 'final', title: 'Book spreads', imgs: [15, 16, 17, 18] }
+  ]
 };

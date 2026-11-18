@@ -176,6 +176,54 @@
     }
     if (!showcase) showcase = '<div class="es-video es-video--empty" style="--c:' + p.color + '"><span class="es-video__ph">WORK COMING SOON</span></div>';
 
+    /* Sectioned layout (window.SECTIONS): Final work first and biggest, then Process,
+       then Moodboard + references. Each section: title, caption, then its media. */
+    var SEC = (window.SECTIONS || {})[p.id] || null;
+    var groupHtml = { final: '', process: '', ref: '' };
+    if (SEC) {
+      var kindOf = function (im) { return im[1] && im[2] > im[1] * 2.2 ? 'tall' : (im[1] && im[2] >= im[1] * 0.95 ? 'port' : 'land'); };
+      var shot = function (im, alt) { return '<a class="es-pic" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, alt) + '</a>'; };
+      var secHtml = function (s, g) {
+        var ims = (s.imgs || []).map(function (k) { return imgs[k - 1]; }).filter(Boolean);
+        var clips = (s.clips || []).map(function (k) { return p.clips[k - 1]; }).filter(Boolean);
+        var media = '';
+        if (s.video && p.video) media += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
+        if (clips.length) media += '<div class="es-clips">' + clips.map(function (v) { return '<video src="' + esc(v) + '" controls playsinline muted loop preload="metadata"></video>'; }).join('') + '</div>';
+        /* run of same-shaped images -> one row type: long pages scroll inside, portraits sit side by side,
+           landscapes run full width in Final work and two-up in Process / Moodboard */
+        var runs = [];
+        ims.forEach(function (im, i) {
+          var k = kindOf(im);
+          if (g !== 'final' && k !== 'tall') k = 'mix'; /* process + moodboard: one even grid per section */
+          var last = runs[runs.length - 1];
+          if (last && last.k === k) last.items.push([im, i]); else runs.push({ k: k, items: [[im, i]] });
+        });
+        runs.forEach(function (r) {
+          var alt = function (it) { return p.title + ': ' + s.title + (ims.length > 1 ? ', ' + (it[1] + 1) + ' of ' + ims.length : ''); };
+          var n = r.items.length;
+          var cells = r.items.map(function (it) { return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it)); }).join('');
+          if (r.k === 'tall') media += '<div class="es-longs">' + cells + '</div>';
+          else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
+          else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
+          else media += '<div class="es-set ' + (g === 'final' || n === 1 ? 'es-set--full' : 'es-set--2') + '">' + cells + '</div>';
+        });
+        return '<div class="es-sec">' +
+          '<div class="es-sec__head"><h3 class="es-sec__title">' + esc(s.title) + '</h3>' + (s.text ? '<p class="es-sec__text">' + esc(s.text) + '</p>' : '') + '</div>' +
+          '<div class="es-sec__media">' + media + '</div>' +
+        '</div>';
+      };
+      SEC.forEach(function (s) { var g = s.g === 'process' || s.g === 'ref' ? s.g : 'final'; groupHtml[g] += secHtml(s, g); });
+    }
+    var part = 0;
+    var group = function (key, title, kicker) {
+      if (!groupHtml[key]) return '';
+      part++;
+      return '<section class="es-section es-group es-group--' + key + '" aria-labelledby="grp-' + key + '"><div class="es-wrap">' +
+        '<div class="es-group__head"><p class="es-kicker">PART ' + String(part).padStart(2, '0') + ' · ' + kicker + '</p><h2 class="es-h2" id="grp-' + key + '">' + title + '</h2></div>' +
+        groupHtml[key] +
+      '</div></section>';
+    };
+
     var did = (p.did && p.did.length)
       ? '<p class="es-label">WHAT I DID</p><ul class="es-did">' + p.did.map(function (d) { return '<li><span class="es-check" aria-hidden="true">✓</span><span>' + esc(d) + '</span></li>'; }).join('') + '</ul>'
       : '';
@@ -206,7 +254,9 @@
         '</div>' +
       '</section>' +
 
-      '<section class="es-wrap es-brief" aria-label="The brief">' +
+      (SEC ? group('final', 'Final work', 'THE RESULT') : '') +
+
+      '<section class="es-wrap es-brief' + (SEC ? ' es-brief--mid' : '') + '" aria-label="The brief">' +
         '<div class="es-brief__main">' +
           '<p class="es-kicker">MISSION BRIEFING</p><h2 class="es-h2">The brief</h2>' +
           '<p class="es-brief__text">' + esc(p.brief || p.desc) + '</p>' +
@@ -222,10 +272,12 @@
         '</aside>' +
       '</section>' +
 
-      '<section class="es-section" aria-label="Showcase"><div class="es-wrap">' +
-        '<p class="es-kicker">SHOWCASE</p><h2 class="es-h2">The work</h2>' +
-        '<div class="es-showcase">' + showcase + '</div>' +
-      '</div></section>' +
+      (SEC
+        ? group('process', 'Process', 'HOW IT WAS MADE') + group('ref', 'Moodboard + references', 'WHERE IT STARTED')
+        : '<section class="es-section" aria-label="Showcase"><div class="es-wrap">' +
+            '<p class="es-kicker">SHOWCASE</p><h2 class="es-h2">The work</h2>' +
+            '<div class="es-showcase">' + showcase + '</div>' +
+          '</div></section>') +
 
       '<section class="es-section" aria-label="Continue"><div class="es-wrap">' +
         '<p class="es-kicker">CONTINUE?</p>' +
