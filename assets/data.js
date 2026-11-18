@@ -350,7 +350,6 @@ window.QUESTS = [
   { type: 'drawing', title: 'Figure study', image: 'images/play/045.jpg', ratio: '936 / 1242', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Figure study', image: 'images/play/046.jpg', ratio: '936 / 1250', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings', image: 'images/play/047.jpg', ratio: '1247 / 936', tools: ['Pencil'], color: '#2A2A2A' },
-  { type: 'graphic', title: 'SquareOne', sub: 'Freelance · brand identity, website and launch materials', color: '#1F5F7A', ratio: '4 / 3', link: '' },
 ];
 
 /* Play: Story mode. Multi-part pieces shown as slideshows (arrows, swipe, autoplay).
@@ -360,6 +359,7 @@ window.STORIES = [
   { id: 'metamorphosis', title: 'Riot Games: Metamorphosis', type: 'Digital art', text: 'Illustrated frames of light, hands and transformation, ending on a Riot Games reveal.', tools: ['Procreate', 'Photoshop'] },
   { id: 'eve-arnold', title: 'Eve Arnold', type: 'Editorial', text: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.', tools: ['InDesign'] },
   { id: 'woobofood', title: 'Woobofood + Bullbop', type: 'Web design', text: 'Websites for Woobofood, an international Korean food company, its brands Purunchon, Lechi and Ocean Snack, and Bullbop, its Korean BBQ food truck.', tools: ['Wix'] },
+  { id: 'squareone', title: 'SquareOne', type: 'Web design', text: 'A fashion resale marketplace: the homepage, menswear and womenswear shops, and the page that invites people to sell.' },
   { id: 'snowstorm', title: 'Snowstorm', type: 'Digital art', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'] }
 ];
 
