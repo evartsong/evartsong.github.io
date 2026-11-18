@@ -9,9 +9,12 @@
   /* attach generated media (covers, images [src, w, h], video clips) to each entry */
   P.concat(X).forEach(function (o) {
     var m = M[o.id] || {};
+    var ownCover = !!o.cover;
     o.cover = o.cover || m.cover || '';
-    o.coverRatio = m.coverRatio || '';
     o.images = ((o.images && o.images.length) ? o.images : (m.images || [])).map(function (im) { return typeof im === 'string' ? [im, 0, 0] : im; });
+    /* ratio of the top image: data.js value, else the media cover's, else the matching image's own size */
+    var same = o.images.filter(function (im) { return im[0] === o.cover && im[1]; })[0];
+    o.coverRatio = o.coverRatio || (!ownCover || o.cover === m.cover ? m.coverRatio : '') || (same ? same[1] + ' / ' + same[2] : '');
     o.clips = (o.clips && o.clips.length) ? o.clips : (m.clips || []);
   });
 

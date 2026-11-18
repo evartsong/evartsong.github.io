@@ -33,7 +33,7 @@ window.PROJECTS = [
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
     tools: ['Cinema 4D', 'After Effects'],
     type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
-    cover: '', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
+    cover: 'images/label-lunacy/05.jpg', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: 'ARTCENTER', season: 'TRAINING ARC · ARTCENTER',
@@ -404,6 +404,7 @@ window.SECTIONS = {
   ],
   'label-lunacy': [
     { g: 'final', title: 'The ad', video: true },
+    { g: 'final', title: 'Styleframes', text: 'Frames from the finished ad: liquid gold resolving into the Louis Vuitton mark, then an everyday folding chair staged as a luxury object.', imgs: [5, 6, 7, 8, 9, 10, 11, 12], cols: 2 },
     { g: 'process', title: 'Storyboard', imgs: [4] },
     { g: 'ref', title: 'Moodboard', imgs: [1] },
     { g: 'ref', title: 'Lighting + texture references', imgs: [2] },
