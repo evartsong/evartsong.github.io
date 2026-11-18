@@ -383,6 +383,7 @@
       var slides = card.querySelectorAll('.es-story__slide');
       var dots = card.querySelectorAll('.es-story__dots button');
       var n = slides.length, at = 0, timer = null, hover = false, seen = false;
+      var startAt = (S[+card.getAttribute('data-i')] || {}).start || 0; /* STORIES start: slide index the show opens on */
       /* lazy images inside a sliding track never "scroll into view", so load the current + next slide by hand */
       var warm = function (j) { var im = slides[(j + n) % n] && slides[(j + n) % n].querySelector('img'); if (im && im.loading !== 'eager') im.loading = 'eager'; };
       var go = function (k) {
@@ -393,6 +394,7 @@
         dots.forEach(function (d, j) { d.setAttribute('aria-selected', String(j === at)); });
       };
       var stop = function () { clearInterval(timer); timer = null; };
+      if (startAt > 0 && startAt < n) { track.style.transition = 'none'; go(startAt); track.offsetHeight; track.style.transition = ''; }
       var start = function () { stop(); if (n > 1 && seen && !hover && !calm.matches && !document.hidden) timer = setInterval(function () { go(at + 1); }, 4000); };
       card.querySelector('.es-story__arrow--prev').addEventListener('click', function () { go(at - 1); start(); });
       card.querySelector('.es-story__arrow--next').addEventListener('click', function () { go(at + 1); start(); });
@@ -419,6 +421,9 @@
   var boardEl = document.getElementById('quest-board');
   var filtersEl = document.getElementById('quest-filters');
   if (boardEl && filtersEl) {
+    /* fresh random order on every visit / refresh (Fisher–Yates); filters keep this visit's order */
+    Q = Q.slice();
+    for (var si = Q.length - 1; si > 0; si--) { var sj = Math.floor(Math.random() * (si + 1)); var sw = Q[si]; Q[si] = Q[sj]; Q[sj] = sw; }
     var TYPES = [['all', 'ALL'], ['painting', 'PAINTING'], ['drawing', 'DRAWING'], ['ink', 'INK'], ['digital', 'DIGITAL ART'], ['sketch', 'SKETCHBOOK'], ['3d', '3D, SCULPTURE'], ['graphic', 'GRAPHIC DESIGN'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
     var NAME = {}; TYPES.forEach(function (t) { NAME[t[0]] = t[1]; });
     var want = new URLSearchParams(location.search).get('type');
