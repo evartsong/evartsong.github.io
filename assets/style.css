@@ -1029,10 +1029,10 @@ body { background: var(--es-bg); }
 /* Light mode: Play cards wait on a light placeholder instead of dark grey */
 @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .es-flip__front { background-color: var(--es-line); } }
 :root[data-theme="light"] .es-flip__front { background-color: var(--es-line); }
-/* Cursor: orange crosshair (plus + center dot) on mouse/trackpad devices only.
+/* Cursor: orange crosshair (plus + center dot) on mouse/trackpad devices only; white crosshair over clickable things.
    Links, buttons and anything clickable keep the normal hand; text fields keep the text cursor. */
 @media (hover: hover) and (pointer: fine) {
   html, body { cursor: url('cursor.svg') 16 16, crosshair; }
-  a, button, summary, label, select, [role="button"], [role="tab"], .es-flip, .es-tile, .es-pic, .es-long, .es-g, video, .es-story__dots button { cursor: pointer; }
+  html body :is(a, button, summary, label, select, [role="button"], [role="tab"], .es-flip, .es-tile, .es-pic, .es-long, .es-g, video) { cursor: url('cursor-hover.svg') 16 16, pointer; }
   input, textarea, [contenteditable="true"] { cursor: text; }
 }
