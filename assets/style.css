@@ -672,3 +672,43 @@ body { background: var(--es-bg); }
 }
 .es-featured__art { background-size: cover; background-position: center; }
 .es-featured__art[style*='background-image']::before, .es-featured__art[style*='background-image'] .es-featured__ko { display: none; }
+
+/* ---------- Play: flip cards (plain art front, title + tools back) ---------- */
+.es-qboard { padding-top: 48px; padding-bottom: 104px; }
+.es-qboard__tip { margin-top: 10px; font-family: var(--es-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--es-muted); }
+.es-qgrid { margin-top: 32px; display: flex; gap: 16px; align-items: flex-start; }
+.es-qgrid__col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.es-flip { position: relative; display: block; width: 100%; padding: 0; margin: 0; border: 0; border-radius: 14px; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; perspective: 1600px; -webkit-tap-highlight-color: transparent; }
+.es-flip:focus-visible { outline: 3px solid var(--es-ring); outline-offset: 3px; }
+.es-flip__inner { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.es-flip[aria-pressed="true"] .es-flip__inner { transform: rotateY(180deg); }
+.es-flip__front, .es-flip__back { position: absolute; inset: 0; border-radius: 14px; overflow: hidden; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.es-flip__front { background-color: var(--c, #333); }
+.es-flip__front img, .es-flip__front video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.es-flip__plain { display: flex; align-items: flex-end; height: 100%; padding: 20px; font-family: var(--es-head); font-weight: 900; font-size: 20px; line-height: 1.1; letter-spacing: -0.045em; color: #FFFFFF; }
+.es-flip__hint { position: absolute; left: 12px; bottom: 12px; font-family: var(--es-mono); font-size: 10px; letter-spacing: 0.06em; color: #FFFFFF; background: rgba(11, 13, 16, 0.78); padding: 6px 8px; border-radius: 4px; opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; }
+@media (hover: hover) { .es-flip:hover .es-flip__hint, .es-flip:focus-visible .es-flip__hint { opacity: 1; transform: none; } }
+.es-flip__back { transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 10px; padding: 20px; background: var(--es-panel); border: 1px solid var(--es-line3); box-shadow: inset 0 5px 0 var(--c, var(--es-accent)); }
+.es-flip__back-hint { position: absolute; top: 18px; right: 16px; font-family: var(--es-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--es-muted); }
+.es-flip__meta { font-family: var(--es-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--es-accent-text); }
+.es-flip__title { font-family: var(--es-head); font-weight: 900; font-size: 20px; line-height: 1.1; letter-spacing: -0.045em; color: var(--es-strong); padding-bottom: 0.06em; margin-bottom: 4px; }
+.es-flip__label { font-family: var(--es-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--es-muted); }
+.es-flip__tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.es-flip__tools .es-pill { font-size: 10px; padding: 5px 8px; }
+.es-flip__sub { font-size: 14px; line-height: 1.45; color: var(--es-dim); }
+@media (prefers-reduced-motion: reduce) { .es-flip__inner { transition: none; } }
+@media (max-width: 767px) {
+  .es-qboard { padding-top: 24px; padding-bottom: 64px; }
+  .es-qboard__tip { font-size: 9px; margin-top: 6px; }
+  .es-qgrid { margin-top: 20px; gap: 10px; }
+  .es-qgrid__col { gap: 10px; }
+  .es-flip, .es-flip__front, .es-flip__back { border-radius: 12px; }
+  .es-flip__plain { padding: 12px; font-size: 14px; }
+  .es-flip__back { padding: 12px; gap: 6px; box-shadow: inset 0 4px 0 var(--c, var(--es-accent)); }
+  .es-flip__back-hint { top: 10px; right: 10px; font-size: 8px; }
+  .es-flip__meta, .es-flip__label { font-size: 8px; }
+  .es-flip__title { font-size: 14px; line-height: 1.12; margin-bottom: 2px; }
+  .es-flip__tools { gap: 4px; }
+  .es-flip__tools .es-pill { font-size: 9px; padding: 4px 6px; }
+  .es-flip__sub { font-size: 11px; line-height: 1.4; }
+}

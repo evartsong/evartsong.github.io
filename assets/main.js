@@ -256,31 +256,81 @@
     var count = function (t) { return String(t === 'all' ? Q.length : Q.filter(function (q) { return q.type === t; }).length).padStart(2, '0'); };
     var setCount = document.getElementById('quest-total');
     if (setCount) setCount.textContent = String(Q.length).padStart(2, '0');
+    /* One plain image (or a looping video) per piece. Click / tap flips the card to show
+       the title and what it was made with. Cards keep the art's shape, clamped to 3:4 – 4:3. */
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var ratioOf = function (q, x) {
+      var d = (x && x.cover && x.coverRatio) || (x && x.images && x.images[0] && x.images[0][1] ? x.images[0][1] + ' / ' + x.images[0][2] : '') || q.ratio || '1 / 1';
+      var p = String(d).split('/');
+      var r = parseFloat(p[0]) / parseFloat(p[1] || 1);
+      return Math.min(4 / 3, Math.max(3 / 4, r || 1));
+    };
+    var cardHtml = function (q) {
+      var x = q.id ? X.find(function (e) { return e.id === q.id; }) : null;
+      var cover = (x && (x.cover || (x.images && x.images[0] && x.images[0][0]))) || q.image || '';
+      var video = x && x.video && /\.mp4(\?|$)/i.test(x.video) ? x.video : '';
+      var tools = (x && x.tools) || [];
+      var meta = NAME[q.type] + (x && x.when ? ' · ' + upper(x.when) : '');
+      var front = video
+        ? '<video src="' + esc(video) + '"' + (cover ? ' poster="' + esc(cover) + '"' : '') + ' muted loop playsinline preload="metadata"' + (still.matches ? '' : ' autoplay') + ' aria-hidden="true"></video>'
+        : cover
+          ? '<img src="' + esc(cover) + '" alt="" loading="lazy" decoding="async">'
+          : '<span class="es-flip__plain">' + esc(q.title) + '</span>';
+      var made = tools.length
+        ? '<span class="es-flip__label">MADE WITH</span><span class="es-flip__tools">' + tools.map(function (t) { return '<span class="es-pill">' + esc(t) + '</span>'; }).join('') + '</span>'
+        : (q.sub ? '<span class="es-flip__sub">' + esc(q.sub) + '</span>' : '');
+      var said = q.title + '. ' + NAME[q.type].toLowerCase() + (tools.length ? '. Made with ' + tools.join(', ') : (q.sub ? '. ' + q.sub : ''));
+      return '<button type="button" class="es-flip" aria-pressed="false" data-say="' + esc(said) + '" aria-label="' + esc(q.title + ': show details') + '" style="--c:' + q.color + ';aspect-ratio:' + ratioOf(q, x).toFixed(4) + '">' +
+        '<span class="es-flip__inner">' +
+          '<span class="es-flip__front">' + front + '<span class="es-flip__hint" aria-hidden="true">↻ INFO</span></span>' +
+          '<span class="es-flip__back" aria-hidden="true">' +
+            '<span class="es-flip__back-hint">↺ FLIP BACK</span>' +
+            '<span class="es-flip__meta">' + esc(meta) + '</span>' +
+            '<span class="es-flip__title">' + esc(q.title) + '</span>' + made +
+          '</span>' +
+        '</span>' +
+      '</button>';
+    };
+    var colCount = function () { var w = boardEl.clientWidth || window.innerWidth; return w < 560 ? 2 : w < 980 ? 3 : 4; };
+    var shownCols = 0;
+    var watch = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting && !still.matches) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      });
+    }, { rootMargin: '120px' }) : null;
     var renderBoard = function () {
       filtersEl.innerHTML = TYPES.map(function (t) {
         return '<button type="button" class="es-filter" data-f="' + t[0] + '" aria-pressed="' + (t[0] === current) + '">' + t[1] + ' <span>' + count(t[0]) + '</span></button>';
       }).join('');
-      boardEl.innerHTML = Q.filter(function (q) { return current === 'all' || q.type === current; }).map(function (q) {
+      /* fill columns shortest-first so the grid stays even and reads left to right */
+      var n = shownCols = colCount(), cols = [], h = [];
+      for (var i = 0; i < n; i++) { cols.push(''); h.push(0); }
+      Q.filter(function (q) { return current === 'all' || q.type === current; }).forEach(function (q) {
         var x = q.id ? X.find(function (e) { return e.id === q.id; }) : null;
-        var href = x ? 'project.html?id=' + encodeURIComponent(x.id) : (q.link || '');
-        var cover = (x && (x.cover || (x.images && x.images[0] && x.images[0][0]))) || q.image || '';
-        var dims = x && x.images && x.images[0] && x.images[0][1] ? x.images[0][1] + ' / ' + x.images[0][2] : q.ratio;
-        if (x && x.cover && x.coverRatio) dims = x.coverRatio;
-        var tag = href ? 'a' : 'div';
-        var attrs = href ? ' href="' + esc(href) + '"' + (/^https?:/.test(href) ? ' target="_blank" rel="noopener"' : '') : '';
-        var badge = x && x.video ? '▶ VIDEO' : (x ? '★ ' + String((x.images || []).length).padStart(2, '0') + ' IMG' : '★ COMPLETE');
-        return '<' + tag + ' class="es-panel es-qcard' + (q.open ? ' is-open' : '') + '"' + attrs + '>' +
-          '<span class="es-qcard__art" style="aspect-ratio:' + dims + ';' + artStyle(q.color, cover) + '">' +
-            '<span class="es-chip">' + NAME[q.type] + '</span>' +
-            '<span class="es-qcard__status">' + badge + '</span>' +
-          '</span>' +
-          '<span class="es-qcard__body"><span class="es-qcard__title">' + esc(q.title) + '</span><span class="es-qcard__sub">' + esc(q.sub) + '</span></span>' +
-        '</' + tag + '>';
-      }).join('');
+        var k = h.indexOf(Math.min.apply(null, h));
+        cols[k] += cardHtml(q);
+        h[k] += 1 / ratioOf(q, x) + 0.05;
+      });
+      if (watch) watch.disconnect();
+      boardEl.innerHTML = cols.map(function (c) { return '<div class="es-qgrid__col">' + c + '</div>'; }).join('');
+      if (watch) boardEl.querySelectorAll('video').forEach(function (v) { watch.observe(v); });
     };
     filtersEl.addEventListener('click', function (e) {
       var b = e.target.closest('[data-f]');
       if (b) { current = b.getAttribute('data-f'); renderBoard(); filtersEl.querySelector('[data-f="' + current + '"]').focus(); }
+    });
+    boardEl.addEventListener('click', function (e) {
+      var c = e.target.closest('.es-flip');
+      if (!c) return;
+      var on = c.getAttribute('aria-pressed') !== 'true';
+      c.setAttribute('aria-pressed', String(on));
+      c.setAttribute('aria-label', on ? c.getAttribute('data-say') + '. Flip back' : c.querySelector('.es-flip__title').textContent + ': show details');
+    });
+    var resizeT;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(function () { if (colCount() !== shownCols) renderBoard(); }, 150);
     });
     renderBoard();
   }
