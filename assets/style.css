@@ -884,7 +884,8 @@ body { background: var(--es-bg); }
 /* Play: Story mode slideshows */
 .es-stories { padding-top: 56px; }
 .es-stories__grid { margin-top: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-.es-story { min-width: 0; background: var(--es-panel); border: 1px solid var(--es-line2); border-radius: 18px; overflow: hidden; }
+/* scoped to the Play grid: History's Backstory also uses .es-story / .es-story__text */
+.es-stories__grid .es-story { display: block; gap: 0; min-width: 0; background: var(--es-panel); border: 1px solid var(--es-line2); border-radius: 18px; overflow: hidden; }
 .es-story__view { position: relative; overflow: hidden; background: #0B0D10; touch-action: pan-y; outline: none; }
 .es-story__view:focus-visible { box-shadow: inset 0 0 0 3px var(--es-accent); }
 .es-story__track { display: flex; height: 100%; transition: transform 0.55s cubic-bezier(.2,.7,.2,1); }
@@ -901,7 +902,7 @@ body { background: var(--es-bg); }
 .es-story__dots button[aria-selected="true"] { background: var(--es-accent); }
 .es-story__meta { margin: 0; font-family: var(--es-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--es-muted); }
 .es-story__title { margin: 6px 0 0; font-family: var(--es-head); font-weight: 900; font-size: 24px; line-height: 1.1; letter-spacing: -0.035em; color: var(--es-strong); padding-bottom: 0.06em; }
-.es-story__text { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: var(--es-soft); }
+.es-stories__grid .es-story__text { display: block; max-width: none; margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: var(--es-soft); }
 .es-story__tools { margin: 14px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .es-story__tools .es-flip__label { margin-right: 4px; }
 @media (prefers-reduced-motion: reduce) { .es-story__track { transition: none; } }
