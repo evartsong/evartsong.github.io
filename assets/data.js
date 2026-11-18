@@ -116,7 +116,6 @@ window.PROJECTS = [
 window.QUESTS = [
   { type: 'illo', title: 'Where Do We Go? tour merch', sub: 'Illustrated merch for Billie Eilish’s world tour, sold globally · Interscope Records', color: '#2F5D3A', ratio: '4 / 5', link: '', image: '' },
   { type: '3d', title: '[Add title]', sub: '3D experiment · Cinema 4D', color: '#5B2BB5', ratio: '1 / 1', link: '', image: '', open: true },
-  { type: 'creator', title: 'Twitch · esongow', sub: 'Live channel grown to 10K followers', color: '#6B34C9', ratio: '16 / 10', link: 'https://www.twitch.tv/esongow', image: '' },
   { type: 'graphic', title: 'Woobofood', sub: 'Freelance · brand identity, website and launch materials', color: '#B5651D', ratio: '4 / 3', link: '', image: '' },
   { type: 'editorial', title: 'Hanbok', sub: 'Exhibition + publication for six Korean contemporary artists', color: '#7A2E5A', ratio: '4 / 5', link: '', image: '' },
   { type: '3d', title: '[Add title]', sub: '3D loop · Redshift', color: '#3E2A8C', ratio: '4 / 5', link: '', image: '', open: true },
@@ -131,8 +130,7 @@ window.QUESTS = [
 /* Links used across the site */
 window.LINKS = {
   email: 'mailto:evartsong@gmail.com',
-  linkedin: '',              /* paste your LinkedIn URL */
+  linkedin: 'https://www.linkedin.com/in/eva-song-5261561b7/',
   instagram: 'https://www.instagram.com/evartsong',
-  twitch: 'https://www.twitch.tv/esongow',
   resume: 'evasong_resume.pdf' /* drop the PDF into the site folder with this name */
 };
