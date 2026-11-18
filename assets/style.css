@@ -633,3 +633,42 @@ body { background: var(--es-bg); }
   .es-nav a { padding-left: 7px; padding-right: 7px; }
   .es-nav a span { display: none; }
 }
+/* =========================================================
+   REAL MEDIA: gallery, long email previews, video clips
+   ========================================================= */
+.es-showcase { margin-top: 40px; }
+.es-showcase .es-video { margin-top: 0; }
+.es-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.es-video--empty { aspect-ratio: 21 / 9; }
+.es-media-label { margin: 40px 0 14px; }
+.es-showcase > .es-media-label:first-child { margin-top: 0; }
+.es-gallery { columns: 2 420px; column-gap: 16px; }
+.es-g { display: block; break-inside: avoid; margin-bottom: 16px; border-radius: 14px; overflow: hidden; background: var(--es-shotbg); border: 1px solid var(--es-line2); transition: border-color 0.15s, transform 0.2s; }
+.es-g:hover { border-color: var(--es-accent); }
+.es-g img { display: block; width: 100%; height: auto; }
+.es-longs { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.es-long { display: block; height: 640px; overflow-y: auto; border-radius: 14px; border: 1px solid var(--es-line2); background: var(--es-shotbg); scrollbar-width: thin; scrollbar-color: var(--es-line3) transparent; }
+.es-long:hover { border-color: var(--es-accent); }
+.es-long img { display: block; width: 100%; height: auto; }
+.es-clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; align-items: start; }
+.es-clips video { display: block; width: 100%; max-height: 520px; border-radius: 14px; background: #000; border: 1px solid var(--es-line2); }
+.es-q-3d { --img: url('../images/covers/voyage.jpg'); }
+.es-q-graphic { --img: url('../images/akkurat/04.png'); }
+.es-q-illo { --img: url('../images/metamorphosis/03.jpg'); }
+.es-q-hanbok { --img: url('../images/hanbok/01.jpg'); }
+.es-quest { background-blend-mode: normal; }
+.es-quest::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55)); pointer-events: none; }
+.es-quest > * { position: relative; }
+.es-avatar { --img: url('../images/covers/eva.jpg'); color: transparent; font-size: 0; }
+@media (max-width: 767px) {
+  .es-showcase { margin-top: 24px; }
+  .es-media-label { margin: 28px 0 10px; }
+  .es-gallery { columns: 1; }
+  .es-g { margin-bottom: 10px; border-radius: 12px; }
+  .es-longs { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .es-long { height: 420px; border-radius: 12px; }
+  .es-clips { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .es-clips video { border-radius: 12px; max-height: 360px; }
+}
+.es-featured__art { background-size: cover; background-position: center; }
+.es-featured__art[style*='background-image']::before, .es-featured__art[style*='background-image'] .es-featured__ko { display: none; }

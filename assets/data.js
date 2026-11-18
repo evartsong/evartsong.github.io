@@ -2,7 +2,7 @@
    EVA SONG: THE GAME — all site content lives here.
    To add a project: copy one { ... } block in PROJECTS, change
    the text, and put its images in the /images folder.
-   cover: 'images/bibi-cover.jpg'   (leave '' to show the color)
+   cover / images: filled in automatically from assets/media.js
    video: 'https://player.vimeo.com/video/123456'  or a YouTube
           embed link like 'https://www.youtube.com/embed/abc123'
    images: ['images/bibi-1.jpg', 'images/bibi-2.jpg', ...]
@@ -57,7 +57,7 @@ window.PROJECTS = [
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
     tools: [],
     type: 'Satirical ad', collaborators: '', recognition: '',
-    cover: '', video: '', images: []
+    cover: '', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
   },
   {
     id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: 'ARTCENTER', season: '',
@@ -77,7 +77,7 @@ window.PROJECTS = [
     did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
     tools: [],
     type: 'Live streaming software', collaborators: '', recognition: '',
-    cover: '', video: '', images: []
+    cover: '', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
   },
   {
     id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion graphics', era: 'ARTCENTER', season: '',
@@ -87,7 +87,7 @@ window.PROJECTS = [
     did: ['Tell a sustainability message through two characters', 'Stage it in front-camera framing with expressive faces and body motion', 'Model, light and render in Cinema 4D and Redshift'],
     tools: ['Cinema 4D', 'Redshift', 'After Effects'],
     type: 'Sustainability short', collaborators: 'Sarah Lee', recognition: 'ArtCenter Student Gallery, 2023',
-    cover: '', video: '', images: []
+    cover: '', video: 'https://www.youtube.com/watch?v=Tv06w4CawK4', images: []
   },
   {
     id: 'minari', title: 'Minari', genre: 'Title sequence', era: 'ARTCENTER', season: '',
@@ -111,20 +111,96 @@ window.PROJECTS = [
   }
 ];
 
-/* Side quests on the Play page. type: 3d | graphic | illo | editorial | creator
-   open: true = an empty "+ ADD WORK" slot waiting for a real piece. */
+/* Side quests that get their own page (project.html?id=...). Same fields as PROJECTS.
+   Images come from assets/media.js; video can be a YouTube/Vimeo link or an .mp4 path. */
+window.EXTRAS = [
+  {
+    id: 'hanbok', title: 'Hanbok', genre: 'Graphic editorial', when: 'ArtCenter', role: 'Designer', color: '#7A2E5A', badge: '',
+    desc: 'An exhibition and publication for six South Korean contemporary artists who weave history and culture into their work.',
+    brief: 'A group exhibition and publication featuring six South Korean contemporary artists. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
+    did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into exhibition posters'],
+    tools: ['InDesign', 'Illustrator', 'Photoshop'], type: 'Exhibition + publication', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'eve-arnold', title: 'Eve Arnold', genre: 'Editorial design', when: 'ArtCenter', role: 'Designer', color: '#3B3F46', badge: '',
+    desc: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.',
+    brief: 'An editorial layout for a photographer monograph: essays, captions and full-bleed photography paced across a run of spreads.',
+    did: [], tools: ['InDesign'], type: 'Book spreads', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'akkurat', title: 'Akkurat type specimen', genre: 'Graphic design', when: 'ArtCenter', role: 'Designer', color: '#E8573A', badge: '',
+    desc: 'A type specimen for LL Akkurat: its history, weights and glyphs.',
+    brief: 'A type specimen series for the typeface LL Akkurat, mixing its history and character with expressive typographic layouts.',
+    did: [], tools: ['InDesign', 'Illustrator'], type: 'Type specimen', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'nyum', title: 'Nyum! Menu', genre: 'Graphic design', when: 'Personal', role: 'Designer + illustrator', color: '#E59BC4', badge: '',
+    desc: 'An illustrated sushi menu with cat characters.',
+    brief: 'An illustrated menu for a playful sushi spot, pairing each roll with its own character.',
+    did: [], tools: ['Procreate', 'Illustrator'], type: 'Menu design', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal', role: '3D artist', color: '#5B2BB5', badge: '',
+    desc: 'A short 3D motion piece.',
+    brief: 'A short 3D motion experiment.',
+    did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D animation', collaborators: '', recognition: '', video: 'https://vimeo.com/816708659'
+  },
+  {
+    id: 'karaoke-cube', title: 'Karaoke Cube', genre: '3D motion', when: 'Personal', role: '3D artist', color: '#3E2A8C', badge: '',
+    desc: 'A 10-second 3D loop.',
+    brief: 'A short 3D motion loop.',
+    did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D loop', collaborators: '', recognition: '', video: 'https://vimeo.com/816614157'
+  },
+  {
+    id: 'metamorphosis', title: 'Metamorphosis', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#6B3FB8', badge: '',
+    desc: 'Illustrated frames of a transformation, ending on a Riot Games reveal.',
+    brief: 'A sequence of illustrated frames built around light, hands and transformation.',
+    did: [], tools: ['Procreate', 'Photoshop'], type: 'Illustrated frames', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'snowstorm', title: 'Snowstorm', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#1F4F8A', badge: '',
+    desc: 'Illustrated frames of a climber facing a mountain storm.',
+    brief: 'Two illustrated frames: a mountain storm and the figure walking into it.',
+    did: [], tools: ['Procreate', 'Photoshop'], type: 'Illustrated frames', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'killjoy', title: 'Killjoy × Adventure Time', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#C99BE8', badge: '',
+    desc: 'Valorant’s Killjoy drawn in the Adventure Time style.',
+    brief: 'Fan illustration mixing a Valorant agent with Adventure Time’s character style.',
+    did: [], tools: ['Procreate'], type: 'Fan illustration', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'nicotine', title: 'Nicotine', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#2B2F7A', badge: '',
+    desc: 'A bold character illustration.',
+    brief: 'A character illustration with saturated color and pattern.',
+    did: [], tools: ['Procreate'], type: 'Illustration', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'portrait', title: 'Portrait study', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#8A5A4A', badge: '',
+    desc: 'A digital painting portrait study.',
+    brief: 'A painted portrait study focused on light and skin tones.',
+    did: [], tools: ['Procreate'], type: 'Digital painting', collaborators: '', recognition: '', video: ''
+  }
+];
+
+/* Play page board. type: 3d | graphic | illo | editorial | creator
+   id: links to a side quest page above. link: an outside URL. */
 window.QUESTS = [
-  { type: 'illo', title: 'Where Do We Go? tour merch', sub: 'Illustrated merch for Billie Eilish’s world tour, sold globally · Interscope Records', color: '#2F5D3A', ratio: '4 / 5', link: '', image: '' },
-  { type: '3d', title: '[Add title]', sub: '3D experiment · Cinema 4D', color: '#5B2BB5', ratio: '1 / 1', link: '', image: '', open: true },
-  { type: 'graphic', title: 'Woobofood', sub: 'Freelance · brand identity, website and launch materials', color: '#B5651D', ratio: '4 / 3', link: '', image: '' },
-  { type: 'editorial', title: 'Hanbok', sub: 'Exhibition + publication for six Korean contemporary artists', color: '#7A2E5A', ratio: '4 / 5', link: '', image: '' },
-  { type: '3d', title: '[Add title]', sub: '3D loop · Redshift', color: '#3E2A8C', ratio: '4 / 5', link: '', image: '', open: true },
-  { type: 'graphic', title: 'SquareOne', sub: 'Freelance · brand identity, website and launch materials', color: '#1F5F7A', ratio: '4 / 3', link: '', image: '' },
-  { type: 'creator', title: 'Short-form clips', sub: 'Viral gaming content: TikTok 1M+ views, YouTube 500K+', color: '#9C2A4A', ratio: '3 / 4', link: '', image: '' },
-  { type: 'illo', title: '[Add title]', sub: 'Illustration · digital painting', color: '#A0371C', ratio: '1 / 1', link: '', image: '', open: true },
-  { type: 'graphic', title: '[Add title]', sub: 'Poster · typography', color: '#0E6B8C', ratio: '3 / 4', link: '', image: '', open: true },
-  { type: '3d', title: '[Add title]', sub: '3D experiment', color: '#4B2F9E', ratio: '16 / 10', link: '', image: '', open: true },
-  { type: 'illo', title: '[Add title]', sub: 'Gifs + stickers', color: '#8A4B12', ratio: '4 / 3', link: '', image: '', open: true }
+  { id: 'voyage', type: '3d', title: 'Voyage', sub: '3D motion · video', color: '#5B2BB5', ratio: '16 / 9' },
+  { id: 'akkurat', type: 'graphic', title: 'Akkurat type specimen', sub: 'Type specimen · 7 pieces', color: '#E8573A', ratio: '4 / 3' },
+  { id: 'metamorphosis', type: 'illo', title: 'Metamorphosis', sub: 'Illustrated frames', color: '#6B3FB8', ratio: '16 / 9' },
+  { id: 'eve-arnold', type: 'editorial', title: 'Eve Arnold', sub: 'Book spreads', color: '#3B3F46', ratio: '4 / 3' },
+  { id: 'killjoy', type: 'illo', title: 'Killjoy × Adventure Time', sub: 'Fan illustration', color: '#C99BE8', ratio: '3 / 4' },
+  { id: 'karaoke-cube', type: '3d', title: 'Karaoke Cube', sub: '3D loop · video', color: '#3E2A8C', ratio: '16 / 9' },
+  { id: 'nyum', type: 'graphic', title: 'Nyum! Menu', sub: 'Illustrated menu', color: '#E59BC4', ratio: '4 / 3' },
+  { id: 'snowstorm', type: 'illo', title: 'Snowstorm', sub: 'Illustrated frames', color: '#1F4F8A', ratio: '16 / 9' },
+  { id: 'hanbok', type: 'editorial', title: 'Hanbok', sub: 'Exhibition + publication', color: '#7A2E5A', ratio: '4 / 3' },
+  { id: 'nicotine', type: 'illo', title: 'Nicotine', sub: 'Character illustration', color: '#2B2F7A', ratio: '1 / 1' },
+  { id: 'portrait', type: 'illo', title: 'Portrait study', sub: 'Digital painting', color: '#8A5A4A', ratio: '1 / 1' },
+  { type: 'illo', title: 'Where Do We Go? tour merch', sub: 'Billie Eilish world tour merch, sold globally · Interscope Records', color: '#2F5D3A', ratio: '4 / 5', link: '' },
+  { type: 'graphic', title: 'Woobofood', sub: 'Freelance · brand identity, website and launch materials', color: '#B5651D', ratio: '4 / 3', link: '' },
+  { type: 'graphic', title: 'SquareOne', sub: 'Freelance · brand identity, website and launch materials', color: '#1F5F7A', ratio: '4 / 3', link: '' },
+  { type: 'creator', title: 'Short-form clips', sub: 'Viral gaming content: TikTok 1M+ views, YouTube 500K+', color: '#9C2A4A', ratio: '3 / 4', link: '' }
 ];
 
 /* Links used across the site */
