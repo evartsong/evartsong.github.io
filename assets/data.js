@@ -33,7 +33,7 @@ window.PROJECTS = [
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
     tools: ['Cinema 4D', 'After Effects'],
     type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
-    cover: 'images/label-lunacy/05.jpg', video: 'https://www.youtube.com/watch?v=fuxI35rUmUM', images: []
+    cover: 'images/label-lunacy/05.jpg', video: 'videos/label-lunacy.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=fuxI35rUmUM */, images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: 'ARTCENTER', season: 'TRAINING ARC · ARTCENTER',
