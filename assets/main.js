@@ -79,13 +79,17 @@
   }
   var tiersEl = document.getElementById('tiers');
   if (tiersEl && P.length) {
-    /* ranked layout, biggest first: 01 featured, 02–03 beside it, 04–06 in thirds, 07–10 in quarters */
+    /* ranked layout, biggest first: the featured project, two beside it, three in thirds, four in quarters.
+       The 01–10 buttons above the grid choose which project takes the big featured spot. */
     var rank = function (i) { return i === 0 ? 1 : i < 3 ? 2 : i < 6 ? 3 : 4; };
-    tiersEl.innerHTML = P.map(function (p, i) {
+    var renderTiers = function (sel) {
+      var order = [sel].concat(P.map(function (p, i) { return i; }).filter(function (i) { return i !== sel; }));
+      tiersEl.innerHTML = order.map(function (t, i) {
+      var p = P[t];
       var feat = i === 0;
       var meta = p.season || upper(p.era); /* the tier number sits in the corner badge */
       return '<a class="es-tile es-tile--r' + rank(i) + (feat ? ' es-tile--feat' : '') + '" href="' + projectUrl(p) + '" style="--c:' + p.color + '">' +
-        '<span class="es-tile__num" aria-hidden="true">' + num(i) + '</span>' +
+        '<span class="es-tile__num" aria-hidden="true">' + num(t) + '</span>' +
         '<img src="' + esc(tileImg(p)) + '" alt="" loading="' + (i < 3 ? 'eager' : 'lazy') + '" decoding="async">' +
         '<span class="es-tile__cap">' +
           '<span class="es-tile__text">' +
@@ -95,13 +99,24 @@
           '</span>' +
           (feat ? '<span class="es-btn">View project →</span>' : '') +
         '</span></a>';
-    }).join('');
-  }
-  var numsEl = document.getElementById('pass-nums');
-  if (numsEl && P.length) {
-    numsEl.innerHTML = P.map(function (p, i) {
-      return '<a href="' + projectUrl(p) + '" title="' + esc(p.title) + '" aria-label="Tier ' + num(i) + ': ' + esc(p.title) + '">' + num(i) + '</a>';
-    }).join('');
+      }).join('');
+    };
+    renderTiers(0);
+    var numsEl = document.getElementById('pass-nums');
+    if (numsEl) {
+      numsEl.innerHTML = P.map(function (p, i) {
+        return '<button type="button" data-t="' + i + '" aria-pressed="' + (i === 0) + '" title="' + esc(p.title) + '" aria-label="Feature tier ' + num(i) + ': ' + esc(p.title) + '">' + num(i) + '</button>';
+      }).join('');
+      numsEl.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-t]');
+        if (!b) return;
+        renderTiers(+b.getAttribute('data-t'));
+        numsEl.querySelectorAll('[data-t]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        /* bring the grid into view if the featured tile is off screen */
+        var top = tiersEl.getBoundingClientRect().top;
+        if (top < 0 || top > window.innerHeight * 0.6) tiersEl.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      });
+    }
   }
 
   /* ---------- Media helpers (images come from assets/media.js) ---------- */

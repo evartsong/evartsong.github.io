@@ -919,3 +919,12 @@ body { background: var(--es-bg); }
 .es-cut__view { aspect-ratio: 16 / 9; background: #000; }
 .es-cut__view video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
 .es-stories + .es-stories { padding-top: 40px; }
+/* Season pass: 01-10 buttons pick the featured project */
+.es-passnums button { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border-radius: 999px; border: 1px solid var(--es-line3); background: transparent; font-family: var(--es-mono); font-size: 11px; color: var(--es-muted); cursor: pointer; }
+.es-passnums button:hover, .es-passnums button:focus-visible { border-color: var(--es-strong); color: var(--es-strong); }
+.es-passnums button[aria-pressed="true"] { background: var(--es-accent); border-color: var(--es-accent); color: var(--es-on-accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .es-tile--feat { animation: es-feat-in 0.35s ease-out; }
+  @keyframes es-feat-in { from { opacity: 0; transform: scale(0.985); } to { opacity: 1; transform: none; } }
+}
+@media (max-width: 767px) { .es-passnums button { width: 44px; height: 44px; font-size: 11px; } }
