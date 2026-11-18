@@ -313,6 +313,70 @@
     });
   }
 
+  /* ---------- Play: Story mode slideshows (arrows, dots, swipe, keyboard, autoplay) ---------- */
+  var storiesEl = document.getElementById('stories');
+  var S = window.STORIES || [];
+  if (storiesEl && S.length) {
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    storiesEl.innerHTML = S.map(function (st, si) {
+      var ims = (M[st.id] && M[st.id].images) || [];
+      var r = ims[0] && ims[0][1] ? (ims[0][1] / ims[0][2]).toFixed(4) : '1.6';
+      return '<article class="es-story" data-i="' + si + '" aria-roledescription="carousel" aria-label="' + esc(st.title) + '">' +
+        '<div class="es-story__view" style="aspect-ratio:' + r + '" tabindex="0" aria-label="' + esc(st.title) + ' slides. Use left and right arrow keys.">' +
+          '<div class="es-story__track">' + ims.map(function (im, k) {
+            return '<figure class="es-story__slide" role="group" aria-roledescription="slide" aria-label="' + (k + 1) + ' of ' + ims.length + '"' + (k ? ' aria-hidden="true"' : '') + '>' +
+              '<img src="' + esc(im[0]) + '" alt="' + esc(st.title + ', part ' + (k + 1) + ' of ' + ims.length) + '" loading="' + (k ? 'lazy' : 'eager') + '" decoding="async" draggable="false"></figure>';
+          }).join('') + '</div>' +
+          '<button type="button" class="es-story__arrow es-story__arrow--prev" aria-label="Previous slide">←</button>' +
+          '<button type="button" class="es-story__arrow es-story__arrow--next" aria-label="Next slide">→</button>' +
+          '<span class="es-story__count" aria-live="polite">01 / ' + String(ims.length).padStart(2, '0') + '</span>' +
+        '</div>' +
+        '<div class="es-story__info">' +
+          '<div class="es-story__dots" role="tablist" aria-label="Choose a slide">' + ims.map(function (im, k) { return '<button type="button" role="tab" aria-label="Slide ' + (k + 1) + '" aria-selected="' + (k === 0) + '"></button>'; }).join('') + '</div>' +
+          '<p class="es-story__meta">' + esc(upper(st.type)) + ' · ' + ims.length + ' PARTS</p>' +
+          '<h3 class="es-story__title">' + esc(st.title) + '</h3>' +
+          (st.text ? '<p class="es-story__text">' + esc(st.text) + '</p>' : '') +
+          (st.tools && st.tools.length ? '<p class="es-story__tools"><span class="es-flip__label">MADE WITH</span>' + st.tools.map(function (t) { return '<span class="es-pill">' + esc(t) + '</span>'; }).join('') + '</p>' : '') +
+        '</div>' +
+      '</article>';
+    }).join('');
+
+    storiesEl.querySelectorAll('.es-story').forEach(function (card) {
+      var track = card.querySelector('.es-story__track');
+      var slides = card.querySelectorAll('.es-story__slide');
+      var dots = card.querySelectorAll('.es-story__dots button');
+      var count = card.querySelector('.es-story__count');
+      var n = slides.length, at = 0, timer = null, hover = false, seen = false;
+      var go = function (k) {
+        at = (k + n) % n;
+        track.style.transform = 'translateX(' + (-100 * at) + '%)';
+        slides.forEach(function (s, j) { if (j === at) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
+        dots.forEach(function (d, j) { d.setAttribute('aria-selected', String(j === at)); });
+        count.textContent = String(at + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
+      };
+      var stop = function () { clearInterval(timer); timer = null; };
+      var start = function () { stop(); if (n > 1 && seen && !hover && !calm.matches && !document.hidden) timer = setInterval(function () { go(at + 1); }, 4000); };
+      card.querySelector('.es-story__arrow--prev').addEventListener('click', function () { go(at - 1); start(); });
+      card.querySelector('.es-story__arrow--next').addEventListener('click', function () { go(at + 1); start(); });
+      dots.forEach(function (d, j) { d.addEventListener('click', function () { go(j); start(); }); });
+      var view = card.querySelector('.es-story__view');
+      view.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') { go(at - 1); start(); } if (e.key === 'ArrowRight') { go(at + 1); start(); } });
+      /* pause while the pointer or keyboard focus is on the slideshow */
+      card.addEventListener('mouseenter', function () { hover = true; stop(); });
+      card.addEventListener('mouseleave', function () { hover = false; start(); });
+      card.addEventListener('focusin', function () { hover = true; stop(); });
+      card.addEventListener('focusout', function () { hover = false; start(); });
+      /* swipe on touch screens */
+      var x0 = null;
+      view.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') x0 = e.clientX; });
+      view.addEventListener('pointerup', function (e) { if (x0 === null) return; var dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 40) { go(at + (dx < 0 ? 1 : -1)); start(); } });
+      /* only autoplay while on screen */
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { seen = en[0].isIntersecting; if (seen) start(); else stop(); }, { threshold: 0.4 }).observe(card);
+      else { seen = true; start(); }
+      document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+    });
+  }
+
   /* ---------- Play page ---------- */
   var boardEl = document.getElementById('quest-board');
   var filtersEl = document.getElementById('quest-filters');
