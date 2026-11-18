@@ -26,8 +26,8 @@ window.PROJECTS = [
     cover: 'images/bibi/06.jpg', coverRatio: '1200 / 553', video: '', images: []
   },
   {
-    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2025', season: 'SEASON 2025',
-    when: '2025', role: '3D designer + animator', color: '#8A5F0E', badge: '',
+    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: '3D designer + animator', color: '#8A5F0E', badge: '',
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
     brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
