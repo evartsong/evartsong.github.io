@@ -94,8 +94,8 @@
     var pi = (idx - 1 + P.length) % P.length, ni = (idx + 1) % P.length;
     document.title = p.title + ' — Eva Song';
 
-    var dots = P.map(function (t, i) {
-      return '<a href="' + projectUrl(t) + '" class="' + (i === idx ? 'is-current' : '') + '" aria-label="Tier ' + num(i) + ': ' + esc(t.title) + '"' + (i === idx ? ' aria-current="page"' : '') + '></a>';
+    var chips = P.map(function (t, i) {
+      return '<a href="' + projectUrl(t) + '" class="' + (i === idx ? 'is-current' : '') + '" title="' + esc(t.title) + '" aria-label="Tier ' + num(i) + ': ' + esc(t.title) + '"' + (i === idx ? ' aria-current="page"' : '') + '>' + num(i) + '</a>';
     }).join('');
 
     var tools = (p.tools && p.tools.length ? p.tools : ['Tools coming soon']).map(function (t) { return '<li class="es-pill">' + esc(t) + '</li>'; }).join('');
@@ -111,10 +111,18 @@
 
     projEl.innerHTML =
       '<div class="es-subbar"><div class="es-wrap">' +
-        '<a class="es-back" href="index.html#work">← <span class="es-d">ESC · SEASON PASS</span><span class="es-m">BACK</span></a>' +
-        '<nav class="es-dots" aria-label="Jump to tier">' + dots + '</nav>' +
-        '<span>TIER ' + num(idx) + ' / ' + num(P.length - 1) + '<span class="es-d"> · ' + esc(upper(p.era)) + '</span></span>' +
+        '<a class="es-back" href="index.html#work">← <span class="es-d">SEASON PASS</span><span class="es-m">ALL WORK</span></a>' +
+        '<nav class="es-chips" aria-label="Jump to a project">' + chips + '</nav>' +
+        '<span class="es-m es-count">TIER ' + num(idx) + ' / ' + num(P.length - 1) + '</span>' +
+        '<div class="es-stepper es-d">' +
+          '<a href="' + projectUrl(prev) + '" aria-label="Previous project: ' + esc(prev.title) + '">← PREV</a>' +
+          '<a href="' + projectUrl(next) + '" aria-label="Next project: ' + esc(next.title) + '">NEXT →</a>' +
+        '</div>' +
       '</div></div>' +
+      '<nav class="es-pbar" aria-label="Previous and next project">' +
+        '<a href="' + projectUrl(prev) + '"><small>← PREV · ' + num(pi) + '</small><b>' + esc(prev.title) + '</b></a>' +
+        '<a class="is-next" href="' + projectUrl(next) + '"><small>NEXT · ' + num(ni) + ' →</small><b>' + esc(next.title) + '</b></a>' +
+      '</nav>' +
 
       '<section class="es-phero" style="--c:' + p.color + '" aria-label="Project">' +
         '<span class="es-phero__num" aria-hidden="true">' + num(idx) + '</span>' +
@@ -158,6 +166,14 @@
         '</div>' +
         '<div class="es-btnrow"><a class="es-btn" href="index.html#work">Back to season pass</a><a class="es-btn es-btn--ghost" href="index.html#contact">Send a squad invite</a></div>' +
       '</div></section>';
+    projEl.closest('main').classList.add('has-pbar');
+
+    /* keyboard: left / right arrows move between projects, like a game menu */
+    document.addEventListener('keydown', function (e) {
+      if (e.altKey || e.ctrlKey || e.metaKey || /input|textarea|select/i.test(e.target.tagName)) return;
+      if (e.key === 'ArrowRight') location.href = projectUrl(next);
+      if (e.key === 'ArrowLeft') location.href = projectUrl(prev);
+    });
   }
 
   /* ---------- Play page ---------- */
