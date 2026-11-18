@@ -362,8 +362,8 @@ window.STORIES = [
 
 /* Play: Cutscenes. Animations shown as video players with sound (no autoplay). */
 window.CUTSCENES = [
-  { title: 'Voyage', type: '3D animation', text: 'A short 3D motion piece.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage-poster.jpg', tools: ['Cinema 4D', 'Redshift'] },
-  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube-poster.jpg', tools: ['Cinema 4D', 'Redshift'] }
+  { title: 'Voyage', type: '3D animation', text: 'A short 3D motion piece.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
+  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube.jpg', tools: ['Cinema 4D', 'Redshift'] }
 ];
 /* Links used across the site */
 window.LINKS = {
