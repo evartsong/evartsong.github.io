@@ -22,8 +22,8 @@ window.PROJECTS = [
     ],
     tools: ['Photoshop', 'Mailchimp', 'Faire', 'FashionGo', 'AI video + graphics'],
     type: 'Fashion wholesale · e-commerce', collaborators: '', recognition: '',
-    tile: 'images/bibi/23.jpg', /* home tiles: a social post crops better than the wide banner */
-    cover: '', video: '', images: []
+    tile: 'images/bibi/28.jpg', /* home grid image */
+    cover: 'images/bibi/06.jpg', coverRatio: '1200 / 553', video: '', images: []
   },
   {
     id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: 'ARTCENTER', season: '',
@@ -33,7 +33,8 @@ window.PROJECTS = [
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
     tools: ['Cinema 4D', 'After Effects'],
     type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
-    cover: 'images/label-lunacy/05.jpg', video: 'videos/label-lunacy.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=fuxI35rUmUM */, images: []
+    tile: 'images/label-lunacy/05.jpg', /* home grid image */
+    cover: 'images/label-lunacy/08.jpg', coverRatio: '1920 / 1080', video: 'videos/label-lunacy.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=fuxI35rUmUM */, images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: 'ARTCENTER', season: 'TRAINING ARC · ARTCENTER',
@@ -43,7 +44,8 @@ window.PROJECTS = [
     did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
     tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
     type: 'Spotify · concept spot', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
-    cover: '', video: '', images: []
+    tile: 'images/covers/soundtrack.png', /* home grid image */
+    cover: 'images/soundtrack/01.png', coverRatio: '2000 / 1125', video: '', images: []
   },
   {
     id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
@@ -53,7 +55,8 @@ window.PROJECTS = [
     did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
     tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
     type: 'Live streaming software', collaborators: '', recognition: '',
-    cover: '', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
+    tile: 'images/covers/vmix.jpg', /* home grid image */
+    cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
   },
   {
     id: 'warp', title: 'WARP', genre: 'Digital marketing', era: '2024', season: 'SEASON 2024',
@@ -68,7 +71,8 @@ window.PROJECTS = [
     ],
     tools: ['HubSpot', 'Klaviyo'],
     type: 'B2B freight logistics · web + email + social', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
-    cover: '', video: '', images: []
+    tile: 'images/covers/warp-feature.jpg', /* home grid image */
+    cover: 'images/warp/19.jpg', coverRatio: '1200 / 1200', video: '', images: []
   },
   {
     id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: 'ARTCENTER', season: '',
@@ -78,7 +82,8 @@ window.PROJECTS = [
     did: ['Use light as the symbol of imagination', 'Design and animate the title sequence'],
     tools: ['Cinema 4D', 'Arnold', 'Photoshop'],
     type: 'Film title sequence', collaborators: 'Jason Kim', recognition: '',
-    cover: '', video: '', images: []
+    tile: 'images/moonrise/03.jpg', /* home grid image */
+    cover: 'images/covers/moonrise.jpg', coverRatio: '2000 / 1125', video: '', images: []
   },
   {
     id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: 'ARTCENTER', season: '',
@@ -88,7 +93,8 @@ window.PROJECTS = [
     did: ['Name and position the venue: GSArena, powered by GameStop', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
     tools: ['InDesign', 'Photoshop', 'After Effects'],
     type: 'Esports venue', collaborators: '', recognition: '',
-    cover: '', video: '', images: []
+    tile: 'images/gsa/15.jpg', /* home grid image */
+    cover: 'images/gsa/01.jpg', coverRatio: '2000 / 900', video: '', images: []
   },
   {
     id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion graphics', era: 'ARTCENTER', season: '',
@@ -98,7 +104,8 @@ window.PROJECTS = [
     did: ['Tell a sustainability message through two characters', 'Stage it in front-camera framing with expressive faces and body motion', 'Model, light and render in Cinema 4D and Redshift'],
     tools: ['Cinema 4D', 'Redshift', 'After Effects'],
     type: 'Sustainability short', collaborators: 'Sarah Lee', recognition: 'ArtCenter Student Gallery, 2023',
-    cover: '', video: 'https://www.youtube.com/watch?v=Tv06w4CawK4', images: []
+    tile: 'images/shampoo-bar/03.jpg', /* home grid image */
+    cover: 'images/shampoo-bar/01.jpg', coverRatio: '1920 / 1080', video: 'https://www.youtube.com/watch?v=Tv06w4CawK4', images: []
   },
   {
     id: 'minari', title: 'Minari', genre: 'Title sequence', era: 'ARTCENTER', season: '',
@@ -108,7 +115,8 @@ window.PROJECTS = [
     did: ['Use a seed as the framing device for growth and hope', 'Build the sequence around the burning-crops scene'],
     tools: ['Photoshop', 'Lightroom', 'InDesign'],
     type: 'Film title sequence', collaborators: '', recognition: '',
-    cover: '', video: '', images: []
+    tile: 'images/minari/06.jpg', /* home grid image */
+    cover: 'images/minari/01.jpg', coverRatio: '2000 / 1125', video: '', images: []
   },
   {
     id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: 'ARTCENTER', season: '',
@@ -118,8 +126,8 @@ window.PROJECTS = [
     did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
     tools: ['InDesign', 'Illustrator', 'Photoshop'],
     type: 'Exhibition + publication', collaborators: '', recognition: '',
-    tile: 'images/hanbok/02.jpg',
-    cover: 'images/hanbok/01.jpg', video: '', images: []
+    tile: 'images/hanbok/01.jpg', /* home grid image */
+    cover: 'images/hanbok/03.jpg', coverRatio: '2000 / 1500', video: '', images: []
   }
 ];
 
