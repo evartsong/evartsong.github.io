@@ -347,8 +347,11 @@
       var dots = card.querySelectorAll('.es-story__dots button');
       var count = card.querySelector('.es-story__count');
       var n = slides.length, at = 0, timer = null, hover = false, seen = false;
+      /* lazy images inside a sliding track never "scroll into view", so load the current + next slide by hand */
+      var warm = function (j) { var im = slides[(j + n) % n] && slides[(j + n) % n].querySelector('img'); if (im && im.loading !== 'eager') im.loading = 'eager'; };
       var go = function (k) {
         at = (k + n) % n;
+        warm(at); warm(at + 1); warm(at - 1);
         track.style.transform = 'translateX(' + (-100 * at) + '%)';
         slides.forEach(function (s, j) { if (j === at) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
         dots.forEach(function (d, j) { d.setAttribute('aria-selected', String(j === at)); });
@@ -371,7 +374,7 @@
       view.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') x0 = e.clientX; });
       view.addEventListener('pointerup', function (e) { if (x0 === null) return; var dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 40) { go(at + (dx < 0 ? 1 : -1)); start(); } });
       /* only autoplay while on screen */
-      if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { seen = en[0].isIntersecting; if (seen) start(); else stop(); }, { threshold: 0.4 }).observe(card);
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { seen = en[0].isIntersecting; if (seen) { warm(at + 1); start(); } else stop(); }, { threshold: 0.4 }).observe(card);
       else { seen = true; start(); }
       document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
     });
