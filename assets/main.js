@@ -301,8 +301,8 @@
   var boardEl = document.getElementById('quest-board');
   var filtersEl = document.getElementById('quest-filters');
   if (boardEl && filtersEl) {
-    var TYPES = [['all', 'ALL'], ['3d', '3D MOTION'], ['graphic', 'GRAPHIC DESIGN'], ['illo', 'ILLUSTRATION'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
-    var NAME = { '3d': '3D MOTION', graphic: 'GRAPHIC DESIGN', illo: 'ILLUSTRATION', editorial: 'EDITORIAL', creator: 'CREATOR' };
+    var TYPES = [['all', 'ALL'], ['3d', '3D MOTION'], ['graphic', 'GRAPHIC DESIGN'], ['illo', 'ILLUSTRATION'], ['fine', 'FINE ART'], ['sketch', 'SKETCHBOOK'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
+    var NAME = { '3d': '3D MOTION', graphic: 'GRAPHIC DESIGN', illo: 'ILLUSTRATION', fine: 'FINE ART', sketch: 'SKETCHBOOK', editorial: 'EDITORIAL', creator: 'CREATOR' };
     var want = new URLSearchParams(location.search).get('type');
     var current = TYPES.some(function (t) { return t[0] === want; }) ? want : 'all';
     var count = function (t) { return String(t === 'all' ? Q.length : Q.filter(function (q) { return q.type === t; }).length).padStart(2, '0'); };
@@ -321,8 +321,9 @@
       var x = q.id ? X.find(function (e) { return e.id === q.id; }) : null;
       var cover = (x && (x.cover || (x.images && x.images[0] && x.images[0][0]))) || q.image || '';
       var video = x && x.video && /\.mp4(\?|$)/i.test(x.video) ? x.video : '';
-      var tools = (x && x.tools) || [];
-      var meta = NAME[q.type] + (x && x.when ? ' · ' + upper(x.when) : '');
+      var tools = (x && x.tools) || q.tools || [];
+      var when = (x && x.when) || q.when || '';
+      var meta = NAME[q.type] + (when ? ' · ' + upper(when) : '');
       var front = video
         ? '<video src="' + esc(video) + '"' + (cover ? ' poster="' + esc(cover) + '"' : '') + ' muted loop playsinline preload="metadata"' + (still.matches ? '' : ' autoplay') + ' aria-hidden="true"></video>'
         : cover
