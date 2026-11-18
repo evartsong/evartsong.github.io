@@ -928,3 +928,46 @@ body { background: var(--es-bg); }
   @keyframes es-feat-in { from { opacity: 0; transform: scale(0.985); } to { opacity: 1; transform: none; } }
 }
 @media (max-width: 767px) { .es-passnums button { width: 44px; height: 44px; font-size: 11px; } }
+/* =====================================================================
+   Spacing + readability pass (2026-11-18). Fluid spacing from phone to
+   large monitors, and a readable floor for small mono labels.
+   ===================================================================== */
+.es-wrap { max-width: 1440px; padding-left: clamp(16px, 4vw, 56px); padding-right: clamp(16px, 4vw, 56px); }
+.es-section { padding-top: clamp(56px, 7vw, 112px); padding-bottom: clamp(64px, 8vw, 128px); }
+.es-kicker { margin-bottom: clamp(10px, 1.2vw, 18px); }
+.es-lede { margin-top: clamp(10px, 1.2vw, 16px); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.55; }
+
+/* Title screen: fills most of the first screen, with room under PRESS START */
+.es-title { min-height: clamp(560px, 86vh, 980px); }
+.es-title__main { padding-top: clamp(24px, 5vh, 72px); padding-bottom: clamp(56px, 10vh, 120px); }
+.es-start { margin-top: clamp(28px, 4.5vh, 56px); }
+
+/* Quick links: centered, larger, wrap instead of scrolling off the edge */
+.es-quick__row { justify-content: center; padding-top: clamp(18px, 2.4vw, 30px); padding-bottom: clamp(18px, 2.4vw, 30px); }
+.es-quick__links { justify-content: center; gap: clamp(8px, 1vw, 12px); }
+.es-quick__links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 clamp(14px, 1.4vw, 20px); font-size: clamp(12px, 0.95vw, 14px); }
+@media (max-width: 767px) {
+  .es-quick__links { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; width: auto; }
+  .es-quick__links a { font-size: 12px; }
+}
+
+/* Readable floor: small mono labels never drop below 11px (desktop) / 10px (phone) */
+.es-chip, .es-tag, .es-tier__season, .es-tier__genre, .es-tier__cta, .es-stats dt, .es-trophy__meta, .es-quest .es-chip,
+.es-phero dt, .es-details dt, .es-chapter__tag, .es-slot__slot, .es-bigstats dt, .es-flip__meta, .es-flip__label,
+.es-tile__meta, .es-tile__num, .es-match__when, .es-count, .es-chapter__meta, .es-filter, .es-passnums button,
+.es-story__meta, .es-lfs, .es-pill { font-size: 11px; }
+.es-tile--r1 .es-tile__num { font-size: 12px; }
+.es-flip__tools .es-pill { font-size: 11px; }
+@media (max-width: 767px) {
+  .es-chip, .es-tag, .es-tier__season, .es-tier__genre, .es-stats dt, .es-trophy__meta, .es-quest .es-chip, .es-phero dt,
+  .es-details dt, .es-chapter__tag, .es-bigstats dt, .es-flip__meta, .es-flip__label, .es-tile__meta, .es-tile__num,
+  .es-match__when, .es-count, .es-chapter__meta, .es-hud, .es-title__kicker, .es-foot, .es-subbar .es-wrap, .es-story__meta,
+  .es-pill, .es-flip__tools .es-pill, .es-profile .es-label, .es-brief .es-label, .es-card__say { font-size: 10.5px; }
+  .es-filter { font-size: 11px; }
+  .es-tile--r3 .es-tile__meta { display: none; }
+}@media (max-width: 767px) {
+  .es-pbar small, .es-phero .es-chip, .es-video .es-chip { font-size: 10.5px; }
+}@media (max-width: 767px) {
+  .es-title { min-height: 0; }
+  .es-title__main { padding-top: 48px; padding-bottom: 56px; }
+}
