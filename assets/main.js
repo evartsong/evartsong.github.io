@@ -514,4 +514,53 @@
     setOpen();
     if (phone.addEventListener) phone.addEventListener('change', setOpen);
   }
+
+  /* ---------- Every page: header height for sticky bars ---------- */
+  var siteHeader = document.querySelector('.es-header');
+  var headH = function () { return siteHeader ? siteHeader.offsetHeight : 0; };
+  var syncHeadH = function () { document.documentElement.style.setProperty('--es-headh', headH() + 'px'); };
+  syncHeadH(); window.addEventListener('resize', syncHeadH);
+  var calmScroll = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ---------- Home: sticky section bar that marks the section you're in ---------- */
+  var quick = document.querySelector('.es-quick');
+  if (quick) {
+    var qLinks = [].slice.call(quick.querySelectorAll('.es-quick__links a'));
+    var qStrip = quick.querySelector('.es-quick__links');
+    var qParts = qLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var qLast = null;
+    var markQuick = function () {
+      var top = quick.getBoundingClientRect().top, stuck = top <= headH() + 1;
+      quick.classList.toggle('is-stuck', stuck);
+      var line = quick.getBoundingClientRect().bottom + 140, cur = -1;
+      /* nothing is "current" while you're still on the title screen */
+      if (stuck) qParts.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= line) cur = i; });
+      /* at the very bottom of the page the last section counts as current */
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = qParts.length - 1;
+      if (cur === qLast) return;
+      qLast = cur;
+      qLinks.forEach(function (a, i) { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+      /* phones: keep the current link visible in the swipe row */
+      if (cur >= 0 && qStrip.scrollWidth > qStrip.clientWidth) {
+        var a = qLinks[cur];
+        qStrip.scrollTo({ left: a.offsetLeft - (qStrip.clientWidth - a.offsetWidth) / 2, behavior: calmScroll.matches ? 'auto' : 'smooth' });
+      }
+    };
+    var qTick = false;
+    window.addEventListener('scroll', function () { if (!qTick) { qTick = true; requestAnimationFrame(function () { qTick = false; markQuick(); }); } }, { passive: true });
+    window.addEventListener('resize', markQuick);
+    markQuick();
+  }
+
+  /* ---------- Every page: back-to-top button after you scroll ---------- */
+  var toTop = document.createElement('button');
+  toTop.type = 'button'; toTop.className = 'es-totop'; toTop.setAttribute('aria-label', 'Back to top');
+  toTop.innerHTML = '<span aria-hidden="true">↑</span> TOP';
+  document.body.appendChild(toTop);
+  var showTop = function () { toTop.classList.toggle('is-on', window.scrollY > window.innerHeight * 0.9); };
+  window.addEventListener('scroll', showTop, { passive: true }); showTop();
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: calmScroll.matches ? 'auto' : 'smooth' });
+    var logo = document.querySelector('.es-logo'); if (logo) logo.focus({ preventScroll: true });
+  });
 })();
