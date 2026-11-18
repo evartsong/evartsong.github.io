@@ -230,6 +230,7 @@ window.EXTRAS = [
    id: a video side quest above (Voyage, Karaoke Cube). */
 window.QUESTS = [
   { id: 'karaoke-cube', type: '3d', title: 'Karaoke Cube', sub: '3D motion', color: '#3E2A8C', ratio: '16 / 9' },
+  { type: 'ink', title: 'Billie Eilish tour merch', sub: 'Where Do We Go? world tour, sold globally · Interscope Records', image: 'images/sketchbook/12.jpg', ratio: '1600 / 1280', tools: ['Pen + ink'], color: '#2F5D3A' },
   { type: 'painting', title: 'Viking portrait', image: 'images/ig-paintings/01.jpg', ratio: '1440 / 1800', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'ink', title: 'Courtside', image: 'images/ig-ink/01.jpg', ratio: '1439 / 1669', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Bust study', image: 'images/ig-drawing/03.jpg', ratio: '1080 / 1080', tools: ['Charcoal'], color: '#2A2A2A' },
@@ -262,7 +263,7 @@ window.QUESTS = [
   { type: 'digital', title: 'Nicotine', image: 'images/nicotine/01.jpg', ratio: '2000 / 1951', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Squad lineup', image: 'images/ig-ink/07.jpg', ratio: '1080 / 1080', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Anatomy studies', image: 'images/play/012.jpg', ratio: '1080 / 820', tools: ['Graphite'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Sketchbook spread', image: 'images/play/028.jpg', ratio: '898 / 1123', tools: ['Pen + ink'], color: '#2A2A2A' },
+  { type: 'sketch', title: 'Sketchbook spread', image: 'images/play/028.jpg', ratio: '1123 / 898', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'painting', title: 'Portrait studies II', image: 'images/play/006.jpg', ratio: '1440 / 1440', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'digital', title: 'Portrait study', image: 'images/portrait/01.jpg', ratio: '1841 / 2000', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Hanging out', image: 'images/ig-ink/08.jpg', ratio: '1080 / 977', tools: ['Pen + ink'], color: '#2A2A2A' },
@@ -288,7 +289,7 @@ window.QUESTS = [
   { type: 'painting', title: 'Still life with pitcher', image: 'images/college/16.jpg', ratio: '1163 / 936', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'digital', title: 'Checkerboard portrait', image: 'images/ig-portraits/03.jpg', ratio: '1080 / 701', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Comic page', image: 'images/ig-ink/12.jpg', ratio: '1440 / 1711', tools: ['Pen + ink'], color: '#2A2A2A' },
-  { type: 'drawing', title: 'Reclining on checkers', image: 'images/play/021.jpg', ratio: '1080 / 654', tools: ['Marker'], color: '#2A2A2A' },
+  { type: 'drawing', title: 'Reclining on checkers', image: 'images/play/021.jpg', ratio: '654 / 1080', tools: ['Marker'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Perspective study', image: 'images/sketchbook/02.jpg', ratio: '1600 / 1166', tools: ['Colored pencil'], color: '#2A2A2A' },
   { type: 'painting', title: 'Coastal landscape II', image: 'images/play/033.jpg', ratio: '1161 / 936', tools: ['Paint'], color: '#2A2A2A' },
   { type: 'digital', title: 'Duck character', image: 'images/ig-characters/02.jpg', ratio: '1440 / 1439', tools: ['Procreate'], color: '#2A2A2A' },
@@ -321,7 +322,6 @@ window.QUESTS = [
   { type: 'drawing', title: 'Location sketches', image: 'images/college/07.jpg', ratio: '1227 / 936', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Monkey studies', image: 'images/sketchbook/11.jpg', ratio: '1600 / 1285', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Bust and pattern', image: 'images/college/08.jpg', ratio: '864 / 1320', tools: ['Graphite', 'Colored pencil'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Character pages', image: 'images/sketchbook/12.jpg', ratio: '1600 / 1280', tools: ['Pen + ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Underwater study', image: 'images/college/09.jpg', ratio: '864 / 1296', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Drapery + dancer', image: 'images/sketchbook/13.jpg', ratio: '1600 / 1306', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Portrait with a spoon', image: 'images/college/10.jpg', ratio: '936 / 1291', tools: ['Colored pencil'], color: '#2A2A2A' },
@@ -344,7 +344,6 @@ window.QUESTS = [
   { type: 'drawing', title: 'Figure study', image: 'images/play/045.jpg', ratio: '936 / 1242', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Figure study', image: 'images/play/046.jpg', ratio: '936 / 1250', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings', image: 'images/play/047.jpg', ratio: '1247 / 936', tools: ['Pencil'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Where Do We Go? tour merch', sub: 'Billie Eilish world tour merch, sold globally · Interscope Records', color: '#2F5D3A', ratio: '4 / 5', link: '' },
   { type: 'graphic', title: 'Woobofood', sub: 'Freelance · brand identity, website and launch materials', color: '#B5651D', ratio: '4 / 3', link: '' },
   { type: 'graphic', title: 'SquareOne', sub: 'Freelance · brand identity, website and launch materials', color: '#1F5F7A', ratio: '4 / 3', link: '' },
   { type: 'creator', title: 'Short-form clips', sub: 'Viral gaming content: TikTok 1M+ views, YouTube 500K+', color: '#9C2A4A', ratio: '3 / 4', link: '' }

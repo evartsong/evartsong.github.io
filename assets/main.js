@@ -412,10 +412,10 @@
         : cover
           ? '<img src="' + esc(cover) + '" alt="" loading="lazy" decoding="async">'
           : '<span class="es-flip__plain">' + esc(q.title) + '</span>';
-      var made = tools.length
+      var made = (q.sub ? '<span class="es-flip__sub">' + esc(q.sub) + '</span>' : '') + (tools.length
         ? '<span class="es-flip__label">MADE WITH</span><span class="es-flip__tools">' + tools.map(function (t) { return '<span class="es-pill">' + esc(t) + '</span>'; }).join('') + '</span>'
-        : (q.sub ? '<span class="es-flip__sub">' + esc(q.sub) + '</span>' : '');
-      var said = q.title + '. ' + NAME[q.type].toLowerCase() + (tools.length ? '. Made with ' + tools.join(', ') : (q.sub ? '. ' + q.sub : ''));
+        : '');
+      var said = q.title + '. ' + NAME[q.type].toLowerCase() + (q.sub ? '. ' + q.sub : '') + (tools.length ? '. Made with ' + tools.join(', ') : '');
       return '<button type="button" class="es-flip" aria-pressed="false" data-say="' + esc(said) + '" aria-label="' + esc(q.title + ': show details') + '" style="--c:' + q.color + ';aspect-ratio:' + ratioOf(q, x).toFixed(4) + '">' +
         '<span class="es-flip__inner">' +
           '<span class="es-flip__front">' + front + '<span class="es-flip__hint" aria-hidden="true">↻ INFO</span></span>' +
