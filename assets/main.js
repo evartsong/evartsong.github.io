@@ -445,7 +445,8 @@
     var cardHtml = function (q) {
       var x = q.id ? X.find(function (e) { return e.id === q.id; }) : null;
       var cover = (x && (x.cover || (x.images && x.images[0] && x.images[0][0]))) || q.image || '';
-      var video = x && x.video && /\.mp4(\?|$)/i.test(x.video) ? x.video : '';
+      var vsrc = (x && x.video) || q.video || ''; /* a card can loop a short silent mp4, GIF-style */
+      var video = /\.mp4(\?|$)/i.test(vsrc) ? vsrc : '';
       var tools = (x && x.tools) || q.tools || [];
       var when = (x && x.when) || q.when || '';
       var meta = NAME[q.type] + (when ? ' · ' + upper(when) : '');

@@ -246,7 +246,7 @@ window.QUESTS = [
   { type: 'drawing', title: 'Hand studies', image: 'images/ig-drawing/04.jpg', ratio: '1440 / 1117', tools: ['Ink', 'Colored pens'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Pattern studies', image: 'images/play/019.jpg', ratio: '1080 / 1080', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: '3d', title: 'Clay sculpture', image: 'images/college/17.jpg', ratio: '864 / 1296', tools: ['Clay'], color: '#2A2A2A' },
-  { type: '3d', title: 'Creature sculpt', image: 'images/play/001.jpg', ratio: '1080 / 720', tools: ['Octane'], color: '#2A2A2A' },
+  { type: '3d', title: 'Creature sculpt', image: 'images/play/001.jpg', ratio: '1080 / 720', tools: ['Octane'], color: '#2A2A2A', video: 'videos/play/creature-sculpt.mp4' },
   { type: 'painting', title: 'Gentleman portrait', image: 'images/ig-paintings/05.jpg', ratio: '1440 / 1800', tools: ['Acrylic painting'], color: '#2A2A2A' },
   { type: 'ink', title: 'Creatures', image: 'images/ig-ink/03.jpg', ratio: '1440 / 1800', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Figure study', image: 'images/play/007.jpg', ratio: '1284 / 1600', tools: ['Charcoal'], color: '#2A2A2A' },
