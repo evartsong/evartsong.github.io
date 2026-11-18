@@ -28,7 +28,7 @@ window.PROJECTS = [
     id: 'warp', title: 'WARP', genre: 'Digital marketing', era: '2024', season: 'SEASON 2024',
     when: '03.2024 – 12.2024', role: 'Digital Marketing Specialist', color: '#3326B8', badge: '',
     desc: 'Website, landing pages, decks and B2B campaigns, leading marketing and revenue with the co-founders.',
-    brief: 'At WARP I worked directly with the co-founders and led the marketing and revenue teams, while designing the brand’s website, landing pages and campaign assets myself.',
+    brief: 'At WARP, a Los Angeles freight logistics company, I worked directly with the co-founders and led the marketing and revenue teams, while designing the brand’s website, landing pages and campaign assets myself. The pages below are the 2024 site, captured from the Internet Archive.',
     did: [
       'Lead the marketing and revenue teams with the co-founders: run meetings, assign tasks, hit deadlines',
       'Design the website, landing pages and business decks; lead campaign asset design',
@@ -36,7 +36,7 @@ window.PROJECTS = [
       'Manage social and create B2B content: press releases, case studies and graphics'
     ],
     tools: ['HubSpot', 'Klaviyo'],
-    type: 'B2B · web + email + social', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
+    type: 'B2B freight logistics · web + email + social', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
     cover: '', video: '', images: []
   },
   {
@@ -180,6 +180,42 @@ window.EXTRAS = [
     desc: 'A digital painting portrait study.',
     brief: 'A painted portrait study focused on light and skin tones.',
     did: [], tools: ['Procreate'], type: 'Digital painting', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'ig-characters', title: 'Character illustrations', genre: 'Illustration', when: '2020 – 2022', role: 'Illustrator', color: '#D94A6B', badge: '',
+    desc: 'Original characters: a girl in a beanie, a duck with a knife, a starry space bird and a robot.',
+    brief: 'A set of original character illustrations from my Instagram, mixing flat digital color with playful shapes.',
+    did: [], tools: ['Procreate', 'Photoshop'], type: 'Character design', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'ig-portraits', title: 'Digital portraits', genre: 'Illustration', when: '2017 – 2019', role: 'Illustrator', color: '#4E6E7A', badge: '',
+    desc: 'Painted digital portraits focused on light, hair and skin.',
+    brief: 'Digital portrait paintings exploring soft light, hair texture and skin tones.',
+    did: [], tools: ['Procreate', 'Photoshop'], type: 'Digital painting', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'ig-paintings', title: 'Painting studies', genre: 'Illustration', when: '2017 – 2020', role: 'Painter', color: '#5B3A2E', badge: '',
+    desc: 'Acrylic, oil and gouache studies: portraits, a Viking, landscapes and the sea.',
+    brief: 'Traditional painting studies from photo references and life: portraits, figures, landscapes and seascapes in acrylic, oil and gouache.',
+    did: [], tools: ['Acrylic', 'Oil', 'Gouache'], type: 'Traditional painting', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'ig-ink', title: 'Ink drawings', genre: 'Illustration', when: '2017 – 2020', role: 'Illustrator', color: '#22252B', badge: '',
+    desc: 'Detailed pen-and-ink work: Kobe, crowded collages, statue heads, fashion figures and a gamer’s room.',
+    brief: 'Pen-and-ink drawings built from dense line work and pattern, from portrait studies to full collages and a one-point perspective gamer’s room.',
+    did: [], tools: ['Pen + ink', 'Micron'], type: 'Ink illustration', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'ig-drawing', title: 'Drawing studies', genre: 'Illustration', when: '2018 – 2021', role: 'Artist', color: '#6E6E6E', badge: '',
+    desc: 'Charcoal figures and drapery, a statue study and colored-pencil hands.',
+    brief: 'Observational drawing studies in charcoal and colored pencil.',
+    did: [], tools: ['Charcoal', 'Colored pencil'], type: 'Drawing studies', collaborators: '', recognition: '', video: ''
+  },
+  {
+    id: 'ig-sculpt', title: 'Sculpt study', genre: '3D', when: '2022', role: '3D artist', color: '#2E2E33', badge: '',
+    desc: 'A digital sculpture study rendered in 3D.',
+    brief: 'A 3D sculpting study of a classical figure, rendered from several angles.',
+    did: [], tools: ['ZBrush', 'Cinema 4D'], type: '3D sculpt', collaborators: '', recognition: '', video: ''
   }
 ];
 
@@ -187,6 +223,12 @@ window.EXTRAS = [
    id: links to a side quest page above. link: an outside URL. */
 window.QUESTS = [
   { id: 'voyage', type: '3d', title: 'Voyage', sub: '3D motion · video', color: '#5B2BB5', ratio: '16 / 9' },
+  { id: 'ig-characters', type: 'illo', title: 'Character illustrations', sub: '4 original characters', color: '#D94A6B', ratio: '1 / 1' },
+  { id: 'ig-paintings', type: 'illo', title: 'Painting studies', sub: 'Acrylic, oil + gouache · 14 pieces', color: '#5B3A2E', ratio: '4 / 5' },
+  { id: 'ig-ink', type: 'illo', title: 'Ink drawings', sub: 'Pen + ink · 13 pieces', color: '#22252B', ratio: '4 / 5' },
+  { id: 'ig-portraits', type: 'illo', title: 'Digital portraits', sub: 'Digital painting', color: '#4E6E7A', ratio: '4 / 5' },
+  { id: 'ig-drawing', type: 'illo', title: 'Drawing studies', sub: 'Charcoal + colored pencil', color: '#6E6E6E', ratio: '4 / 5' },
+  { id: 'ig-sculpt', type: '3d', title: 'Sculpt study', sub: '3D sculpt', color: '#2E2E33', ratio: '3 / 2' },
   { id: 'akkurat', type: 'graphic', title: 'Akkurat type specimen', sub: 'Type specimen · 7 pieces', color: '#E8573A', ratio: '4 / 3' },
   { id: 'metamorphosis', type: 'illo', title: 'Metamorphosis', sub: 'Illustrated frames', color: '#6B3FB8', ratio: '16 / 9' },
   { id: 'eve-arnold', type: 'editorial', title: 'Eve Arnold', sub: 'Book spreads', color: '#3B3F46', ratio: '4 / 3' },
