@@ -30,30 +30,31 @@
     return '--c:' + color + ';' + (img ? "background-image:url('" + esc(img) + "');" : '');
   }
 
-  /* ---------- Shared: color theme (Auto / Light / Dark) ---------- */
+  /* ---------- Shared: color theme, a 2-way Dark / Light switch ----------
+     First visit follows the visitor's device; one click flips it and the choice is remembered. */
   var root = document.documentElement;
   var prefersLight = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
-  var NEXT = { auto: 'light', light: 'dark', dark: 'auto' };
-  var LABEL = { auto: 'auto (matches your device)', light: 'light', dark: 'dark' };
-  function currentPref() { return root.getAttribute('data-theme-pref') || 'auto'; }
+  function currentTheme() {
+    var t = root.getAttribute('data-theme');
+    return t === 'light' || t === 'dark' ? t : (prefersLight && prefersLight.matches ? 'light' : 'dark');
+  }
   function syncTheme() {
-    var pref = currentPref();
-    var effective = pref === 'auto' ? (prefersLight && prefersLight.matches ? 'light' : 'dark') : pref;
+    var now = currentTheme(), other = now === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme-now', now);
     var meta = document.querySelector('[data-theme-meta]');
-    if (meta) meta.setAttribute('content', effective === 'light' ? '#F3F4F6' : '#0B0D10');
+    if (meta) meta.setAttribute('content', now === 'light' ? '#F3F4F6' : '#0B0D10');
     document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-      b.setAttribute('aria-label', 'Color theme: ' + LABEL[pref] + '. Change theme');
-      b.title = 'Theme: ' + pref.toUpperCase() + ' (click to change)';
+      b.setAttribute('aria-label', 'Color theme: ' + now + '. Switch to ' + other);
+      b.title = 'Switch to ' + other;
     });
   }
-  function setTheme(pref) {
-    if (pref === 'light' || pref === 'dark') root.setAttribute('data-theme', pref); else root.removeAttribute('data-theme');
-    root.setAttribute('data-theme-pref', pref);
-    try { localStorage.setItem('es-theme', pref); } catch (e) {}
+  function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    try { localStorage.setItem('es-theme', t); } catch (e) {}
     syncTheme();
   }
   document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-    b.addEventListener('click', function () { setTheme(NEXT[currentPref()] || 'auto'); });
+    b.addEventListener('click', function () { setTheme(currentTheme() === 'dark' ? 'light' : 'dark'); });
   });
   if (prefersLight && prefersLight.addEventListener) prefersLight.addEventListener('change', syncTheme);
   syncTheme();
