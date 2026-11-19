@@ -657,7 +657,7 @@ body { background: var(--es-bg); }
 .es-quest { background-blend-mode: normal; }
 .es-quest::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55)); pointer-events: none; }
 .es-quest > * { position: relative; }
-.es-avatar { --img: url('../images/covers/eva-portrait-square.jpg'); color: transparent; font-size: 0; }
+.es-avatar { --img: url('../images/covers/eva-portrait-orange.jpg'); color: transparent; font-size: 0; }
 @media (max-width: 767px) {
   .es-showcase { margin-top: 24px; }
   .es-media-label { margin: 28px 0 10px; }
