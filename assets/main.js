@@ -234,7 +234,7 @@
             return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
           }).join('');
           if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
-          else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : n <= 5 ? n : n % 3 === 0 ? 3 : 4) + '">' + cells + '</div>'; /* up to 5 long pages share one row */
+          else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : Math.min(n, 3)) + '">' + cells + '</div>'; /* long pages: at most 3 per row */
           else if (s.layout) media += '<div class="es-set es-set--' + (+s.layout === 1 ? (r.k === 'port' ? 'one' : 'full') : s.layout) + '">' + cells + '</div>'; /* layout picked in the page editor */
           else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
