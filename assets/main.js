@@ -202,6 +202,7 @@
           var n = r.items.length;
           var cells = r.items.map(function (it) { return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it)); }).join('');
           if (r.k === 'tall') media += '<div class="es-longs">' + cells + '</div>';
+          else if (s.layout) media += '<div class="es-set es-set--' + (+s.layout === 1 ? (r.k === 'port' ? 'one' : 'full') : s.layout) + '">' + cells + '</div>'; /* layout picked in the page editor */
           else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
           else media += '<div class="es-set ' + (n === 1 ? 'es-set--full' : s.cols ? 'es-set--' + s.cols : g === 'final' ? 'es-set--full' : 'es-set--2') + '">' + cells + '</div>';

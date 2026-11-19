@@ -26,15 +26,15 @@ window.PROJECTS = [
     cover: 'images/bibi/06.jpg', coverRatio: '1200 / 553', video: '', images: []
   },
   {
-    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: '3D designer + animator', color: '#8A5F0E', badge: '',
-    desc: 'A satirical ad on how brands turn everyday items into must-haves.',
-    brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
-    did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
-    tools: ['Cinema 4D', 'After Effects'],
-    type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
-    tile: 'images/label-lunacy/05.jpg', /* home grid image */
-    cover: 'images/label-lunacy/08.jpg', coverRatio: '1920 / 1080', video: 'videos/label-lunacy.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=fuxI35rUmUM */, images: []
+    id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
+    desc: 'Inviting streamers to find their inner conductor in live video.',
+    brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
+    did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
+    tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
+    type: 'Live streaming software', collaborators: '', recognition: '',
+    tile: 'images/covers/vmix.jpg', /* home grid image */
+    cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: '2023', season: 'SEASON 2023',
@@ -46,17 +46,6 @@ window.PROJECTS = [
     type: 'Spotify · concept spot', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/covers/soundtrack.png', /* home grid image */
     cover: 'images/soundtrack/01.png', coverRatio: '2000 / 1125', video: '', images: []
-  },
-  {
-    id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
-    desc: 'Inviting streamers to find their inner conductor in live video.',
-    brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
-    did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
-    tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
-    type: 'Live streaming software', collaborators: '', recognition: '',
-    tile: 'images/covers/vmix.jpg', /* home grid image */
-    cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
   },
   {
     id: 'warp', title: 'WARP', genre: 'Digital marketing', era: '2024', season: 'SEASON 2024',
@@ -73,6 +62,17 @@ window.PROJECTS = [
     type: 'B2B freight logistics · web + email + social', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
     tile: 'images/covers/warp-feature.jpg', /* home grid image */
     cover: 'images/warp/19.jpg', coverRatio: '1200 / 1200', video: '', images: []
+  },
+  {
+    id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: '3D designer + animator', color: '#8A5F0E', badge: '',
+    desc: 'A satirical ad on how brands turn everyday items into must-haves.',
+    brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
+    did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
+    tools: ['Cinema 4D', 'After Effects'],
+    type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
+    tile: 'images/label-lunacy/05.jpg', /* home grid image */
+    cover: 'images/label-lunacy/08.jpg', coverRatio: '1920 / 1080', video: 'videos/label-lunacy.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=fuxI35rUmUM */, images: []
   },
   {
     id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: '2022', season: 'SEASON 2022',
