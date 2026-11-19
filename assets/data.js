@@ -391,7 +391,8 @@ window.SECTIONS = {
     { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers, and the collection pages on the BiBi and SOME Faire storefronts.', imgs: [6, 7, 28, 23], frame: 'macbook-screens' },
     { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the storefronts and marketplaces.', imgs: [24, 25, 26, 27, 29, 33, 34, 35], frame: 'macbook' },
     { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label SOME.', imgs: [37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 106, 107, 108, 109, 110, 111], layout: '4', sets: [[37, 38], [39, 40, 41, 42], [43, 44, 45, 46], [47, 48, 49, 50, 51], [52, 53, 54], [55, 56, 57, 58], [59, 60, 61, 62, 63, 64, 65, 66], [106, 107, 108, 109, 110, 111]] },
-    { g: 'process', title: 'AI styling', text: 'On-model product images made with AI from the product photos, for BiBi and SOME.', imgs: [67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104], layout: '4' }
+    { g: 'process', title: 'AI styling', text: 'On-model product images made with AI from the product photos, for BiBi and SOME.', imgs: [67, 68, 69, 70, 71, 72, 73, 74, 75, 83, 84, 85, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104], layout: '4' },
+    { g: 'process', title: 'Same pose, two styles', text: 'AI shots matched pose for pose across two pairs of shorts, so the line reads as one consistent shoot.', imgs: [76, 86, 79, 91, 80, 88, 81, 89, 78, 87, 82, 90, 77, 92], layout: '4' }
   ],
   warp: [
     { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile.', imgs: [1, 14] },
