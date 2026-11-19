@@ -378,8 +378,9 @@ body { background: var(--es-bg); }
 .es-hhero .es-wrap { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
 .es-hhero__main { flex: 999 1 560px; min-width: 0; }
 .es-hhero .es-card { flex: 1 1 380px; }
-.es-lfs { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; font-family: var(--es-mono); font-size: 10px; color: var(--es-on-accent); background: var(--es-accent); padding: 4px 8px; border-radius: 3px; }
-.es-lfs::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: #22C55E; box-shadow: 0 0 0 1.5px var(--es-on-accent); } /* green "online" dot, dark ring keeps it crisp on orange */
+/* same outlined pill + glowing green dot as the home page status (.es-status) */
+.es-lfs { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; font-family: var(--es-mono); font-size: 10px; letter-spacing: 0.04em; color: var(--es-text); border: 1px solid var(--es-line3); padding: 5px 11px; border-radius: 999px; }
+.es-lfs::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
 .es-story { display: flex; flex-wrap: wrap; gap: 48px; }
 .es-story__head { flex: 1 1 300px; }
 .es-story__text { flex: 2 1 560px; max-width: 760px; display: flex; flex-direction: column; gap: 20px; font-size: 19px; line-height: 1.65; color: var(--es-soft); }
@@ -1012,13 +1013,13 @@ body { background: var(--es-bg); }
 .es-g video, .es-long video, .es-pic video { display: block; width: 100%; height: auto; }
 
 /* Home: availability status under the title */
-/* hero status: same look as the LOOKING FOR SQUAD tag on the player card (orange, green "online" dot with a dark ring) */
-.es-status { display: inline-flex; align-items: center; gap: 10px; margin: clamp(14px, 1.6vw, 20px) 0 0; padding: 7px 14px; border-radius: 4px; background: var(--es-accent);
-  font-family: var(--es-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--es-on-accent); }
-.es-status__dot { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 1.5px var(--es-on-accent); }
+/* hero status: outlined pill with a glowing green "online" dot (the LOOKING FOR SQUAD tag on History matches) */
+.es-status { display: inline-flex; align-items: center; gap: 10px; margin: clamp(14px, 1.6vw, 20px) 0 0; padding: 8px 14px; border: 1px solid var(--es-line3); border-radius: 999px;
+  font-family: var(--es-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--es-text); }
+.es-status__dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
 @media (prefers-reduced-motion: no-preference) {
-  .es-status__dot { animation: es-live 2.2s ease-out infinite; }
-  @keyframes es-live { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+  .es-status__dot, .es-lfs::before { animation: es-live 2.2s ease-out infinite; }
+  @keyframes es-live { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); } 70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
 }
 .es-title__main .es-status + .es-start { margin-top: clamp(22px, 3.5vh, 40px); }
 @media (max-width: 767px) { .es-status { font-size: 11px; padding: 7px 12px; } }
