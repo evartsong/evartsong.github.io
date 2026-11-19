@@ -1043,6 +1043,7 @@ body { background: var(--es-bg); }
 
 /* looping mp4s that replaced GIFs sit exactly like images */
 .es-g video, .es-long video, .es-pic video { display: block; width: 100%; height: auto; }
+.es-pic video { object-fit: cover; } /* a video post fills its tile like the photo posts around it */
 
 /* Home: availability status under the title */
 /* hero status: outlined pill with a glowing green "online" dot (the LOOKING FOR SQUAD tag on History matches) */
