@@ -186,7 +186,7 @@
         /* a color-variant set: one tile that cycles through its colorways like a GIF (see es-cycle below) */
         if (im.frames && im.frames.length > 1) return '<a class="es-pic es-cycle" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' +
           im.frames.map(function (f, i) { return imgTag(f, alt + (i ? ', color ' + (i + 1) : '')).replace('<img ', '<img' + (i ? ' aria-hidden="true"' : ' class="is-on"') + ' '); }).join('') +
-          '<span class="es-cycle__n" aria-hidden="true">' + im.frames.length + ' COLORS</span></a>';
+          '<span class="es-cycle__n" aria-hidden="true">' + im.frames.length + ' ' + esc(im.word || 'COLORS') + '</span></a>';
         return '<a class="es-pic" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, alt) + '</a>';
       };
       /* meta: { label, focus } for one image, from the section's labels: {n: 'text'} and focus: {n: 'left'|'right'|'top'|...} */
@@ -214,7 +214,7 @@
           var si = setOf[k];
           if (si == null) { ims.push(im); return; }
           if (made[si]) { made[si].frames.push(im); return; }
-          var t = im.slice(); t.frames = [im]; made[si] = t; ims.push(t);
+          var t = im.slice(); t.frames = [im]; t.word = s.setWord; made[si] = t; ims.push(t); /* setWord: tag text, e.g. 'STYLES' */
         });
         var clips = (s.clips || []).map(function (k) { return p.clips[k - 1]; }).filter(Boolean);
         var media = '';
