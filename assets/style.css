@@ -652,10 +652,10 @@ body { background: var(--es-bg); }
 .es-long img { display: block; width: 100%; height: auto; }
 .es-clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; align-items: start; }
 .es-clips video { display: block; width: 100%; max-height: 520px; border-radius: 14px; background: #000; border: 1px solid var(--es-line2); }
-.es-q-3d { --img: url('../images/covers/voyage.jpg'); }
-.es-q-graphic { --img: url('../images/akkurat/04.png'); }
+.es-q-digital { --c: #0E6B8C; --img: url('../images/snowstorm/02.jpg'); }
+.es-q-ink { --c: #5B2BB5; --img: url('../images/sketchbook/01.jpg'); }
 .es-q-illo { --img: url('../images/college/01.jpg'); }
-.es-q-paint { --img: url('../images/ig-paintings/01.jpg'); }
+.es-q-paint { --img: url('../images/college/15.jpg'); }
 .es-quest { background-blend-mode: normal; }
 .es-quest::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55)); pointer-events: none; }
 .es-quest > * { position: relative; }
