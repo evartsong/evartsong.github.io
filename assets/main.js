@@ -189,8 +189,13 @@
           '<span class="es-cycle__n" aria-hidden="true">' + im.frames.length + ' COLORS</span></a>';
         return '<a class="es-pic" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, alt) + '</a>';
       };
+      var macShot = function (im, alt, scroll) {
+        var dur = scroll && im[1] ? Math.round(Math.min(40, Math.max(10, im[2] / im[1] * 2.2))) : 0;
+        return '<a class="es-mac' + (scroll ? ' es-mac--scroll' : '') + '" href="' + esc(im[0]) + '" target="_blank" rel="noopener"' + (dur ? ' style="--dur:' + dur + 's"' : '') + '>' +
+          '<span class="es-mac__screen"><span class="es-mac__view">' + imgTag(im, alt) + '</span></span><span class="es-mac__base" aria-hidden="true"></span></a>';
+      };
       var secHtml = function (s, g) {
-        /* sets: [[a, b, c], ...] folds each group of images into one cycling tile */
+        /* sets:[[a, b, c], ...] folds each group of images into one cycling tile */
         var setOf = {}, made = {};
         (s.sets || []).forEach(function (st, si) { st.forEach(function (k) { setOf[k] = si; }); });
         var ims = [];
@@ -220,8 +225,15 @@
           if (ri === 1 && clipHtml) media += clipHtml; /* videos sit right after the first group of images */
           var alt = function (it) { return p.title + ': ' + s.title + (ims.length > 1 ? ', ' + (it[1] + 1) + ' of ' + ims.length : ''); };
           var n = r.items.length;
-          var cells = r.items.map(function (it) { return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it)); }).join('');
-          if (r.k === 'tall') media += '<div class="es-longs" style="--n:' + (n === 1 ? 2 : n <= 5 ? n : n % 3 === 0 ? 3 : 4) + '">' + cells + '</div>'; /* up to 5 long pages share one row */
+          /* frame: 'macbook' puts every image on a black MacBook screen; 'macbook-pages' only the long pages,
+             which then scroll top to bottom on the screen in a loop, like a GIF */
+          var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall');
+          var cells = r.items.map(function (it) {
+            if (framed) return macShot(it[0], alt(it), r.k === 'tall');
+            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
+          }).join('');
+          if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
+          else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : n <= 5 ? n : n % 3 === 0 ? 3 : 4) + '">' + cells + '</div>'; /* up to 5 long pages share one row */
           else if (s.layout) media += '<div class="es-set es-set--' + (+s.layout === 1 ? (r.k === 'port' ? 'one' : 'full') : s.layout) + '">' + cells + '</div>'; /* layout picked in the page editor */
           else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
@@ -337,6 +349,13 @@
         loops.forEach(function (v) { lio.observe(v); });
       }
     }
+
+    /* long pages on MacBook screens scroll only while on screen */
+    var macs = projEl.querySelectorAll('.es-mac--scroll');
+    if (macs.length && 'IntersectionObserver' in window) {
+      var mio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('is-playing', e.isIntersecting); }); });
+      macs.forEach(function (a) { mio.observe(a); });
+    } else macs.forEach(function (a) { a.classList.add('is-playing'); });
 
     /* color-variant tiles: step through the colorways every 0.9s while on screen (still with reduced motion) */
     var cycles = projEl.querySelectorAll('.es-cycle');

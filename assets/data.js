@@ -387,12 +387,12 @@ window.SECTIONS = {
   bibi: [
     { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 2, 3, 4, 5] },
     { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers.', imgs: [7, 8] },
-    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO, with their animated headers below.', imgs: [9, 10, 12, 13, 15, 11, 14] },
-    { g: 'final', title: 'Instagram posts, stories + reels', text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [16, 17, 18, 19, 20, 21, 22, 23, 24, 32, 33, 34, 38], clips: [1, 2, 3, 4] },
-    { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the storefronts and marketplaces.', imgs: [6, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37] },
-    { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label SOME.', imgs: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68], sets: [[39, 40], [41, 42, 43, 44], [45, 46, 47, 48], [49, 50, 51, 52, 53], [54, 55, 56], [57, 58, 59, 60], [61, 62, 63, 64, 65, 66, 67, 68]], layout: '4' },
-    { g: 'process', title: 'AI styling', text: 'On-model product images made with AI from the product photos, for BiBi and SOME.', imgs: [69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106], layout: '4' },
-    { g: 'ref', title: 'Fabric + style references', text: 'Fabric swatches and style references used to guide the AI styling.', imgs: [107, 108, 109] }
+    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO, with their animated headers below.', imgs: [9, 10, 11, 12, 14, 109, 13] },
+    { g: 'final', title: 'Instagram posts, stories + reels', text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [15, 16, 17, 18, 19, 20, 21, 22, 23, 31, 32, 33, 37], clips: [1, 2, 3, 4] },
+    { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the storefronts and marketplaces.', imgs: [6, 24, 25, 26, 27, 28, 29, 30, 34, 35, 36], frame: 'macbook' },
+    { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label SOME.', imgs: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67], sets: [[38, 39], [40, 41, 42, 43], [44, 45, 46, 47], [48, 49, 50, 51, 52], [53, 54, 55], [56, 57, 58, 59], [60, 61, 62, 63, 64, 65, 66, 67]], layout: '4' },
+    { g: 'process', title: 'AI styling', text: 'On-model product images made with AI from the product photos, for BiBi and SOME.', imgs: [68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105], layout: '4' },
+    { g: 'ref', title: 'Fabric + style references', text: 'Fabric swatches and style references used to guide the AI styling.', imgs: [106, 107, 108] }
   ],
   warp: [
     { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile.', imgs: [1, 14] },

@@ -730,6 +730,23 @@ body { background: var(--es-bg); }
 .es-set--solo { grid-template-columns: minmax(0, calc(50% - 8px)); }
 @media (min-width: 1024px) { .es-sec .es-longs[style*='--n'] { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); } } /* a lone landscape image: half width, never one huge image */
 .es-clips video.es-loop { cursor: default; max-height: none; }
+/* all-black MacBook mockup (section frame: 'macbook' / 'macbook-pages') */
+.es-mac { display: block; padding: 0 7%; }
+.es-mac__screen { display: block; position: relative; background: #070708; border: 1px solid #3a3b40; border-radius: 14px 14px 0 0; padding: 2.4% 2.4% 3.2%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05); transition: border-color 0.15s; }
+.es-mac__screen::before { content: ''; position: absolute; top: 0.9%; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: #222327; transform: translateX(-50%); }
+.es-mac:hover .es-mac__screen { border-color: var(--es-accent); }
+.es-mac__view { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 2px; background: #000; container-type: size; }
+.es-mac__view img, .es-mac__view video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.es-mac__base { display: block; position: relative; height: 0; padding-bottom: 3.4%; margin: 0 -7.5%; background: linear-gradient(180deg, #6a6b71 0%, #2a2b2f 30%, #121214 100%); border-radius: 2px 2px 18px 18px / 2px 2px 10px 10px; box-shadow: 0 14px 24px -12px rgba(0, 0, 0, 0.75); }
+.es-mac__base::before { content: ''; position: absolute; top: 0; left: 50%; width: 15%; height: 38%; transform: translateX(-50%); background: #0e0e10; border-radius: 0 0 8px 8px; }
+/* long pages (emails) scroll down the screen and back, like a GIF */
+.es-mac--scroll .es-mac__view img { height: auto; object-fit: initial; animation: es-scroll var(--dur, 24s) ease-in-out infinite; animation-play-state: paused; }
+.es-mac--scroll.is-playing .es-mac__view img { animation-play-state: running; }
+@keyframes es-scroll { 0%, 6% { transform: translateY(0); } 90%, 95% { transform: translateY(calc(-100% + 100cqh)); } 100% { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .es-mac--scroll .es-mac__view { overflow-y: auto; }
+  .es-mac--scroll .es-mac__view img { animation: none; }
+}
 /* color-variant tile: frames stacked in one cell, the current one fades in */
 .es-pic.es-cycle { display: grid; position: relative; }
 .es-pic.es-cycle img { grid-area: 1 / 1; opacity: 0; transition: opacity 0.25s; }
