@@ -189,12 +189,22 @@
           '<span class="es-cycle__n" aria-hidden="true">' + im.frames.length + ' COLORS</span></a>';
         return '<a class="es-pic" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, alt) + '</a>';
       };
-      var macShot = function (im, alt, scroll) {
+      /* meta: { label, focus } for one image, from the section's labels: {n: 'text'} and focus: {n: 'left'|'right'|'top'|...} */
+      var macShot = function (im, alt, scroll, meta) {
+        meta = meta || {};
         var dur = scroll && im[1] ? Math.round(Math.min(40, Math.max(10, im[2] / im[1] * 2.2))) : 0;
+        var pic = imgTag(im, alt);
+        if (meta.focus) pic = pic.replace(/^<(img|video) /, '<$1 style="object-position:' + esc(meta.focus) + ' top" ');
         return '<a class="es-mac' + (scroll ? ' es-mac--scroll' : '') + '" href="' + esc(im[0]) + '" target="_blank" rel="noopener"' + (dur ? ' style="--dur:' + dur + 's"' : '') + '>' +
-          '<span class="es-mac__screen"><span class="es-mac__view">' + imgTag(im, alt) + '</span></span><span class="es-mac__base" aria-hidden="true"></span></a>';
+          '<span class="es-mac__screen"><span class="es-mac__view">' + pic + '</span></span><span class="es-mac__base" aria-hidden="true"></span>' +
+          (meta.label ? '<span class="es-mac__label">' + esc(meta.label) + '</span>' : '') + '</a>';
       };
       var secHtml = function (s, g) {
+        /* per-image label + crop anchor, keyed by image number */
+        var metaOf = {};
+        [['labels', 'label'], ['focus', 'focus']].forEach(function (f) {
+          Object.keys(s[f[0]] || {}).forEach(function (k) { var im = imgs[k - 1]; if (im) { (metaOf[im[0]] = metaOf[im[0]] || {})[f[1]] = s[f[0]][k]; } });
+        });
         /* sets:[[a, b, c], ...] folds each group of images into one cycling tile */
         var setOf = {}, made = {};
         (s.sets || []).forEach(function (st, si) { st.forEach(function (k) { setOf[k] = si; }); });
@@ -230,7 +240,7 @@
           /* 'macbook-screens' frames screenshots (wide or long) but leaves square/portrait graphics as they are */
           var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall') || (s.frame === 'macbook-screens' && r.k !== 'port');
           var cells = r.items.map(function (it) {
-            if (framed) return macShot(it[0], alt(it), r.k === 'tall');
+            if (framed) return macShot(it[0], alt(it), r.k === 'tall', metaOf[it[0][0]]);
             return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
           }).join('');
           if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
