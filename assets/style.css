@@ -1012,12 +1012,13 @@ body { background: var(--es-bg); }
 .es-g video, .es-long video, .es-pic video { display: block; width: 100%; height: auto; }
 
 /* Home: availability status under the title */
-.es-status { display: inline-flex; align-items: center; gap: 10px; margin: clamp(14px, 1.6vw, 20px) 0 0; padding: 8px 14px; border: 1px solid var(--es-line3); border-radius: 999px;
-  font-family: var(--es-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--es-text); }
-.es-status__dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+/* hero status: same look as the LOOKING FOR SQUAD tag on the player card (orange, dark dot) */
+.es-status { display: inline-flex; align-items: center; gap: 10px; margin: clamp(14px, 1.6vw, 20px) 0 0; padding: 7px 14px; border-radius: 4px; background: var(--es-accent);
+  font-family: var(--es-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--es-on-accent); }
+.es-status__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--es-on-accent); }
 @media (prefers-reduced-motion: no-preference) {
   .es-status__dot { animation: es-live 2.2s ease-out infinite; }
-  @keyframes es-live { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); } 70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+  @keyframes es-live { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
 }
 .es-title__main .es-status + .es-start { margin-top: clamp(22px, 3.5vh, 40px); }
 @media (max-width: 767px) { .es-status { font-size: 11px; padding: 7px 12px; } }
