@@ -205,20 +205,38 @@
         [['labels', 'label'], ['focus', 'focus']].forEach(function (f) {
           Object.keys(s[f[0]] || {}).forEach(function (k) { var im = imgs[k - 1]; if (im) { (metaOf[im[0]] = metaOf[im[0]] || {})[f[1]] = s[f[0]][k]; } });
         });
+        /* recipes: [{ ref, refLabel, fabric, out: [..], outLabel }] -> cards reading "reference + fabric = AI result",
+           the result slot cycling through every AI shot like a GIF. Images used in a card leave the normal grid. */
+        var used = {}, recipeHtml = '';
+        if (s.recipes && s.recipes.length) {
+          var cell = function (im, tag, ai) { return '<figure class="es-recipe__cell' + (ai ? ' is-ai' : '') + '"><figcaption class="es-recipe__tag">' + esc(tag) + '</figcaption>' + shot(im, p.title + ': ' + s.title + ', ' + tag) + '</figure>'; };
+          recipeHtml = '<div class="es-recipes">' + s.recipes.map(function (r) {
+            var ref = imgs[r.ref - 1], fab = r.fabric ? imgs[r.fabric - 1] : null;
+            var outs = (r.out || []).map(function (k) { return imgs[k - 1]; }).filter(Boolean);
+            if (!ref || !outs.length) return '';
+            [r.ref, r.fabric].concat(r.out || []).forEach(function (k) { if (k) used[k] = 1; });
+            var res = outs[0];
+            if (outs.length > 1) { res = outs[0].slice(); res.frames = outs; res.word = 'SHOTS'; }
+            return '<div class="es-recipe' + (fab ? '' : ' es-recipe--two') + '">' + cell(ref, r.refLabel || 'Reference') +
+              '<span class="es-recipe__op" aria-hidden="true">' + (fab ? '+' : '→') + '</span>' +
+              (fab ? cell(fab, r.fabricLabel || 'Fabric') + '<span class="es-recipe__op" aria-hidden="true">=</span>' : '') +
+              cell(res, r.outLabel || 'AI result', true) + '</div>';
+          }).join('') + '</div>';
+        }
         /* sets:[[a, b, c], ...] folds each group of images into one cycling tile */
         var setOf = {}, made = {};
         (s.sets || []).forEach(function (st, si) { st.forEach(function (k) { setOf[k] = si; }); });
         var ims = [];
         (s.imgs || []).forEach(function (k) {
-          var im = imgs[k - 1]; if (!im) return;
+          var im = imgs[k - 1]; if (!im || used[k]) return;
           var si = setOf[k];
           if (si == null) { ims.push(im); return; }
           if (made[si]) { made[si].frames.push(im); return; }
           var t = im.slice(); t.frames = [im]; t.word = s.setWord; made[si] = t; ims.push(t); /* setWord: tag text, e.g. 'STYLES' */
         });
         var clips = (s.clips || []).map(function (k) { return p.clips[k - 1]; }).filter(Boolean);
-        var media = '';
-        if (s.video && p.video) media += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
+        var media = recipeHtml;
+        if (s.video && p.video) media +='<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
         /* section videos loop silently like GIFs (they play only while on screen; see es-loop below) */
         var clipHtml = clips.length ? '<div class="es-clips">' + clips.map(function (v) { return '<video class="es-loop" src="' + esc(v) + '" muted loop playsinline preload="metadata"></video>'; }).join('') + '</div>' : '';
         if (!ims.length) media += clipHtml;
