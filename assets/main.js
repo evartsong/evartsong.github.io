@@ -227,7 +227,8 @@
           var n = r.items.length;
           /* frame: 'macbook' puts every image on a black MacBook screen; 'macbook-pages' only the long pages,
              which then scroll top to bottom on the screen in a loop, like a GIF */
-          var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall');
+          /* 'macbook-screens' frames screenshots (wide or long) but leaves square/portrait graphics as they are */
+          var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall') || (s.frame === 'macbook-screens' && r.k !== 'port');
           var cells = r.items.map(function (it) {
             if (framed) return macShot(it[0], alt(it), r.k === 'tall');
             return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
