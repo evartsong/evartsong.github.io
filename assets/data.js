@@ -293,7 +293,6 @@ window.QUESTS = [
   { type: 'painting', title: 'Cat collage', image: 'images/college/11.jpg', ratio: '1277 / 936', tools: ['Mixed media'], color: '#2A2A2A' },
   { type: 'digital', title: 'Portrait in green', image: 'images/ig-portraits/01.jpg', ratio: '1440 / 1800', tools: ['Photoshop painting'], color: '#2A2A2A' },
   { type: 'ink', title: 'Piano dress', image: 'images/ig-ink/10.jpg', ratio: '1440 / 1440', tools: ['Pencil'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Sketchbook cover', image: 'images/play/048.jpg', ratio: '1600 / 1137', tools: ['Mixed media'], color: '#2A2A2A' },
   { type: 'painting', title: 'Jungle scene', image: 'images/college/15.jpg', ratio: '1237 / 936', tools: ['Acrylic painting'], color: '#2A2A2A' },
   { type: 'digital', title: 'Portrait in blue', image: 'images/ig-portraits/02.jpg', ratio: '705 / 881', tools: ['Photoshop painting'], color: '#2A2A2A' },
   { type: 'ink', title: 'Gamer\'s room', image: 'images/ig-ink/11.jpg', ratio: '1440 / 1800', tools: ['Pencil'], color: '#2A2A2A' },
