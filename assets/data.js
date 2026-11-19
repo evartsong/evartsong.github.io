@@ -386,7 +386,7 @@ window.LINKS = {
 window.SECTIONS = {
   bibi: [
     { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO, with their animated headers below.', imgs: [9, 10, 11, 12, 14, 109, 13] },
-    { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 2, 3, 5] },
+    { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 3, 2, 5] },
     { g: 'final', title: 'Instagram posts, stories + reels', text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [15, 16, 17, 18, 19, 20, 21, 22, 23, 31, 32, 33, 37], clips: [1, 2, 3] },
     { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers, and the collection pages on the BiBi and SOME Faire storefronts.', imgs: [7, 8, 6, 24], frame: 'macbook-screens' },
     { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the storefronts and marketplaces.', imgs: [25, 26, 27, 28, 29, 30, 34, 35, 36], frame: 'macbook' },
