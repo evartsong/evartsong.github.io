@@ -182,15 +182,33 @@
     var groupHtml = { final: '', process: '', ref: '' };
     if (SEC) {
       var kindOf = function (im) { return im[1] && im[2] > im[1] * 2.2 ? 'tall' : (im[1] && im[2] >= im[1] * 0.95 ? 'port' : 'land'); };
-      var shot = function (im, alt) { return '<a class="es-pic" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, alt) + '</a>'; };
+      var shot = function (im, alt) {
+        /* a color-variant set: one tile that cycles through its colorways like a GIF (see es-cycle below) */
+        if (im.frames && im.frames.length > 1) return '<a class="es-pic es-cycle" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' +
+          im.frames.map(function (f, i) { return imgTag(f, alt + (i ? ', color ' + (i + 1) : '')).replace('<img ', '<img' + (i ? ' aria-hidden="true"' : ' class="is-on"') + ' '); }).join('') +
+          '<span class="es-cycle__n" aria-hidden="true">' + im.frames.length + ' COLORS</span></a>';
+        return '<a class="es-pic" href="' + esc(im[0]) + '" target="_blank" rel="noopener">' + imgTag(im, alt) + '</a>';
+      };
       var secHtml = function (s, g) {
-        var ims = (s.imgs || []).map(function (k) { return imgs[k - 1]; }).filter(Boolean);
+        /* sets: [[a, b, c], ...] folds each group of images into one cycling tile */
+        var setOf = {}, made = {};
+        (s.sets || []).forEach(function (st, si) { st.forEach(function (k) { setOf[k] = si; }); });
+        var ims = [];
+        (s.imgs || []).forEach(function (k) {
+          var im = imgs[k - 1]; if (!im) return;
+          var si = setOf[k];
+          if (si == null) { ims.push(im); return; }
+          if (made[si]) { made[si].frames.push(im); return; }
+          var t = im.slice(); t.frames = [im]; made[si] = t; ims.push(t);
+        });
         var clips = (s.clips || []).map(function (k) { return p.clips[k - 1]; }).filter(Boolean);
         var media = '';
         if (s.video && p.video) media += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
-        if (clips.length) media += '<div class="es-clips">' + clips.map(function (v) { return '<video src="' + esc(v) + '" controls playsinline muted loop preload="metadata"></video>'; }).join('') + '</div>';
+        /* section videos loop silently like GIFs (they play only while on screen; see es-loop below) */
+        var clipHtml = clips.length ? '<div class="es-clips">' + clips.map(function (v) { return '<video class="es-loop" src="' + esc(v) + '" muted loop playsinline preload="metadata"></video>'; }).join('') + '</div>' : '';
+        if (!ims.length) media += clipHtml;
         /* run of same-shaped images -> one row type: long pages scroll inside, portraits sit side by side,
-           landscapes run full width in Final work and two-up in Process / Moodboard */
+           landscapes two-up (never one huge image per row); phones get one per row in Final work */
         var runs = [];
         ims.forEach(function (im, i) {
           var k = kindOf(im);
@@ -198,16 +216,18 @@
           var last = runs[runs.length - 1];
           if (last && last.k === k) last.items.push([im, i]); else runs.push({ k: k, items: [[im, i]] });
         });
-        runs.forEach(function (r) {
+        runs.forEach(function (r, ri) {
+          if (ri === 1 && clipHtml) media += clipHtml; /* videos sit right after the first group of images */
           var alt = function (it) { return p.title + ': ' + s.title + (ims.length > 1 ? ', ' + (it[1] + 1) + ' of ' + ims.length : ''); };
           var n = r.items.length;
           var cells = r.items.map(function (it) { return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it)); }).join('');
-          if (r.k === 'tall') media += '<div class="es-longs">' + cells + '</div>';
+          if (r.k === 'tall') media += '<div class="es-longs" style="--n:' + (n === 1 ? 2 : n <= 5 ? n : n % 3 === 0 ? 3 : 4) + '">' + cells + '</div>'; /* up to 5 long pages share one row */
           else if (s.layout) media += '<div class="es-set es-set--' + (+s.layout === 1 ? (r.k === 'port' ? 'one' : 'full') : s.layout) + '">' + cells + '</div>'; /* layout picked in the page editor */
           else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
-          else media += '<div class="es-set ' + (n === 1 ? 'es-set--full' : s.cols ? 'es-set--' + s.cols : g === 'final' ? 'es-set--full' : 'es-set--2') + '">' + cells + '</div>';
+          else media += '<div class="es-set ' + (n === 1 ? 'es-set--solo' : s.cols ? 'es-set--' + s.cols : 'es-set--2') + '">' + cells + '</div>';
         });
+        if (ims.length && runs.length < 2) media += clipHtml;
         return '<div class="es-sec">' +
           '<div class="es-sec__head"><h3 class="es-sec__title">' + esc(s.title) + '</h3>' + (s.text ? '<p class="es-sec__text">' + esc(s.text) + '</p>' : '') + '</div>' +
           '<div class="es-sec__media">' + media + '</div>' +
@@ -303,6 +323,40 @@
         '<div class="es-btnrow"><a class="es-btn" href="' + (isQuest ? 'play.html' : 'index.html#work') + '">' + (isQuest ? 'All side quests' : 'All projects') + '</a><a class="es-btn es-btn--ghost" href="index.html#contact">Contact me</a></div>' +
       '</div></section>';
     projEl.closest('main').classList.add('has-pbar');
+
+    /* GIF-style section videos: play silently on loop while on screen, pause when scrolled away.
+       With reduced motion they stay still and get normal controls instead. */
+    var loops = projEl.querySelectorAll('video.es-loop');
+    if (loops.length) {
+      var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (calm || !('IntersectionObserver' in window)) loops.forEach(function (v) { if (calm) v.controls = true; else { v.autoplay = true; v.play().catch(function () {}); } });
+      else {
+        var lio = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { var pr = e.target.play(); if (pr) pr.catch(function () {}); } else e.target.pause(); });
+        }, { rootMargin: '200px 0px' });
+        loops.forEach(function (v) { lio.observe(v); });
+      }
+    }
+
+    /* color-variant tiles: step through the colorways every 0.9s while on screen (still with reduced motion) */
+    var cycles = projEl.querySelectorAll('.es-cycle');
+    var stillCycles = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (cycles.length && !stillCycles && 'IntersectionObserver' in window) {
+      var step = function (a) {
+        var fr = a.querySelectorAll('img'), on = 0;
+        fr.forEach(function (f, i) { if (f.classList.contains('is-on')) on = i; });
+        fr[on].classList.remove('is-on'); var nx = fr[(on + 1) % fr.length]; nx.classList.add('is-on');
+        a.href = nx.getAttribute('src');
+      };
+      var cio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var a = e.target;
+          if (e.isIntersecting && !a._t) a._t = setInterval(function () { step(a); }, 900);
+          else if (!e.isIntersecting && a._t) { clearInterval(a._t); a._t = 0; }
+        });
+      });
+      cycles.forEach(function (a) { cio.observe(a); });
+    }
 
     /* jump bar: sits under the sticky header and marks the part you're reading */
     var jumpEl = projEl.querySelector('.es-jump');

@@ -10,8 +10,15 @@
 
 window.PROJECTS = [
   {
-    id: 'bibi', title: 'BiBi', genre: 'Brand design + marketing', era: '2026', season: 'SEASON 2026',
-    when: '04.2026 – 11.2026', role: 'Brand Designer + Marketing Specialist', color: '#B0174F', badge: 'NEW',
+    id: 'bibi',
+    title: 'BiBi',
+    genre: 'Brand design + marketing',
+    era: '2026',
+    season: 'SEASON 2026',
+    when: '04.2026 – 11.2026',
+    role: 'Brand Designer + Marketing Specialist',
+    color: '#B0174F',
+    badge: 'NEW',
     desc: 'Brand visuals, weekly email campaigns, social video and marketplace ads for a fashion wholesale brand.',
     brief: 'BiBi sells fashion wholesale to retailers. I owned how the brand looks everywhere buyers meet it, from website banners and emails to marketplace ads, and ran the campaigns that put new products in front of them every week.',
     did: [
@@ -21,9 +28,14 @@ window.PROJECTS = [
       'Run FashionGo front-page ads and SEO, tracking sales and traffic to optimize product placement'
     ],
     tools: ['Photoshop', 'Mailchimp', 'Faire', 'FashionGo', 'AI video + graphics'],
-    type: 'Fashion wholesale · e-commerce', collaborators: '', recognition: '',
-    tile: 'images/bibi/28.jpg', /* home grid image */
-    cover: 'images/bibi/06.jpg', coverRatio: '1200 / 553', video: '', images: []
+    type: 'Fashion wholesale · e-commerce',
+    collaborators: '',
+    recognition: '',
+    tile: 'images/bibi/28.jpg',
+    cover: 'images/bibi/06.jpg',
+    coverRatio: '1200 / 553',
+    video: '',
+    images: []
   },
   {
     id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
@@ -373,15 +385,14 @@ window.LINKS = {
    Titles and captions come from the old Cargo pages. */
 window.SECTIONS = {
   bibi: [
-    { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 2, 3, 4, 5, 6, 7, 8] },
-    { g: 'final', title: 'Collections', text: 'Collection pages and graphics, including Early Black Friday and Best Sellers.', imgs: [9, 10, 11] },
-    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO.', imgs: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21] },
-    { g: 'final', title: 'Social posts + stories', imgs: [22, 23, 24, 25, 26, 27, 28, 29, 30] },
-    { g: 'final', title: 'Video', text: 'Social reels, AI-styled product videos and the Dallas Market Center booth.', clips: [1, 2, 3, 4, 5, 6, 7] },
-    { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the marketplaces and social.', imgs: [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] },
-    { g: 'process', title: 'Product photo editing', text: 'Retouching and color-matching product photos for BiBi and its sister label SOME.', imgs: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102] },
-    { g: 'process', title: 'AI styling', text: 'On-model product images made with AI from the product photos, for BiBi and SOME.', imgs: [103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140] },
-    { g: 'ref', title: 'Fabric + style references', text: 'Fabric swatches and style references used to guide the AI styling.', imgs: [141, 142, 143, 144, 145, 146, 147, 148] }
+    { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 2, 3, 4, 5] },
+    { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers.', imgs: [7, 8] },
+    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire and FashionGO, with their animated headers below.', imgs: [9, 10, 12, 13, 15, 11, 14] },
+    { g: 'final', title: 'Instagram posts, stories + reels', text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [16, 17, 18, 19, 20, 21, 22, 23, 24, 32, 33, 34, 38], clips: [1, 2, 3, 4] },
+    { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the storefronts and marketplaces.', imgs: [6, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37] },
+    { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label SOME.', imgs: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68], sets: [[39, 40], [41, 42, 43, 44], [45, 46, 47, 48], [49, 50, 51, 52, 53], [54, 55, 56], [57, 58, 59, 60], [61, 62, 63, 64, 65, 66, 67, 68]], layout: '4' },
+    { g: 'process', title: 'AI styling', text: 'On-model product images made with AI from the product photos, for BiBi and SOME.', imgs: [69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106], layout: '4' },
+    { g: 'ref', title: 'Fabric + style references', text: 'Fabric swatches and style references used to guide the AI styling.', imgs: [107, 108, 109] }
   ],
   warp: [
     { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile.', imgs: [1, 14] },

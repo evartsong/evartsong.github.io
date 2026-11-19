@@ -649,7 +649,7 @@ body { background: var(--es-bg); }
 .es-long { display: block; height: 640px; overflow-y: auto; border-radius: 14px; border: 1px solid var(--es-line2); background: var(--es-shotbg); scrollbar-width: thin; scrollbar-color: var(--es-line3) transparent; }
 .es-long:hover { border-color: var(--es-accent); }
 .es-long img { display: block; width: 100%; height: auto; }
-.es-clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; align-items: start; }
+.es-clips { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; align-items: start; }
 .es-clips video { display: block; width: 100%; max-height: 520px; border-radius: 14px; background: #000; border: 1px solid var(--es-line2); }
 .es-q-digital { --c: #0E6B8C; --img: url('../images/snowstorm/02.jpg'); }
 .es-q-ink { --c: #5B2BB5; --img: url('../images/sketchbook/01.jpg'); }
@@ -727,6 +727,14 @@ body { background: var(--es-bg); }
 .es-set--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .es-set--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .es-set--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.es-set--solo { grid-template-columns: minmax(0, calc(50% - 8px)); }
+@media (min-width: 1024px) { .es-sec .es-longs[style*='--n'] { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); } } /* a lone landscape image: half width, never one huge image */
+.es-clips video.es-loop { cursor: default; max-height: none; }
+/* color-variant tile: frames stacked in one cell, the current one fades in */
+.es-pic.es-cycle { display: grid; position: relative; }
+.es-pic.es-cycle img { grid-area: 1 / 1; opacity: 0; transition: opacity 0.25s; }
+.es-pic.es-cycle img.is-on { opacity: 1; }
+.es-cycle__n { position: absolute; left: 10px; bottom: 10px; font-family: var(--es-mono); font-size: 10px; letter-spacing: 0.06em; color: #fff; background: rgba(11, 13, 16, 0.72); padding: 4px 7px; border-radius: 4px; }
 .es-pic { display: block; border-radius: 14px; overflow: hidden; background: var(--es-shotbg); border: 1px solid var(--es-line2); transition: border-color 0.15s; }
 .es-pic:hover { border-color: var(--es-accent); }
 .es-pic img { display: block; width: 100%; height: auto; }
@@ -742,6 +750,13 @@ body { background: var(--es-bg); }
   .es-set--3, .es-set--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .es-set--3 > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
   .es-pic { border-radius: 12px; }
+  .es-set--solo { grid-template-columns: minmax(0, 1fr); }
+  /* Final work on phones: one image per row, big enough to read */
+  .es-group--final :is(.es-set--2, .es-set--3, .es-set--4, .es-longs, .es-clips) { grid-template-columns: minmax(0, 1fr); }
+  .es-group--final .es-set--3 > :last-child:nth-child(odd) { grid-column: auto; width: auto; }
+  .es-group--final .es-clips video { max-height: 640px; }
+  /* Process + Moodboard grids hold many small product shots: two per row on phones */
+  :is(.es-group--process, .es-group--ref) .es-set--2:has(> :nth-child(7)) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 /* =====================================================================
    Design pass, Nov 2026 (design review #1-#5)
