@@ -25,9 +25,9 @@ window.PROJECTS = [
       'Own brand design and visual assets: website banners, email graphics, promotional materials and photo editing',
       'Run weekly Mailchimp and Faire wholesale email campaigns, with AI-made video and graphics for social',
       'Manage the e-commerce catalog: new product uploads, accurate pricing and inventory, Photoshop color variants',
-      'Run FashionGo front-page ads and SEO, tracking sales and traffic to optimize product placement'
+      'Run FashionGO front-page ads and SEO, tracking sales and traffic to optimize product placement'
     ],
-    tools: ['Photoshop', 'Mailchimp', 'Faire', 'FashionGo', 'AI video + graphics'],
+    tools: ['Photoshop', 'Mailchimp', 'Faire', 'FashionGO', 'AI video + graphics'],
     type: 'Fashion wholesale · e-commerce',
     collaborators: '',
     recognition: '',
