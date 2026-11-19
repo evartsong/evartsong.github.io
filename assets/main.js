@@ -372,18 +372,22 @@
     var cycles = projEl.querySelectorAll('.es-cycle');
     var stillCycles = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (cycles.length && !stillCycles && 'IntersectionObserver' in window) {
-      var step = function (a) {
-        var fr = a.querySelectorAll('img'), on = 0;
-        fr.forEach(function (f, i) { if (f.classList.contains('is-on')) on = i; });
-        fr[on].classList.remove('is-on'); var nx = fr[(on + 1) % fr.length]; nx.classList.add('is-on');
-        a.href = nx.getAttribute('src');
+      /* one shared clock: every tile on screen switches on the same beat, showing frame (tick % its length),
+         so matched pairs all flip to the same style together */
+      var tick = 0, live = [], clock = 0;
+      var show = function (a) {
+        var fr = a.querySelectorAll('img'), k = tick % fr.length;
+        fr.forEach(function (f, i) { f.classList.toggle('is-on', i === k); });
+        a.href = fr[k].getAttribute('src');
       };
       var cio = new IntersectionObserver(function (es) {
         es.forEach(function (e) {
-          var a = e.target;
-          if (e.isIntersecting && !a._t) a._t = setInterval(function () { step(a); }, 900);
-          else if (!e.isIntersecting && a._t) { clearInterval(a._t); a._t = 0; }
+          var i = live.indexOf(e.target);
+          if (e.isIntersecting && i < 0) { live.push(e.target); show(e.target); }
+          else if (!e.isIntersecting && i >= 0) live.splice(i, 1);
         });
+        if (live.length && !clock) clock = setInterval(function () { tick++; live.forEach(show); }, 1100);
+        else if (!live.length && clock) { clearInterval(clock); clock = 0; }
       });
       cycles.forEach(function (a) { cio.observe(a); });
     }
