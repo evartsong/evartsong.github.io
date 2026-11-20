@@ -280,7 +280,7 @@
           else media += '<div class="es-set ' + (n === 1 ? 'es-set--solo' : s.cols ? 'es-set--' + s.cols : 'es-set--2') + '">' + cells + '</div>';
         });
         if (ims.length && runs.length < 2) media += clipHtml;
-        return '<div class="es-sec">' +
+        return '<div class="es-sec' + (s.phone === 2 ? ' es-sec--p2' : '') + '">' + /* phone: 2 -> two per row on phones */
           '<div class="es-sec__head"><h3 class="es-sec__title">' + esc(s.title) + '</h3>' + (s.text ? '<p class="es-sec__text">' + esc(s.text) + '</p>' : '') + '</div>' +
           '<div class="es-sec__media">' + media + '</div>' +
         '</div>';
@@ -308,6 +308,11 @@
 
     var did = (p.did && p.did.length)
       ? '<p class="es-label">WHAT I DID</p><ul class="es-did">' + p.did.map(function (d) { return '<li><span class="es-check" aria-hidden="true">✓</span><span>' + esc(d) + '</span></li>'; }).join('') + '</ul>'
+      : '';
+
+    /* results: [['30%', 'open rate'], ...] -> a row of big numbers above What I did */
+    var results = (p.results && p.results.length)
+      ? '<p class="es-label">RESULTS</p><ul class="es-results">' + p.results.map(function (r) { return '<li><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + '</span></li>'; }).join('') + '</ul>'
       : '';
 
     projEl.innerHTML =
@@ -347,7 +352,7 @@
         '<div class="es-brief__main">' +
           '<p class="es-kicker">MISSION BRIEFING</p><h2 class="es-h2">The brief</h2>' +
           '<p class="es-brief__text">' + esc(p.brief || p.desc) + '</p>' +
-          did +
+          results + did +
         '</div>' +
         '<aside class="es-panel es-card es-details" aria-label="Project details">' +
           '<p class="es-kicker" style="margin:0">DETAILS</p><p class="es-details__title">Tools</p>' +

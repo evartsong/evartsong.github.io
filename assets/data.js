@@ -21,13 +21,15 @@ window.PROJECTS = [
     badge: 'NEW',
     desc: 'Brand visuals, weekly email campaigns, social video and marketplace ads for a fashion wholesale brand.',
     brief: 'BiBi sells fashion wholesale to retailers. I owned how the brand looks everywhere buyers meet it, from website banners and emails to marketplace ads, and ran the campaigns that put new products in front of them every week.',
+    results: [['30%', 'average open rate on weekly wholesale emails'], ['$25–30K', 'in Faire sales the week of each Faire email campaign'], ['100–130', 'new products uploaded every two weeks']],
     did: [
       'Own brand design and visual assets: website banners, email graphics, promotional materials and photo editing',
-      'Run weekly Mailchimp and Faire wholesale email campaigns, with AI-made video and graphics for social',
-      'Manage the e-commerce catalog: new product uploads, accurate pricing and inventory, Photoshop color variants',
+      'Run weekly Mailchimp and Faire wholesale email campaigns: a 30% open rate and $25–⁠30K in Faire sales each campaign week',
+      'Build an AI workflow with Gemini, Higgsfield and Motioncast for on-model product shots and social video, with no new photoshoots',
+      'Manage the e-commerce catalog: 100–⁠130 new products uploaded every two weeks, accurate pricing and inventory, Photoshop color variants',
       'Run FashionGO front-page ads and SEO, tracking sales and traffic to optimize product placement'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Mailchimp', 'Faire', 'FashionGO', 'AI video + graphics'],
+    tools: ['Photoshop', 'Illustrator', 'Mailchimp', 'Faire', 'FashionGO', 'Shopify', 'Gemini (Nano Banana)', 'Higgsfield AI', 'Motioncast AI'],
     type: 'Fashion wholesale · e-commerce',
     collaborators: '',
     recognition: '',
@@ -64,11 +66,12 @@ window.PROJECTS = [
     when: '03.2024 – 12.2024', role: 'Digital Marketing Specialist', color: '#3326B8', badge: '',
     desc: 'Website, landing pages, decks and B2B campaigns, leading marketing and revenue with the co-founders.',
     brief: 'At WARP, a Los Angeles freight logistics company, I worked directly with the co-founders and led the marketing and revenue teams, while designing the brand’s website, landing pages and campaign assets myself. The pages below are the 2024 site, captured from the Internet Archive.',
+    results: [['18K → 25K', 'company LinkedIn followers during my time there'], ['20%', 'open rate on outbound sales emails, turning into sales meetings and new customers']],
     did: [
       'Lead the marketing and revenue teams with the co-founders: run meetings, assign tasks, hit deadlines',
       'Design the website, landing pages and business decks; lead campaign asset design',
-      'Run weekly email campaigns in HubSpot and Klaviyo',
-      'Manage social and create B2B content: press releases, case studies and graphics'
+      'Run weekly email campaigns in HubSpot and Klaviyo; outbound sales emails average a 20% open rate and book meetings that turn into customers',
+      'Manage social and create B2B content (press releases, case studies, graphics), growing the company LinkedIn from 18K to 25K followers'
     ],
     tools: ['HubSpot', 'Klaviyo'],
     type: 'B2B freight logistics · web + email + social', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
@@ -384,13 +387,13 @@ window.LINKS = {
    Titles and captions come from the old Cargo pages. */
 window.SECTIONS = {
   bibi: [
-    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire Campaign and FashionGO through Mailchimp, with their animated headers below.', imgs: [8, 9, 10, 11, 13, 95, 12], start: { '8': 0.019, '9': 0.0631, '10': 0.0206, '11': 0.0212, '13': 0.0222 } },
+    { g: 'final', title: 'Email campaigns', text: 'Weekly wholesale emails for Faire Campaigns and FashionGO through Mailchimp, averaging a 30% open rate, with the two animated headers below.', imgs: [8, 9, 10, 11, 13, 95, 12], start: { '8': 0.019, '9': 0.0631, '10': 0.0206, '11': 0.0212, '13': 0.0222 } },
     { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 3, 2, 5] },
-    { g: 'final', title: 'Instagram posts, stories + reels', text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [16, 18, 17, 15, 14, 19, 20, 21, 22, 29, 30, 31, 35], clips: [1, 2, 3], frame: 'macbook-screens', labels: { '29': 'Higgsfield AI', '30': 'Higgsfield AI', '31': 'Higgsfield AI', '35': 'Instagram' }, focus: { '29': 'right', '30': 'right', '31': 'right', '35': 'left' } },
+    { g: 'final', title: 'Instagram posts, stories + reels', phone: 2, text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [16, 18, 17, 15, 14, 19, 20, 21, 22, 29, 30, 31, 35], clips: [1, 2, 3], frame: 'macbook-screens', labels: { '29': 'Higgsfield AI', '30': 'Higgsfield AI', '31': 'Higgsfield AI', '35': 'Instagram' }, focus: { '29': 'right', '30': 'right', '31': 'right', '35': 'left' } },
     { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers, and the collection pages on the BiBi and So-Me Faire storefronts.', imgs: [7, 27, 23, 6], frame: 'macbook-screens', labels: { '23': 'Faire Storefront · So-Me', '27': 'Faire Storefront · BiBi' }, layout: 'pairs' },
-    { g: 'final', title: 'Live on the storefronts', text: 'The finished work in place on the storefronts and marketplaces.', imgs: [25, 26, 28, 32, 33, 34], frame: 'macbook', labels: { '25': 'FashionGO Ads', '26': 'ERP Software', '28': 'FashionGO Storefront', '32': 'Motioncast AI', '33': 'Motioncast AI', '34': 'FashionGO Clone Schedule Sheet' } },
+    { g: 'final', title: 'Running the storefronts', text: 'The day-to-day behind the storefronts: FashionGO ads and storefront, the ERP catalog, Motioncast AI video and the clone schedule sheet.', imgs: [25, 26, 28, 32, 33, 34], frame: 'macbook', labels: { '25': 'FashionGO Ads', '26': 'ERP Software', '28': 'FashionGO Storefront', '32': 'Motioncast AI', '33': 'Motioncast AI', '34': 'FashionGO Clone Schedule Sheet' } },
     { g: 'process', title: 'AI styling', text: 'No model shoot, just a design reference and a fabric swatch. I put each look on a model with Gemini (Nano Banana) and polished it in Photoshop.', imgs: [107, 106, 90, 91, 92, 93, 94, 108, 103, 85, 83, 84, 109, 105, 88, 89, 104, 86, 87, 102, 70, 71, 72, 73, 74, 110, 66, 67, 68, 69], layout: '4', recipes: [{ ref: 102, refLabel: 'Product reference', out: [70, 71, 72, 73, 74], outLabel: 'AI result · grey half-zip' }, { ref: 110, refLabel: 'Product reference', out: [66, 67, 68, 69], outLabel: 'AI result · bunny sweater' }, { ref: 107, refLabel: 'Product reference', fabric: 106, out: [90, 91, 92, 93, 94] }, { ref: 108, refLabel: 'Back reference', fabric: 103, out: [85, 83, 84] }, { ref: 109, refLabel: 'Product reference', fabric: 105, out: [88, 89] }, { ref: 109, refLabel: 'Product reference', fabric: 104, out: [86, 87] }] },
-    { g: 'process', title: 'Same pose, two styles', text: 'No reshoot needed: from a design reference and a fabric swatch, I put the new shorts into an existing photoshoot, pose for pose, with Gemini (Nano Banana) and polished them in Photoshop.', imgs: [75, 79, 76, 80, 77, 81, 78, 82], layout: '4', sets: [[76, 80], [77, 81], [75, 79], [78, 82]], setWord: 'STYLES' },
+    { g: 'process', title: 'Same pose, two styles', text: 'New design, old photoshoot: I put the new shorts into an existing shoot, pose for pose, with Gemini and Photoshop, so they went live without a reshoot.', imgs: [75, 79, 76, 80, 77, 81, 78, 82], layout: '4', sets: [[76, 80], [77, 81], [75, 79], [78, 82]], setWord: 'STYLES' },
     { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label So-Me.', imgs: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 37, 36, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 96, 97, 98, 99, 100, 101], layout: '4', sets: [[36, 37], [38, 39, 40, 41], [42, 43, 44, 45], [46, 47, 48, 49, 50], [51, 52, 53], [54, 55, 56, 57], [58, 59, 60, 61, 62, 63, 64, 65], [96, 97, 98, 99, 100, 101]] }
   ],
   warp: [
