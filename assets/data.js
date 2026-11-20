@@ -41,7 +41,7 @@ window.PROJECTS = [
   },
   {
     id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: 'Brand designer + animator', color: '#FF072C', badge: '',
+    when: '2023', role: 'Brand designer + animator', color: '#A3001C', badge: '',
     desc: 'Inviting streamers to find their inner conductor in live video.',
     brief: 'A rebrand concept for vMix, the live production and streaming software. To make professional broadcast tools feel inviting to a younger generation of streamers, I built the brand around one idea: everyone has an inner conductor. The conductor’s baton became the logo mark, conducting gestures became the brand shapes, and the system runs through posters, environment graphics, a website, an app and a brand montage.',
     did: [
