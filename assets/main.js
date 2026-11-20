@@ -202,7 +202,7 @@
       var secHtml = function (s, g) {
         /* per-image label + crop anchor, keyed by image number */
         var metaOf = {};
-        [['labels', 'label'], ['focus', 'focus']].forEach(function (f) {
+        [['labels', 'label'], ['focus', 'focus'], ['start', 'start']].forEach(function (f) { /* start: where a long page's window opens (0-1) */
           Object.keys(s[f[0]] || {}).forEach(function (k) { var im = imgs[k - 1]; if (im) { (metaOf[im[0]] = metaOf[im[0]] || {})[f[1]] = s[f[0]][k]; } });
         });
         /* recipes: [{ ref, refLabel, fabric, out: [..], outLabel }] -> cards reading "reference + fabric = AI result",
@@ -243,7 +243,17 @@
         /* run of same-shaped images -> one row type: long pages scroll inside, portraits sit side by side,
            landscapes two-up (never one huge image per row); phones get one per row in Final work */
         var runs = [];
-        ims.forEach(function (im, i) {
+        if (s.layout === 'pairs') {
+          /* layout 'pairs': two images per row, a graphic at 1/3 next to a screen at 2/3, rows alternating sides */
+          for (var pi2 = 0; pi2 < ims.length; pi2 += 2) {
+            var row = ims.slice(pi2, pi2 + 2);
+            media += '<div class="es-pair' + ((pi2 / 2) % 2 ? ' es-pair--flip' : '') + '">' + row.map(function (im) {
+              var land = kindOf(im) === 'land', alt2 = p.title + ': ' + s.title;
+              return '<div class="es-pair__cell' + (land ? ' is-screen' : '') + '">' + (land && /^macbook/.test(s.frame || '') ? macShot(im, alt2, false, metaOf[im[0]]) : shot(im, alt2)) + '</div>';
+            }).join('') + '</div>';
+          }
+        }
+        if (s.layout !== 'pairs') ims.forEach(function (im, i) {
           var k = kindOf(im);
           if (g !== 'final' && k !== 'tall') k = 'mix'; /* process + moodboard: one even grid per section */
           var last = runs[runs.length - 1];
@@ -259,7 +269,8 @@
           var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall') || (s.frame === 'macbook-screens' && r.k !== 'port');
           var cells = r.items.map(function (it) {
             if (framed) return macShot(it[0], alt(it), r.k === 'tall', metaOf[it[0][0]]);
-            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener">' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
+            var st = (metaOf[it[0][0]] || {}).start;
+            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"' + (st ? ' data-start="' + (+st) + '"' : '') + '>' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
           }).join('');
           if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : Math.min(n, 3)) + '">' + cells + '</div>'; /* long pages: at most 3 per row */
@@ -378,6 +389,14 @@
         loops.forEach(function (v) { lio.observe(v); });
       }
     }
+
+    /* long pages with a start point open their window part-way down (e.g. below a header shared with the email beside it) */
+    projEl.querySelectorAll('.es-long[data-start]').forEach(function (a) {
+      var img = a.querySelector('img'); if (!img) return;
+      var go = function () { a.scrollTop = img.offsetHeight * parseFloat(a.dataset.start); };
+      if (img.complete && img.naturalWidth) go(); else img.addEventListener('load', go);
+      window.addEventListener('resize', go);
+    });
 
     /* long pages on MacBook screens scroll only while on screen */
     var macs = projEl.querySelectorAll('.es-mac--scroll');
