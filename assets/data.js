@@ -12,7 +12,7 @@ window.PROJECTS = [
   {
     id: 'bibi',
     title: 'BiBi',
-    genre: 'Brand design + marketing',
+    genre: 'E-commerce + visual merchandising',
     era: '2026',
     season: 'SEASON 2026',
     when: '04.2026 – 11.2026',
