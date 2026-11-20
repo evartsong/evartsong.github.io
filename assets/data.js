@@ -30,7 +30,7 @@ window.PROJECTS = [
       'Run FashionGO front-page ads and SEO, tracking sales and traffic to optimize product placement'
     ],
     tools: ['Photoshop', 'Illustrator', 'Mailchimp', 'Faire', 'FashionGO', 'Shopify', 'Gemini (Nano Banana)', 'Higgsfield AI', 'Motioncast AI'],
-    type: 'Fashion wholesale · e-commerce',
+    type: 'Fashion wholesale + e-commerce',
     collaborators: '',
     recognition: '',
     tile: 'images/bibi/28.jpg',
@@ -41,7 +41,7 @@ window.PROJECTS = [
   },
   {
     id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: 'Brand designer + animator', color: '#A3001C', badge: '',
+    when: '2023', role: 'Brand Designer + Animator', color: '#A3001C', badge: '',
     desc: 'Inviting streamers to find their inner conductor in live video.',
     brief: 'A rebrand concept for vMix, the live production and streaming software. To make professional broadcast tools feel inviting to a younger generation of streamers, I built the brand around one idea: everyone has an inner conductor. The conductor’s baton became the logo mark, conducting gestures became the brand shapes, and the system runs through posters, environment graphics, a website, an app and a brand montage.',
     did: [
@@ -51,18 +51,18 @@ window.PROJECTS = [
       'Design the website and mobile app in Adobe XD, carrying the shapes and palette into the interface'
     ],
     tools: ['Illustrator', 'InDesign', 'Photoshop', 'Adobe XD', 'After Effects'],
-    type: 'Rebrand concept · live streaming software', collaborators: '', recognition: '',
+    type: 'Rebrand concept for live streaming software', collaborators: '', recognition: '',
     tile: 'images/covers/vmix.jpg', /* home grid image */
     cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'videos/vmix.mp4' /* self-hosted 1080p montage; was youtube.com/watch?v=OEFBsg1CY_U */, poster: 'images/vmix/video-poster.jpg', images: []
   },
   {
-    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: 'Designer + animator', color: '#0F6E4D', badge: 'GALLERY PICK',
+    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes + logo reveal', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: 'Designer + Animator', color: '#0F6E4D', badge: 'GALLERY PICK',
     desc: 'Spotify’s instant access, told through a reversed animal food chain.',
     brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
     did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
     tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
-    type: 'Spotify · concept spot', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
+    type: 'Concept spot for Spotify', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/covers/soundtrack.png', /* home grid image */
     cover: 'images/soundtrack/01.png', coverRatio: '2000 / 1125', video: '', images: []
   },
@@ -79,13 +79,13 @@ window.PROJECTS = [
       'Manage social and create B2B content (press releases, case studies, graphics), growing the company LinkedIn from 18K to 25K followers'
     ],
     tools: ['HubSpot', 'Klaviyo'],
-    type: 'B2B freight logistics · web + email + social', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
+    type: 'Web, email + social for B2B freight logistics', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
     tile: 'images/covers/warp-feature.jpg', /* home grid image */
     cover: 'images/warp/19.jpg', coverRatio: '1200 / 1200', video: '', images: []
   },
   {
     id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: '3D designer + animator', color: '#8A5F0E', badge: '',
+    when: '2023', role: '3D Designer + Animator', color: '#8A5F0E', badge: '',
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
     brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
     did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
@@ -96,7 +96,7 @@ window.PROJECTS = [
   },
   {
     id: 'moonrise', title: 'Moonrise Kingdom', genre: 'Title sequence', era: '2022', season: 'SEASON 2022',
-    when: '2022', role: 'Designer + animator', color: '#8A3A1C', badge: '',
+    when: '2022', role: 'Designer + Animator', color: '#8A3A1C', badge: '',
     desc: 'Light as imagination in Sam and Suzy’s runaway love story.',
     brief: 'A title sequence for Moonrise Kingdom. Sam and Suzy fall in love and run away into the wilderness; light becomes the symbol of imagination at the story’s turning point.',
     did: ['Use light as the symbol of imagination', 'Design and animate the title sequence'],
@@ -107,7 +107,7 @@ window.PROJECTS = [
   },
   {
     id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: '2022', season: 'SEASON 2022',
-    when: '2022', role: 'Brand designer', color: '#9E1F18', badge: '',
+    when: '2022', role: 'Brand Designer', color: '#9E1F18', badge: '',
     desc: 'An identity for an arena where gamers compete for prizes and rep.',
     brief: 'A brand identity for GSArena, powered by GameStop: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
     did: ['Name and position the venue: GSArena, powered by GameStop', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
@@ -117,8 +117,8 @@ window.PROJECTS = [
     cover: 'images/gsa/01.jpg', coverRatio: '2000 / 900', video: '', images: []
   },
   {
-    id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion graphics', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: '3D designer + animator', color: '#146A75', badge: 'GALLERY PICK',
+    id: 'shampoo-bar', title: 'Shampoo Bar', genre: '3D motion', era: '2023', season: 'SEASON 2023',
+    when: '2023', role: '3D Designer + Animator', color: '#146A75', badge: 'GALLERY PICK',
     desc: 'A 3D short nudging people from plastic bottles to waste-free bars.',
     brief: 'A short 3D animation encouraging people to switch from plastic bottles to waste-free shampoo bars, told through two characters with front-camera framing, facial expressions and body motion.',
     did: ['Tell a sustainability message through two characters', 'Stage it in front-camera framing with expressive faces and body motion', 'Model, light and render in Cinema 4D and Redshift'],
@@ -140,7 +140,7 @@ window.PROJECTS = [
   },
   {
     id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: '2021', season: 'SEASON 2021',
-    when: '2021', role: 'Graphic designer', color: '#7A2E5A', badge: '',
+    when: '2021', role: 'Graphic Designer', color: '#7A2E5A', badge: '',
     desc: 'An exhibition and book for six South Korean contemporary artists, colored by traditional hanbok silk.',
     brief: 'A group exhibition and publication featuring six South Korean contemporary artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
     did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
@@ -167,19 +167,19 @@ window.EXTRAS = [
     did: [], tools: ['InDesign', 'Illustrator'], type: 'Type specimen', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'nyum', title: 'Nyum! Menu', genre: 'Graphic design', when: 'Personal', role: 'Designer + illustrator', color: '#E59BC4', badge: '',
+    id: 'nyum', title: 'Nyum! Menu', genre: 'Graphic design', when: 'Personal', role: 'Designer + Illustrator', color: '#E59BC4', badge: '',
     desc: 'An illustrated sushi menu with cat characters.',
     brief: 'An illustrated menu for a playful sushi spot, pairing each roll with its own character.',
     did: [], tools: ['Procreate', 'Illustrator'], type: 'Menu design', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal', role: '3D artist', color: '#5B2BB5', badge: '',
+    id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal', role: '3D Artist', color: '#5B2BB5', badge: '',
     desc: 'A short 3D motion piece.',
     brief: 'A short 3D motion experiment.',
     did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D animation', collaborators: '', recognition: '', video: 'videos/voyage.mp4'
   },
   {
-    id: 'karaoke-cube', title: 'Karaoke Cube', genre: '3D motion', when: 'Personal', role: '3D artist', color: '#3E2A8C', badge: '',
+    id: 'karaoke-cube', title: 'Karaoke Cube', genre: '3D motion', when: 'Personal', role: '3D Artist', color: '#3E2A8C', badge: '',
     desc: 'A 10-second 3D loop.',
     brief: 'A short 3D motion loop.',
     did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D loop', collaborators: '', recognition: '', video: 'videos/karaoke-cube.mp4'
@@ -245,7 +245,7 @@ window.EXTRAS = [
     did: [], tools: ['Charcoal', 'Colored pencil'], type: 'Drawing studies', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'ig-sculpt', title: 'Sculpt study', genre: '3D', when: '2022', role: '3D artist', color: '#2E2E33', badge: '',
+    id: 'ig-sculpt', title: 'Sculpt study', genre: '3D', when: '2022', role: '3D Artist', color: '#2E2E33', badge: '',
     desc: 'A digital sculpture study rendered in 3D.',
     brief: 'A 3D sculpting study of a classical figure, rendered from several angles.',
     did: [], tools: ['ZBrush', 'Cinema 4D'], type: '3D sculpt', collaborators: '', recognition: '', video: ''

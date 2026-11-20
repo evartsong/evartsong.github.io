@@ -1139,3 +1139,7 @@ body { background: var(--es-bg); }
 /* bare: cut-out images (transparent PNG phones) sit straight on the page, no card behind them */
 .es-sec--bare .es-pic { background: transparent; border-color: transparent; box-shadow: none; }
 .es-sec--bare .es-pic:hover { border-color: transparent; }
+/* two-per-row sets with an odd count (e.g. 3 content posters): the last one sits centered, tablet and up */
+@media (min-width: 768px) {
+  .es-set--2 > :last-child:nth-child(odd):not(:first-child) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 8px); }
+}
