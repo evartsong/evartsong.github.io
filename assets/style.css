@@ -1112,3 +1112,17 @@ body { background: var(--es-bg); }
   .es-group--final .es-sec--p2 :is(.es-set--3, .es-set--4, .es-clips) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .es-group--final .es-sec--p2 .es-set--3 > :last-child:nth-child(odd), .es-group--final .es-sec--p2 .es-clips > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
 }
+
+/* Email strips with their GIFs laid back in place (section overlays) */
+.es-long__in { position: relative; display: block; }
+.es-long .es-ov { position: absolute; left: 0; width: 100%; display: block; overflow: hidden; pointer-events: none; }
+.es-long .es-ov img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.es-long .es-ov--frames img { opacity: 0; }
+.es-long .es-ov--frames img.is-on { opacity: 1; }
+/* three long pages per row: a short last row sits in the middle (3 + 2 -> the 2 centered) */
+@media (min-width: 1024px) {
+  .es-sec .es-longs[style*='--n:3'] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .es-sec .es-longs[style*='--n:3'] > * { grid-column: span 2; }
+  .es-sec .es-longs[style*='--n:3'] > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2; }
+  .es-sec .es-longs[style*='--n:3'] > :nth-child(3n+1):last-child { grid-column: 3 / span 2; }
+}

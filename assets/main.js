@@ -202,7 +202,7 @@
       var secHtml = function (s, g) {
         /* per-image label + crop anchor, keyed by image number */
         var metaOf = {};
-        [['labels', 'label'], ['focus', 'focus'], ['start', 'start']].forEach(function (f) { /* start: where a long page's window opens (0-1) */
+        [['labels', 'label'], ['focus', 'focus'], ['start', 'start'], ['overlays', 'ov']].forEach(function (f) { /* start: where a long page's window opens (0-1); overlays: animated slices laid over a long email */
           Object.keys(s[f[0]] || {}).forEach(function (k) { var im = imgs[k - 1]; if (im) { (metaOf[im[0]] = metaOf[im[0]] || {})[f[1]] = s[f[0]][k]; } });
         });
         /* recipes: [{ ref, refLabel, fabric, out: [..], outLabel }] -> cards reading "reference + fabric = AI result",
@@ -269,8 +269,15 @@
           var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall') || (s.frame === 'macbook-screens' && r.k !== 'port');
           var cells = r.items.map(function (it) {
             if (framed) return macShot(it[0], alt(it), r.k === 'tall', metaOf[it[0][0]]);
-            var st = (metaOf[it[0][0]] || {}).start;
-            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"' + (st ? ' data-start="' + (+st) + '"' : '') + '>' + imgTag(it[0], alt(it)) + '</a>' : shot(it[0], alt(it));
+            var st = (metaOf[it[0][0]] || {}).start, ov = (metaOf[it[0][0]] || {}).ov;
+            /* overlays: [[src or [frame srcs], top 0-1, height 0-1], ...] put the email's GIFs back in place, like the email that was sent */
+            var ovs = ov ? ov.map(function (o) {
+              var srcs = [].concat(o[0]);
+              return '<span class="es-ov' + (srcs.length > 1 ? ' es-ov--frames' : '') + '" style="top:' + (o[1] * 100).toFixed(3) + '%;height:' + (o[2] * 100).toFixed(3) + '%" aria-hidden="true">' +
+                srcs.map(function (src, fi) { return '<img src="' + esc(src) + '" alt="" decoding="async"' + (fi === 0 ? ' class="is-on"' : '') + '>'; }).join('') + '</span>';
+            }).join('') : '';
+            var body = ov ? '<span class="es-long__in">' + imgTag(it[0], alt(it)) + ovs + '</span>' : imgTag(it[0], alt(it));
+            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"' + (st ? ' data-start="' + (+st) + '"' : '') + '>' + body + '</a>' : shot(it[0], alt(it));
           }).join('');
           if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : Math.min(n, 3)) + '">' + cells + '</div>'; /* long pages: at most 3 per row */
@@ -432,6 +439,22 @@
         else if (!live.length && clock) { clearInterval(clock); clock = 0; }
       });
       cycles.forEach(function (a) { cio.observe(a); });
+    }
+
+    /* email GIFs rebuilt from frames: step every 0.5s (the GIFs' own timing) while on screen */
+    var ovFrames = projEl.querySelectorAll('.es-ov--frames');
+    if (ovFrames.length && !stillCycles && 'IntersectionObserver' in window) {
+      var otick = 0, olive = [], oclock = 0;
+      var oshow = function (el) { var fr = el.querySelectorAll('img'), k = otick % fr.length; fr.forEach(function (f, i) { f.classList.toggle('is-on', i === k); }); };
+      var oio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var i = olive.indexOf(e.target);
+          if (e.isIntersecting && i < 0) olive.push(e.target); else if (!e.isIntersecting && i >= 0) olive.splice(i, 1);
+        });
+        if (olive.length && !oclock) oclock = setInterval(function () { otick++; olive.forEach(oshow); }, 500);
+        else if (!olive.length && oclock) { clearInterval(oclock); oclock = 0; }
+      });
+      ovFrames.forEach(function (el) { oio.observe(el); });
     }
 
     /* jump bar: sits under the sticky header and marks the part you're reading */
