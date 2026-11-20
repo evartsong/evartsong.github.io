@@ -56,11 +56,11 @@ window.PROJECTS = [
     cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'videos/vmix.mp4' /* self-hosted 1080p montage; was youtube.com/watch?v=OEFBsg1CY_U */, poster: 'images/vmix/video-poster.jpg', images: []
   },
   {
-    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes + storyboard', era: '2023', season: 'SEASON 2023',
+    id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes + logo reveal', era: '2023', season: 'SEASON 2023',
     when: '2023', role: 'Designer + Animator', color: '#0F6E4D', badge: 'GALLERY PICK',
     desc: 'Spotify’s instant access, told through a reversed animal food chain.',
-    brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain.',
-    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Storyboard it from line sketches to flat color, with Cinema 4D blockouts for scale'],
+    brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
+    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
     tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
     type: 'Concept spot for Spotify', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/covers/soundtrack.png', /* home grid image */
