@@ -277,7 +277,8 @@
                 srcs.map(function (src, fi) { return '<img src="' + esc(src) + '" alt="" decoding="async"' + (fi === 0 ? ' class="is-on"' : '') + '>'; }).join('') + '</span>';
             }).join('') : '';
             var body = ov ? '<span class="es-long__in">' + imgTag(it[0], alt(it)) + ovs + '</span>' : imgTag(it[0], alt(it));
-            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"' + (st ? ' data-start="' + (+st) + '"' : '') + '>' + body + '</a>' : shot(it[0], alt(it));
+            var lab = (metaOf[it[0][0]] || {}).label; /* page name, shown as a hover title, e.g. 'Early Black Friday · Faire' */
+            return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"' + (st ? ' data-start="' + (+st) + '"' : '') + (lab ? ' title="' + esc(lab) + '"' : '') + '>' + body + '</a>' : shot(it[0], alt(it));
           }).join('');
           if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : Math.min(n, 3)) + '">' + cells + '</div>'; /* long pages: at most 3 per row */

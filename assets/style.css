@@ -1126,3 +1126,10 @@ body { background: var(--es-bg); }
   .es-sec .es-longs[style*='--n:3'] > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2; }
   .es-sec .es-longs[style*='--n:3'] > :nth-child(3n+1):last-child { grid-column: 3 / span 2; }
 }
+/* Phones, sections with phone: 2 that hold long pages (BiBi emails): two per row, each still scrolling inside,
+   taller than the default phone window; an odd last one sits centered */
+@media (max-width: 767px) {
+  .es-group--final .es-sec--p2 .es-longs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .es-group--final .es-sec--p2 .es-longs > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
+  .es-sec--p2 .es-long { height: clamp(480px, 72vh, 620px); }
+}
