@@ -161,7 +161,7 @@
     var wide = imgs.filter(function (im) { return !(im[1] && im[2] > im[1] * 2.2); });
     var tall = imgs.filter(function (im) { return im[1] && im[2] > im[1] * 2.2; });
     var showcase = '';
-    if (p.video) showcase += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
+    if (p.video) showcase += '<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.poster || p.cover) + '</div>';
     if (p.clips && p.clips.length) {
       showcase += '<p class="es-label es-media-label">VIDEOS · ' + String(p.clips.length).padStart(2, '0') + '</p><div class="es-clips">' +
         p.clips.map(function (v) { return '<video src="' + esc(v) + '" controls playsinline muted loop preload="metadata"></video>'; }).join('') + '</div>';
@@ -236,7 +236,7 @@
         });
         var clips = (s.clips || []).map(function (k) { return p.clips[k - 1]; }).filter(Boolean);
         var media = recipeHtml;
-        if (s.video && p.video) media +='<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.cover) + '</div>';
+        if (s.video && p.video) media +='<div class="es-video" style="--c:' + p.color + '">' + embedHtml(p.video, p.title, p.poster || p.cover) + '</div>';
         /* section videos loop silently like GIFs (they play only while on screen; see es-loop below) */
         var clipHtml = clips.length ? '<div class="es-clips">' + clips.map(function (v) { return '<video class="es-loop" src="' + esc(v) + '" muted loop playsinline preload="metadata"></video>'; }).join('') + '</div>' : '';
         if (!ims.length) media += clipHtml;
@@ -288,7 +288,9 @@
           else media += '<div class="es-set ' + (n === 1 ? 'es-set--solo' : s.cols ? 'es-set--' + s.cols : 'es-set--2') + '">' + cells + '</div>';
         });
         if (ims.length && runs.length < 2) media += clipHtml;
-        return '<div class="es-sec' + (s.phone === 2 ? ' es-sec--p2' : '') + '">' + /* phone: 2 -> two per row on phones */
+        /* screen: '16 / 9' -> MacBook screens take the screenshots' own shape instead of 16:10 (nothing cropped) */
+        if (s.screen && /^[\d.]+ ?\/ ?[\d.]+$/.test(s.screen)) media = media.split('class="es-mac__view"').join('class="es-mac__view" style="aspect-ratio:' + s.screen + '"');
+        return '<div class="es-sec' + (s.phone === 2 ? ' es-sec--p2' : '') + (s.bare ? ' es-sec--bare' : '') + '">' + /* phone: 2 -> two per row on phones; bare: no card behind cut-out images */
           '<div class="es-sec__head"><h3 class="es-sec__title">' + esc(s.title) + '</h3>' + (s.text ? '<p class="es-sec__text">' + esc(s.text) + '</p>' : '') + '</div>' +
           '<div class="es-sec__media">' + media + '</div>' +
         '</div>';

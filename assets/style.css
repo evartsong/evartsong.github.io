@@ -727,6 +727,7 @@ body { background: var(--es-bg); }
 .es-set--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .es-set--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .es-set--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.es-set--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } /* five phone screens in one row (vMix app) */
 .es-set--solo { grid-template-columns: minmax(0, calc(50% - 8px)); }
 /* long pages (tablet and up): --n per row as flex items, so a short last row is always centered (3 + 2 -> the 2 in the middle) at every window width */
 @media (min-width: 768px) {
@@ -1130,3 +1131,11 @@ body { background: var(--es-bg); }
   .es-group--final .es-sec--p2 .es-longs > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
   .es-sec--p2 .es-long { height: clamp(480px, 72vh, 620px); }
 }
+/* five-up rows (layout '5'): all five in one row from tablet up; 2 per row on phones, the odd last one centered */
+@media (max-width: 767px) {
+  .es-set--5, .es-group--final .es-set--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .es-set--5 > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
+}
+/* bare: cut-out images (transparent PNG phones) sit straight on the page, no card behind them */
+.es-sec--bare .es-pic { background: transparent; border-color: transparent; box-shadow: none; }
+.es-sec--bare .es-pic:hover { border-color: transparent; }

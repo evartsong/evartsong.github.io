@@ -41,14 +41,14 @@ window.PROJECTS = [
   },
   {
     id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
-    when: '2023', role: 'Brand designer + animator', color: '#1E1CA8', badge: '',
+    when: '2023', role: 'Brand designer + animator', color: '#FF072C', badge: '',
     desc: 'Inviting streamers to find their inner conductor in live video.',
     brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
     did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
-    tools: ['Illustrator', 'InDesign', 'Photoshop', 'XD', 'After Effects'],
+    tools: ['Illustrator', 'InDesign', 'Photoshop', 'Adobe XD', 'After Effects'],
     type: 'Live streaming software', collaborators: '', recognition: '',
     tile: 'images/covers/vmix.jpg', /* home grid image */
-    cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'https://www.youtube.com/watch?v=OEFBsg1CY_U', images: []
+    cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'videos/vmix.mp4' /* self-hosted 1080p montage; was youtube.com/watch?v=OEFBsg1CY_U */, poster: 'images/vmix/video-poster.jpg', images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes · logo reveal', era: '2023', season: 'SEASON 2023',
@@ -431,14 +431,13 @@ window.SECTIONS = {
   vmix: [
     { g: 'final', title: 'Brand video', video: true },
     { g: 'final', title: 'Logo', text: 'vMix allows users to produce like a director and a conductor. The main form of the mark was inspired by the positioning and stroke of the orchestra baton.', imgs: [1, 2] },
-    { g: 'final', title: 'Opening animation', imgs: [3] },
-    { g: 'final', title: 'Closing animation', imgs: [4] },
-    { g: 'final', title: 'Graphic elements', text: 'Created a custom brand shapes as my own definition of conducting movements. Which led me to create patterns using the stroke of the logo mark in its own unique rhythms.', imgs: [5] },
-    { g: 'final', title: 'Identity posters', imgs: [6, 7] },
-    { g: 'final', title: 'Content posters', imgs: [8, 9, 10] },
-    { g: 'final', title: 'Environment', imgs: [11, 12] },
-    { g: 'final', title: 'Website', imgs: [13, 14, 15, 16] },
-    { g: 'final', title: 'App', imgs: [18, 19, 20, 21, 22] }
+    { g: 'final', title: 'Logo animation', text: 'Opening: the two baton strokes swing into one line that wipes the screen red. Closing: the rhythm pattern clears and the mark resolves into the vMix logo.', imgs: [3, 4] },
+    { g: 'final', title: 'Graphic elements', text: 'I created custom brand shapes as my own take on a conductor’s movements, then built patterns from the stroke of the logo mark, each with its own rhythm.', imgs: [5] },
+    { g: 'final', title: 'Identity posters', text: 'Street posters pairing the conducting shapes with production words like Tempo, Jump, Cut and Finale.', imgs: [6, 7] },
+    { g: 'final', title: 'Content posters', text: 'Posters featuring creators at work, framed by the curve of the baton.', imgs: [8, 9, 10] },
+    { g: 'final', title: 'Environment', text: 'The identity at building scale: billboards and wall graphics.', imgs: [11, 12] },
+    { g: 'final', title: 'Website', frame: 'macbook', screen: '16 / 9', text: 'Website design, from the home page and mission to creator stories.', imgs: [13, 14, 15, 16] },
+    { g: 'final', title: 'App', phone: 2, layout: '5', bare: true, text: 'The mobile app: launch screen, home, menu and content pages.', imgs: [18, 19, 20, 21, 22] }
   ],
   'shampoo-bar': [
     { g: 'final', title: 'The animation', video: true },
