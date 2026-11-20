@@ -43,10 +43,15 @@ window.PROJECTS = [
     id: 'vmix', title: 'vMix', genre: 'Brand identity + motion', era: '2023', season: 'SEASON 2023',
     when: '2023', role: 'Brand designer + animator', color: '#FF072C', badge: '',
     desc: 'Inviting streamers to find their inner conductor in live video.',
-    brief: 'Brand content for vMix aimed at younger generations and the streaming community, encouraging them to bring their inner conductor and creativity into live broadcast video.',
-    did: ['Reframe live production software for a younger streaming audience', 'Build the identity and motion around the “inner conductor” idea'],
+    brief: 'A rebrand concept for vMix, the live production and streaming software. To make professional broadcast tools feel inviting to a younger generation of streamers, I built the brand around one idea: everyone has an inner conductor. The conductor’s baton became the logo mark, conducting gestures became the brand shapes, and the system runs through posters, environment graphics, a website, an app and a brand montage.',
+    did: [
+      'Design the identity: the baton logo mark, wordmark, color palette and a set of brand shapes drawn from conducting gestures',
+      'Animate the logo’s opening and closing and edit the brand montage',
+      'Create identity and content posters and place the system in real spaces, from street posters to billboards',
+      'Design the website and mobile app in Adobe XD, carrying the shapes and palette into the interface'
+    ],
     tools: ['Illustrator', 'InDesign', 'Photoshop', 'Adobe XD', 'After Effects'],
-    type: 'Live streaming software', collaborators: '', recognition: '',
+    type: 'Rebrand concept · live streaming software', collaborators: '', recognition: '',
     tile: 'images/covers/vmix.jpg', /* home grid image */
     cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'videos/vmix.mp4' /* self-hosted 1080p montage; was youtube.com/watch?v=OEFBsg1CY_U */, poster: 'images/vmix/video-poster.jpg', images: []
   },
