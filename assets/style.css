@@ -1143,3 +1143,32 @@ body { background: var(--es-bg); }
 @media (min-width: 768px) {
   .es-set--2 > :last-child:nth-child(odd):not(:first-child) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 8px); }
 }
+/* layout 'poster' (Soundtrack styleframes): a comic page on a black board, like the printed gallery poster.
+   Panel 1 spans two rows at 2/3 width, panels 2 + 3 stack on the right, later panels run full width. */
+.es-poster { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; padding: 10px; background: #000; border-radius: 14px; }
+.es-poster__panel { min-width: 0; }
+.es-poster__panel--1 { grid-row: span 2; }
+.es-poster__panel:nth-child(n+4) { grid-column: 1 / -1; }
+.es-poster .es-pic { height: 100%; border: 0; border-radius: 2px; background: #000; }
+.es-poster .es-pic img { width: 100%; height: 100%; object-fit: cover; }
+.es-poster .es-pic:hover { box-shadow: 0 0 0 2px var(--es-accent); }
+@media (max-width: 767px) {
+  /* phones: scene 1 full width, 2 + 3 side by side, then 4 + 5 full width */
+  .es-poster { grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px; border-radius: 12px; }
+  .es-poster__panel--1 { grid-row: auto; grid-column: 1 / -1; }
+}
+/* frame 'phone' (vMix app): a black phone drawn in CSS with the MacBook's materials (near-black body,
+   thin grey edge, inner highlight, orange edge on hover); the screenshot keeps its own Dynamic Island */
+.es-phone { display: block; padding: 0 6px; }
+.es-phone__screen { display: block; position: relative; background: #070708; border: 1px solid #3a3b40; border-radius: 15% / 7%; padding: 4.2%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 18px 40px rgba(0, 0, 0, 0.35); transition: border-color 0.15s; }
+.es-phone:hover .es-phone__screen { border-color: var(--es-accent); }
+.es-phone__screen img { display: block; width: 100%; height: auto; border-radius: 12.5% / 5.8%; background: #000; }
+/* layout 'trio' (Soundtrack moodboard): two images stacked on the left, a tall one on the right */
+.es-trio { display: grid; grid-template-columns: 1.21fr 1fr; gap: 16px; }
+.es-trio__cell { min-width: 0; }
+.es-trio__cell--3 { grid-column: 2; grid-row: 1 / span 2; }
+.es-trio__cell--3 .es-pic { height: 100%; }
+.es-trio__cell--3 .es-pic img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 767px) {
+  .es-trio { gap: 10px; } /* phones keep the same 2 stacked + 1 tall shape */
+}

@@ -253,7 +253,20 @@
             }).join('') + '</div>';
           }
         }
-        if (s.layout !== 'pairs') ims.forEach(function (im, i) {
+        if (s.layout === 'poster') {
+          /* layout 'poster': a comic page like the printed gallery poster: panel 1 big with panels 2 + 3 stacked
+             beside it, then every later panel full width, all on one black board */
+          media += '<div class="es-poster">' + ims.map(function (im, i) {
+            return '<div class="es-poster__panel es-poster__panel--' + (i + 1) + '">' + shot(im, p.title + ': ' + s.title + ', scene ' + (i + 1) + ' of ' + ims.length) + '</div>';
+          }).join('') + '</div>';
+        }
+        if (s.layout === 'trio') {
+          /* layout 'trio': the first two images stacked on the left, the third (a tall one) beside them on the right */
+          media += '<div class="es-trio">' + ims.map(function (im, i) {
+            return '<div class="es-trio__cell es-trio__cell--' + (i + 1) + '">' + shot(im, p.title + ': ' + s.title + ', ' + (i + 1) + ' of ' + ims.length) + '</div>';
+          }).join('') + '</div>';
+        }
+        if (s.layout !== 'pairs' && s.layout !== 'poster' && s.layout !== 'trio') ims.forEach(function (im, i) {
           var k = kindOf(im);
           if (g !== 'final' && k !== 'tall') k = 'mix'; /* process + moodboard: one even grid per section */
           var last = runs[runs.length - 1];
@@ -269,6 +282,8 @@
           var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall') || (s.frame === 'macbook-screens' && r.k !== 'port');
           var cells = r.items.map(function (it) {
             if (framed) return macShot(it[0], alt(it), r.k === 'tall', metaOf[it[0][0]]);
+            /* frame: 'phone' -> app screens on a black phone drawn in CSS, the same materials as the MacBook */
+            if (s.frame === 'phone') return '<a class="es-phone" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"><span class="es-phone__screen">' + imgTag(it[0], alt(it)) + '</span></a>';
             var st = (metaOf[it[0][0]] || {}).start, ov = (metaOf[it[0][0]] || {}).ov;
             /* overlays: [[src or [frame srcs], top 0-1, height 0-1], ...] put the email's GIFs back in place, like the email that was sent */
             var ovs = ov ? ov.map(function (o) {

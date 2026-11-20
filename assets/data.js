@@ -411,10 +411,9 @@ window.SECTIONS = {
     { g: 'final', title: 'Contact', imgs: [13] }
   ],
   soundtrack: [
-    { g: 'final', title: 'Styleframes', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten about how strong his ancestors used to be. As Pet Lion gets instant access to his favorite music, he awakens his instinct and feels empowered to become the king.', imgs: [1, 2, 3, 4, 5] },
-    { g: 'process', title: 'Storyboard process', text: 'Starting with line sketches of our storyboard, we established values and then flat colors before diving into details.', imgs: [9, 10, 11] },
-    { g: 'process', title: '3D process', text: 'When it came to the details of our execution, we used Cinema 4D as a guide. We quickly blocked out the environment, placements of the characters, and in this case, flying objects to help us get the perfect perspective and scale. This was our most essential tool and was very beneficial for our workflow. It helped us illustrate without struggling with perspective.', imgs: [12, 13, 14] },
-    { g: 'ref', title: 'Moodboard', text: 'Taking inspiration from the execution of flat colors with hard light and shadow forms, we incorporated playful color palettes and shape language into our styleframes.', imgs: [6, 7, 8] }
+    { g: 'final', title: 'Styleframes', layout: 'poster', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten about how strong his ancestors used to be. As Pet Lion gets instant access to his favorite music, he awakens his instinct and feels empowered to become the king.', imgs: [1, 2, 3, 4, 5] },
+    { g: 'process', title: 'Storyboard + 3D process', text: 'The storyboard went from line sketches to values to flat colors. For the details, we blocked out the supermarket, the characters and the flying objects in Cinema 4D, so every frame had the right perspective and scale before we illustrated it.', imgs: [9, 10, 11, 12, 13, 14], sets: [[9, 10, 11], [12, 13, 14]], setWord: 'STAGES' },
+    { g: 'ref', title: 'Moodboard', layout: 'trio', text: 'Taking inspiration from the execution of flat colors with hard light and shadow forms, we incorporated playful color palettes and shape language into our styleframes.', imgs: [6, 8, 7] }
   ],
   'label-lunacy': [
     { g: 'final', title: 'The ad', video: true },
@@ -442,7 +441,7 @@ window.SECTIONS = {
     { g: 'final', title: 'Content posters', text: 'Posters featuring creators at work, framed by the curve of the baton.', imgs: [8, 9, 10] },
     { g: 'final', title: 'Environment', text: 'The identity at building scale: billboards and wall graphics.', imgs: [11, 12] },
     { g: 'final', title: 'Website', frame: 'macbook', screen: '16 / 9', text: 'Website design, from the home page and mission to creator stories.', imgs: [13, 14, 15, 16] },
-    { g: 'final', title: 'App', phone: 2, layout: '5', bare: true, text: 'The mobile app: launch screen, home, menu and content pages.', imgs: [18, 19, 20, 21, 22] }
+    { g: 'final', title: 'App', frame: 'phone', phone: 2, layout: '5', bare: true, text: 'The mobile app: launch screen, home, menu and content pages.', imgs: [18, 19, 20, 21, 22] }
   ],
   'shampoo-bar': [
     { g: 'final', title: 'The animation', video: true },
