@@ -87,8 +87,8 @@ window.PROJECTS = [
     id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2023', season: 'SEASON 2023',
     when: '2023', role: '3D Designer + Animator', color: '#8A5F0E', badge: '',
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
-    brief: 'A satirical ad about how brands steer consumer behavior, turning ordinary, everyday items into coveted possessions.',
-    did: ['Write the satire: everyday items sold as status symbols', 'Build and animate the ad in 3D'],
+    brief: 'A satirical ad about how far a label can carry a product: some shoppers would buy almost anything with Louis Vuitton on it. We built the ad like a luxury reveal, with liquid gold and the LV mark, so viewers lean in to find out what is being unveiled. The payoff is a plain folding chair.',
+    did: ['Write the satire: a plain folding chair sold on the Louis Vuitton label alone', 'Build the reveal to keep viewers curious until the last shot', 'Model, light and animate the ad in 3D'],
     tools: ['Cinema 4D', 'After Effects'],
     type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
     tile: 'images/label-lunacy/05.jpg', /* home grid image */
