@@ -99,7 +99,7 @@ window.PROJECTS = [
     when: '2022', role: 'Designer + Animator', color: '#8A3A1C', badge: '',
     desc: 'Light as imagination in Sam and Suzy’s runaway love story.',
     brief: 'A title sequence for Moonrise Kingdom. Sam and Suzy fall in love and run away into the wilderness; light becomes the symbol of imagination at the story’s turning point.',
-    did: ['Use light as the symbol of imagination', 'Design and animate the title sequence'],
+    did: ['Use light as the symbol of imagination', 'Storyboard the scenes in values to plan the lighting', 'Model, light and render the title sequence in Cinema 4D and Arnold'],
     tools: ['Cinema 4D', 'Arnold', 'Photoshop'],
     type: 'Film title sequence', collaborators: 'Jason Kim', recognition: '',
     tile: 'images/moonrise/03.jpg', /* home grid image */
@@ -125,14 +125,14 @@ window.PROJECTS = [
     tools: ['Cinema 4D', 'Redshift', 'After Effects'],
     type: 'Sustainability short', collaborators: 'Sarah Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/shampoo-bar/03.jpg', /* home grid image */
-    cover: 'images/shampoo-bar/01.jpg', coverRatio: '1920 / 1080', video: 'https://www.youtube.com/watch?v=Tv06w4CawK4', images: []
+    cover: 'images/shampoo-bar/01.jpg', coverRatio: '1920 / 1080', video: 'videos/shampoo-bar.mp4' /* self-hosted 1080p with sound; was youtube.com/watch?v=Tv06w4CawK4 */, poster: 'images/shampoo-bar/video-poster.jpg', images: []
   },
   {
     id: 'minari', title: 'Minari', genre: 'Title sequence', era: '2021', season: 'SEASON 2021',
     when: '2021', role: 'Designer', color: '#3F6420', badge: '',
     desc: 'A seed carries growth and hope through the film’s burning-crops scene.',
     brief: 'A title sequence for Minari that visualizes growth and hope through a seed, framed around the scene where the crops burn and Jacob and Monica try to save them.',
-    did: ['Use a seed as the framing device for growth and hope', 'Build the sequence around the burning-crops scene'],
+    did: ['Use a seed as the framing device for growth and hope', 'Build the sequence around the burning-crops scene', 'Set the credits in one simple sans serif, using scale for hierarchy'],
     tools: ['Photoshop', 'Lightroom', 'InDesign'],
     type: 'Film title sequence', collaborators: '', recognition: '',
     tile: 'images/minari/06.jpg', /* home grid image */
@@ -422,12 +422,8 @@ window.SECTIONS = {
   ],
   moonrise: [
     { g: 'final', title: 'Title sequence frames', text: 'We used a warm yellow tone for inside the tent, where Sam and Suzy feel the most comfort and true love. In contrast, we used a cool tone of blue and purple for the final scene, where it is revealed that the tent is placed in the room that represents the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },
-    { g: 'process', title: '3D typography treatment', text: 'Taking inspiration from the 3D film titles, we designed a backlit of the 3D title reveal for our hero frame.', imgs: [9] },
-    { g: 'process', title: 'Typography', text: 'We chose type treatment to go along with the soft mood of our sequences and the consistent size of the type.', imgs: [10] },
-    { g: 'process', title: 'Storyboard sketch', text: 'Before modeling, we sketched out the scenes with values to anticipate the lighting and details.', imgs: [11] },
-    { g: 'process', title: 'Render process', text: 'Our initial composition, lighting, and type treatment before adding texture and adjusting the intensity of the light.', imgs: [12] },
-    { g: 'ref', title: 'Moodboard (warm)', text: 'We gathered tone references that give cozy feelings portraying the characters’ emotions and thoughts.', imgs: [7] },
-    { g: 'ref', title: 'Moodboard (cool + warm)', text: 'We studied the contrast between cold night tones and cozy light which shows the reality of the situation in the story.', imgs: [8] }
+    { g: 'process', title: 'Storyboard, render + type', text: 'Before modeling, we sketched the scenes in values to plan the lighting and details, then set up the first renders before adding texture and adjusting the light. The type stays soft and consistent in size to match the mood.', imgs: [11, 12, 10], sets: [[11, 12]], setWord: 'STAGES' },
+    { g: 'ref', title: 'Moodboard', text: 'Warm references for the cozy feeling inside the tent, cold night tones against cozy light for the reality outside it, and 3D film titles that inspired our backlit title reveal.', imgs: [7, 8, 9] }
   ],
   vmix: [
     { g: 'final', title: 'Brand video', video: true },
@@ -442,41 +438,29 @@ window.SECTIONS = {
   ],
   'shampoo-bar': [
     { g: 'final', title: 'The animation', video: true },
-    { g: 'final', title: 'Styleframes', imgs: [1, 2, 3, 4, 5, 6] },
-    { g: 'process', title: 'Storyboard', text: 'We sketched scene by scene storyboard every time there were camera transitions and changes in facial expression.', imgs: [7] },
-    { g: 'process', title: 'Character design', text: 'Before modeling, we divided our parts to sketch all the characters and bathroom elements in the animation.', imgs: [8] },
-    { g: 'process', title: 'Character modeling', text: 'Referencing the sketch, all the characters were modeled and colored while showing the scale differences.', imgs: [9, 10] },
-    { g: 'process', title: 'Modeling process', text: 'Using the Miro collaboration tool while on a call, we discussed taking side notes on the board.', imgs: [11] }
+    { g: 'final', title: 'Styleframes', text: 'Frames from the short: the bathroom set, the two characters and the bath-toy ocean scenes.', imgs: [1, 2, 3, 4, 5, 6] },
+    { g: 'process', title: 'Storyboard to 3D', text: 'We storyboarded every camera change and facial expression, sketched all the characters and bathroom props, then modeled and colored them to scale. We worked through the modeling together on a Miro board during calls.', imgs: [7, 8, 10, 9, 11], sets: [[10, 9]], setWord: 'STAGES' }
   ],
   minari: [
-    { g: 'final', title: 'Title sequence frames', imgs: [1, 2, 3, 4, 5, 6, 7] },
-    { g: 'process', title: 'Storyboard', text: 'Sketched out variations of camera angles to tell the narrative of this seed’s growth and hope.', imgs: [9] },
-    { g: 'process', title: 'Typography', text: 'Using simple sans serif font throughout my sequences, scale differences to show the hierarchy, and lighting effect on the type.', imgs: [10] },
-    { g: 'ref', title: 'Moodboard', text: 'Gathering photograph references to study the intense lighting that I want to capture.', imgs: [8] }
+    { g: 'final', title: 'Title sequence frames', text: 'Close-up frames follow the seed from the soil to roots, a stem and leaves, so the credits grow with it.', imgs: [1, 2, 3, 4, 5, 6] },
+    { g: 'final', title: 'Title card', text: 'The MINARI title, framed by the leaves.', imgs: [7], layout: '1' },
+    { g: 'process', title: 'Storyboard + typography', text: 'I sketched variations of camera angles to tell the story of the seed’s growth and hope, and set the credits in one simple sans serif, using scale for hierarchy and light on the type.', imgs: [9, 10] },
+    { g: 'ref', title: 'Moodboard', text: 'Photo references to study the intense lighting I wanted to capture.', imgs: [8] }
   ],
   gsa: [
-    { g: 'final', title: 'The arena', imgs: [1] },
-    { g: 'final', title: 'Logo', text: 'GSA is spelled out to help recognize the new GameStop Arena.', imgs: [2, 3] },
-    { g: 'final', title: 'Lock up', imgs: [4] },
-    { g: 'final', title: 'Clear space', imgs: [5] },
-    { g: 'final', title: 'Typography', imgs: [6] },
-    { g: 'final', title: 'Color', imgs: [7] },
-    { g: 'final', title: 'Promotional posters', imgs: [10, 11, 12] },
-    { g: 'final', title: 'Digital stand', imgs: [13] },
-    { g: 'final', title: 'Banners', imgs: [14] },
-    { g: 'final', title: 'Environment (exterior)', imgs: [15] },
-    { g: 'final', title: 'Environment (interior)', imgs: [16] },
-    { g: 'final', title: 'Website', imgs: [17] },
-    { g: 'final', title: 'App', imgs: [18] },
-    { g: 'final', title: 'Motion', imgs: [19, 20, 21] },
-    { g: 'process', title: 'Brand steering wheel + keywords', imgs: [8] },
-    { g: 'process', title: 'Brand driver', imgs: [9] }
+    { g: 'final', title: 'Logo + lockups', text: 'GSA is spelled out to help recognize the new GameStop Arena, with horizontal and stacked lockups and their clear space.', imgs: [2, 3, 4, 5], cols: 2 },
+    { g: 'final', title: 'Typography + color', text: 'Dubai in four weights, and a blue, purple and red palette that runs through every piece.', imgs: [6, 7], cols: 2 },
+    { g: 'final', title: 'Promotional posters', phone: 2, text: 'Posters built from the GSA letterforms and the PLAY, COMPETE, ENJOY tagline.', imgs: [10, 11, 12] },
+    { g: 'final', title: 'Motion', text: 'The GSA letters turning in 3D through PLAY, COMPETE, ENJOY, a spinning GSA cube, and the logo reveal.', imgs: [19, 20, 21], cols: 3 },
+    { g: 'final', title: 'In the arena', text: 'The identity on the arena’s exterior and stage, a digital stand, a bus shelter ad and street banners.', imgs: [15, 16, 13, 14], cols: 2 },
+    { g: 'final', title: 'Website + app', imgs: [17, 18], cols: 2 },
+    { g: 'process', title: 'Brand strategy', text: 'The brand steering wheel, keywords and brand driver that set the tone: professional, visionary, competitive, entertaining.', imgs: [8, 9], cols: 2 }
   ],
   hanbok: [
     { g: 'final', title: 'The book', text: 'Each color block on the cover is taken from the silk of a traditional hanbok.', imgs: [2, 1] },
     { g: 'final', title: 'Inside the book', text: 'The exhibition introduction, Korean art history, then a section and an interview for each of the six artists.', imgs: [3, 4, 5, 6, 7, 8], cols: 2 },
     { g: 'final', title: 'Spread by spread', text: 'The whole publication laid out page by page.', imgs: [15, 16, 17, 18], cols: 2 },
     { g: 'final', title: 'Exhibition identity', text: 'The HANBOK wordmark on the gallery wall and the promotional poster.', imgs: [10, 9], cols: 2 },
-    { g: 'final', title: 'Artist poster series', text: 'Each artist is given a color and a shape, and the poster colors complement each other.', imgs: [11, 12, 13, 14] }
+    { g: 'final', title: 'Artist poster series', phone: 2, text: 'Each artist is given a color and a shape, and the poster colors complement each other.', imgs: [11, 12, 13, 14] }
   ]
 };
