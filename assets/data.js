@@ -402,13 +402,10 @@ window.SECTIONS = {
     { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label So-Me.', imgs: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 37, 36, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 96, 97, 98, 99, 100, 101], layout: '4', sets: [[36, 37], [38, 39, 40, 41], [42, 43, 44, 45], [46, 47, 48, 49, 50], [51, 52, 53], [54, 55, 56, 57], [58, 59, 60, 61, 62, 63, 64, 65], [96, 97, 98, 99, 100, 101]] }
   ],
   warp: [
-    { g: 'final', title: 'Homepage', text: 'The 2024 site, desktop and mobile.', imgs: [1, 14] },
-    { g: 'final', title: 'Blog + social graphics', text: 'B2B blog and LinkedIn graphics for WARP LTL Freight, built on the brand’s blue, yellow and black.', imgs: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34] },
-    { g: 'final', title: 'Network maps + data', text: 'Monthly lane and cross-dock maps and city delivery totals for the blog and LinkedIn.', imgs: [35, 36, 37, 38, 39, 40, 41, 42], cols: 2 },
-    { g: 'final', title: 'Blog illustrations', text: 'Isometric illustrations and product visuals for blog headers and case studies.', imgs: [43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54], cols: 2 },
-    { g: 'final', title: 'Company pages', text: 'About us, our technology and sustainability.', imgs: [2, 3, 4] },
-    { g: 'final', title: 'Service pages', text: 'Store replenishments, inbound freight optimization, pool distribution, LTL, perishable freight and national distribution.', imgs: [5, 6, 7, 8, 9, 10] },
-    { g: 'final', title: 'Contact', imgs: [13] }
+    { g: 'final', title: 'Website', frame: 'macbook-pages', text: 'The 2024 WARP site, from the home page and company pages to the service pages. Each page scrolls top to bottom, captured from the Internet Archive.', imgs: [1, 2, 3, 4, 5, 8], labels: { '1': 'Home', '2': 'About us', '3': 'Our technology', '4': 'Sustainability', '5': 'Store replenishments', '8': 'LTL' } },
+    { g: 'final', title: 'LinkedIn + blog graphics', phone: 2, text: 'B2B LinkedIn and blog graphics for WARP LTL Freight, built on the brand’s blue, yellow and black.', imgs: [15, 16, 17, 18, 20, 22, 24, 25, 28, 29, 32, 33] },
+    { g: 'final', title: 'Network maps + data', text: 'Monthly lane and cross-dock maps and city delivery totals for the blog and LinkedIn.', imgs: [36, 37, 38, 40, 41, 42], cols: 2 },
+    { g: 'final', title: 'Blog illustrations', text: 'Isometric illustrations and product visuals for blog headers, case studies and the WARP apps.', imgs: [46, 47, 48, 50, 53, 54, 52], cols: 2 }
   ],
   soundtrack: [
     { g: 'final', title: 'Styleframes', layout: 'poster', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten about how strong his ancestors used to be. As Pet Lion gets instant access to his favorite music, he awakens his instinct and feels empowered to become the king.', imgs: [1, 2, 3, 4, 5] },
