@@ -416,9 +416,7 @@ window.SECTIONS = {
     { g: 'final', title: 'The ad', video: true },
     { g: 'final', title: 'Styleframes', text: 'Frames from the finished ad: liquid gold resolving into the Louis Vuitton mark, then an everyday folding chair staged as a luxury object.', imgs: [5, 6, 7, 8, 9, 10, 11, 12], cols: 2 },
     { g: 'process', title: 'Storyboard', imgs: [4] },
-    { g: 'ref', title: 'Moodboard', imgs: [1] },
-    { g: 'ref', title: 'Lighting + texture references', imgs: [2] },
-    { g: 'ref', title: 'Environment references', imgs: [3] }
+    { g: 'ref', title: 'Moodboard', row: true, text: 'Liquid gold and brushed metal close-ups, dark luxury lighting and textures, and surreal 3D sets with a single piece of furniture as the centerpiece.', imgs: [1, 2, 3] }
   ],
   moonrise: [
     { g: 'final', title: 'Title sequence frames', layout: 'poster-b', text: 'We used a warm yellow tone for inside the tent, where Sam and Suzy feel the most comfort and true love. In contrast, we used a cool tone of blue and purple for the final scene, where it is revealed that the tent is placed in the room that represents the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },

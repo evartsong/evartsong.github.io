@@ -298,6 +298,7 @@
           if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : Math.min(n, 3)) + '">' + cells + '</div>'; /* long pages: at most 3 per row */
           else if (s.layout) media += '<div class="es-set es-set--' + (+s.layout === 1 ? (r.k === 'port' ? 'one' : 'full') : s.layout) + '">' + cells + '</div>'; /* layout picked in the page editor */
+          else if (r.k === 'mix' && s.row && n > 1) media += '<div class="es-set es-set--row" style="--cols:' + r.items.map(function (it) { return ((it[0][1] / it[0][2]) || 1.6).toFixed(3) + 'fr'; }).join(' ') + '">' + cells + '</div>'; /* row: one line, same height, widths follow each image's shape (nothing cropped) */
           else if (r.k === 'mix') media += '<div class="es-set es-set--' + (n === 1 ? 'full' : n % 3 === 0 ? 3 : 2) + '">' + cells + '</div>';
           else if (r.k === 'port') media += '<div class="es-set es-set--' + (n === 1 ? 'one' : n <= 3 ? n : (n % 4 === 0 ? 4 : 3)) + '">' + cells + '</div>';
           else media += '<div class="es-set ' + (n === 1 ? 'es-set--solo' : s.cols ? 'es-set--' + s.cols : 'es-set--2') + '">' + cells + '</div>';

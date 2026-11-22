@@ -1157,6 +1157,11 @@ body { background: var(--es-bg); }
   /* phones: tighter board; one frame per row is set below, after poster-b */
   .es-poster { gap: 6px; padding: 6px; border-radius: 12px; }
 }
+/* section row: true -> one line of images at the same height, each as wide as its shape needs (no cropping);
+   phones get one full image per line */
+.es-set.es-set--row { grid-template-columns: var(--cols); }
+.es-set--row .es-pic img { width: 100%; height: auto; }
+@media (max-width: 767px) { .es-set.es-set--row { grid-template-columns: minmax(0, 1fr); } }
 /* poster-b (Moonrise gallery poster): a 6-column board. 1 + 2 small and stacked on the left, 3 big on the
    right spanning both rows, 4 + 5 halves, 6 (the title) full width. */
 .es-poster.es-poster--b { grid-template-columns: repeat(6, minmax(0, 1fr)); }
