@@ -147,7 +147,7 @@ window.PROJECTS = [
     tools: ['InDesign', 'Illustrator', 'Photoshop'],
     type: 'Exhibition + publication', collaborators: '', recognition: '',
     tile: 'images/hanbok/01.jpg', /* home grid image */
-    cover: 'images/hanbok/03.jpg', coverRatio: '2000 / 1500', video: '', images: []
+    cover: 'images/hanbok/spread-1.jpg', coverRatio: '2000 / 1500', video: '', images: []
   }
 ];
 
