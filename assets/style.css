@@ -728,7 +728,7 @@ body { background: var(--es-bg); }
 .es-set--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .es-set--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .es-set--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } /* five phone screens in one row (vMix app) */
-.es-set--solo { grid-template-columns: minmax(0, calc(50% - 8px)); }
+.es-set--solo { grid-template-columns: minmax(0, calc(50% - 8px)); justify-content: center; } /* a lone image sits centered under the row above */
 /* long pages (tablet and up): --n per row as flex items, so a short last row is always centered (3 + 2 -> the 2 in the middle) at every window width */
 @media (min-width: 768px) {
   .es-sec .es-longs[style*='--n'] { display: flex; flex-wrap: wrap; justify-content: center; }
