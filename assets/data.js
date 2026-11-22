@@ -440,8 +440,7 @@ window.SECTIONS = {
     { g: 'process', title: 'Storyboard to 3D', text: 'We storyboarded every camera change and facial expression, sketched all the characters and bathroom props, then modeled and colored them to scale. We worked through the modeling together on a Miro board during calls.', imgs: [7, 8, 10, 9, 11], sets: [[10, 9]], setWord: 'STAGES' }
   ],
   minari: [
-    { g: 'final', title: 'Title sequence frames', text: 'Close-up frames follow the seed from the soil to roots, a stem and leaves, so the credits grow with it.', imgs: [1, 2, 3, 4, 5, 6] },
-    { g: 'final', title: 'Title card', text: 'The MINARI title, framed by the leaves.', imgs: [7], layout: '1' },
+    { g: 'final', title: 'Title sequence frames', layout: 'poster-c', text: 'Close-up frames follow the seed from the soil to roots, a stem and leaves, so the credits grow with it, ending on the MINARI title framed by the leaves.', imgs: [1, 2, 3, 4, 5, 6, 7] },
     { g: 'process', title: 'Storyboard + typography', text: 'I sketched variations of camera angles to tell the story of the seed’s growth and hope, and set the credits in one simple sans serif, using scale for hierarchy and light on the type.', imgs: [9, 10] },
     { g: 'ref', title: 'Moodboard', text: 'Photo references to study the intense lighting I wanted to capture.', imgs: [8] }
   ],
