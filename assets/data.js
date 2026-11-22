@@ -33,7 +33,7 @@ window.PROJECTS = [
     type: 'Fashion wholesale + e-commerce',
     collaborators: '',
     recognition: '',
-    tile: 'images/bibi/28.jpg',
+    tile: 'images/bibi/28.jpg', tilePos: '50% calc(14px - 34.74cqw)', /* home grid framing: pins the window sign 14px under the tile top, clear of the caption */
     cover: 'images/bibi/06.jpg',
     coverRatio: '1200 / 553',
     video: '',
@@ -52,25 +52,25 @@ window.PROJECTS = [
     ],
     tools: ['Illustrator', 'InDesign', 'Photoshop', 'Adobe XD', 'After Effects'],
     type: 'Rebrand concept for live streaming software', collaborators: '', recognition: '',
-    tile: 'images/covers/vmix.jpg', /* home grid image */
+    tile: 'images/covers/vmix.jpg', tilePos: '50% 100%', /* home grid image; framed low so the poster words clear the caption */
     cover: 'images/vmix/11.jpg', coverRatio: '2000 / 1333', video: 'videos/vmix.mp4' /* self-hosted 1080p montage; was youtube.com/watch?v=OEFBsg1CY_U */, poster: 'images/vmix/video-poster.jpg', images: []
   },
   {
     id: 'warp', title: 'WARP', genre: 'Digital marketing', era: '2024', season: 'SEASON 2024',
     when: '03.2024 – 12.2024', role: 'Digital Marketing Specialist', color: '#3326B8', badge: '',
     desc: 'Website, landing pages, decks and B2B campaigns, leading marketing and revenue with the co-founders.',
-    brief: 'At WARP, a Los Angeles freight logistics company, I worked directly with the co-founders and led the marketing and revenue teams, while designing the brand’s website, landing pages and campaign assets myself. The pages below are the 2024 site, captured from the Internet Archive.',
-    results: [['18K → 25K', 'company LinkedIn followers during my time there'], ['20%', 'open rate on outbound sales emails, turning into sales meetings and new customers']],
+    brief: 'At WARP, a Los Angeles freight logistics company, I worked directly with the co-founders and led the marketing and revenue teams, while also designing the website, landing pages and campaign assets myself.',
+    results: [['18K → 25K', 'company LinkedIn followers while I was there'], ['20%', 'open rate on outbound sales emails, turning into sales meetings and new customers']],
     did: [
-      'Lead the marketing and revenue teams with the co-founders: run meetings, assign tasks, hit deadlines',
-      'Design the website, landing pages and business decks; lead campaign asset design',
-      'Run weekly email campaigns in HubSpot and Klaviyo; outbound sales emails average a 20% open rate and book meetings that turn into customers',
-      'Manage social and create B2B content (press releases, case studies, graphics), growing the company LinkedIn from 18K to 25K followers'
+      'Lead the marketing and revenue teams with the co-founders: run meetings, assign tasks and hit deadlines',
+      'Design the website, landing pages and business decks, and lead campaign design',
+      'Run weekly email campaigns in HubSpot and Klaviyo, plus outbound sales emails that book meetings with new customers',
+      'Manage social and create B2B content: press releases, case studies and graphics'
     ],
-    tools: ['HubSpot', 'Klaviyo'],
+    tools: ['Photoshop', 'Illustrator', 'Figma', 'Midjourney', 'HubSpot', 'Klaviyo', 'Canva', 'LinkedIn Ads', 'Google Ads', 'Google Analytics'],
     type: 'Web, email + social for B2B freight logistics', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
     tile: 'images/covers/warp-feature.jpg', /* home grid image */
-    cover: 'images/warp/19.jpg', coverRatio: '1200 / 1200', video: '', images: []
+    cover: 'images/warp/25.jpg' /* project page hero: From Dock to Doorstep; was warp/19.jpg */, coverRatio: '1200 / 1200', video: '', images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes + logo reveal', era: '2023', season: 'SEASON 2023',
@@ -402,10 +402,10 @@ window.SECTIONS = {
     { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label So-Me.', imgs: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 37, 36, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 96, 97, 98, 99, 100, 101], layout: '4', sets: [[36, 37], [38, 39, 40, 41], [42, 43, 44, 45], [46, 47, 48, 49, 50], [51, 52, 53], [54, 55, 56, 57], [58, 59, 60, 61, 62, 63, 64, 65], [96, 97, 98, 99, 100, 101]] }
   ],
   warp: [
-    { g: 'final', title: 'Website', frame: 'macbook-pages', text: 'The 2024 WARP site, from the home page and company pages to the service pages. Each page scrolls top to bottom, captured from the Internet Archive.', imgs: [1, 2, 3, 4, 5, 8], labels: { '1': 'Home', '2': 'About us', '3': 'Our technology', '4': 'Sustainability', '5': 'Store replenishments', '8': 'LTL' } },
-    { g: 'final', title: 'LinkedIn + blog graphics', phone: 2, text: 'B2B LinkedIn and blog graphics for WARP LTL Freight, built on the brand’s blue, yellow and black.', imgs: [15, 16, 17, 18, 20, 22, 24, 25, 28, 29, 32, 33] },
+    { g: 'final', title: 'Website', frame: 'macbook-pages', text: 'The 2024 WARP website, from the home and company pages to the service pages. Each page scrolls from top to bottom.', imgs: [1, 2, 3, 4, 5, 8], labels: { '1': 'Home', '2': 'About us', '3': 'Our technology', '4': 'Sustainability', '5': 'Store replenishments', '8': 'LTL' } },
+    { g: 'final', title: 'LinkedIn + blog graphics', phone: 2, text: 'B2B LinkedIn and blog graphics for WARP LTL Freight, built on the brand’s blue, yellow and black.', imgs: [15, 16, 17, 18, 19, 20, 22, 24, 28, 29, 32, 33] },
     { g: 'final', title: 'Network maps + data', text: 'Monthly lane and cross-dock maps and city delivery totals for the blog and LinkedIn.', imgs: [36, 37, 38, 40, 41, 42], cols: 2 },
-    { g: 'final', title: 'Blog illustrations', text: 'Isometric illustrations and product visuals for blog headers, case studies and the WARP apps.', imgs: [46, 47, 48, 50, 53, 54, 52], cols: 2 }
+    { g: 'final', title: 'Blog illustrations', text: 'Isometric illustrations and product visuals for blog headers, case studies and the WARP apps.', imgs: [47, 52, 53, 54], cols: 2 }
   ],
   soundtrack: [
     { g: 'final', title: 'Styleframes', layout: 'poster', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten about how strong his ancestors used to be. As Pet Lion gets instant access to his favorite music, he awakens his instinct and feels empowered to become the king.', imgs: [1, 2, 3, 4, 5] },

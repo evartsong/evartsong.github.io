@@ -841,7 +841,7 @@ body { background: var(--es-bg); }
 .es-passnums a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--es-line3); font-family: var(--es-mono); font-size: 11px; color: var(--es-muted); }
 .es-passnums a:hover { border-color: var(--es-strong); color: var(--es-strong); }
 .es-bento { margin-top: 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 250px; gap: 16px; }
-.es-tile { position: relative; display: block; border-radius: 16px; overflow: hidden; background-color: var(--c, var(--es-panel)); border: 1px solid var(--es-line2); }
+.es-tile { position: relative; display: block; container-type: inline-size; /* lets tilePos use cqw */ border-radius: 16px; overflow: hidden; background-color: var(--c, var(--es-panel)); border: 1px solid var(--es-line2); }
 .es-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .es-tile:hover, .es-tile:focus-visible { border-color: var(--es-strong); }
 .es-tile--feat { grid-column: span 2; grid-row: span 2; }
