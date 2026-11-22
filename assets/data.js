@@ -421,7 +421,7 @@ window.SECTIONS = {
     { g: 'ref', title: 'Environment references', imgs: [3] }
   ],
   moonrise: [
-    { g: 'final', title: 'Title sequence frames', text: 'We used a warm yellow tone for inside the tent, where Sam and Suzy feel the most comfort and true love. In contrast, we used a cool tone of blue and purple for the final scene, where it is revealed that the tent is placed in the room that represents the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },
+    { g: 'final', title: 'Title sequence frames', layout: 'poster-b', text: 'We used a warm yellow tone for inside the tent, where Sam and Suzy feel the most comfort and true love. In contrast, we used a cool tone of blue and purple for the final scene, where it is revealed that the tent is placed in the room that represents the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },
     { g: 'process', title: 'Storyboard, render + type', text: 'Before modeling, we sketched the scenes in values to plan the lighting and details, then set up the first renders before adding texture and adjusting the light. The type stays soft and consistent in size to match the mood.', imgs: [11, 12, 10], sets: [[11, 12]], setWord: 'STAGES' },
     { g: 'ref', title: 'Moodboard', text: 'Warm references for the cozy feeling inside the tent, cold night tones against cozy light for the reality outside it, and 3D film titles that inspired our backlit title reveal.', imgs: [7, 8, 9] }
   ],

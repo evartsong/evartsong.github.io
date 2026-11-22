@@ -253,10 +253,10 @@
             }).join('') + '</div>';
           }
         }
-        if (s.layout === 'poster') {
+        if (s.layout === 'poster' || s.layout === 'poster-b') { /* poster-b (Moonrise): small 1 + 2 stacked left, big 3 right, 4 + 5 side by side, 6 full width */
           /* layout 'poster': a comic page like the printed gallery poster: panel 1 big with panels 2 + 3 stacked
              beside it, then every later panel full width, all on one black board */
-          media += '<div class="es-poster">' + ims.map(function (im, i) {
+          media += '<div class="es-poster' + (s.layout === 'poster-b' ? ' es-poster--b' : '') + '">' + ims.map(function (im, i) {
             return '<div class="es-poster__panel es-poster__panel--' + (i + 1) + '">' + shot(im, p.title + ': ' + s.title + ', scene ' + (i + 1) + ' of ' + ims.length) + '</div>';
           }).join('') + '</div>';
         }
@@ -266,7 +266,7 @@
             return '<div class="es-trio__cell es-trio__cell--' + (i + 1) + '">' + shot(im, p.title + ': ' + s.title + ', ' + (i + 1) + ' of ' + ims.length) + '</div>';
           }).join('') + '</div>';
         }
-        if (s.layout !== 'pairs' && s.layout !== 'poster' && s.layout !== 'trio') ims.forEach(function (im, i) {
+        if (s.layout !== 'pairs' && s.layout !== 'poster' && s.layout !== 'poster-b' && s.layout !== 'trio') ims.forEach(function (im, i) {
           var k = kindOf(im);
           if (g !== 'final' && k !== 'tall') k = 'mix'; /* process + moodboard: one even grid per section */
           var last = runs[runs.length - 1];
