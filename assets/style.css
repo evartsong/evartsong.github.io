@@ -922,7 +922,7 @@ body { background: var(--es-bg); }
 }
 /* Season pass for 10: ranked bento. Biggest first: 01 featured with 02 + 03 stacked beside it,
    04-06 in thirds, 07-10 in quarters. Tablet + phone: 01 full, 02-03 halves, 04-06 thirds, 07-10 halves. */
-.es-bento { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 220px; }
+.es-bento { margin-top: clamp(24px, 2.2vw, 36px); grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(150px, 22vh, 220px); }
 .es-tile--r1 { grid-column: span 8; grid-row: span 2; }
 .es-tile--r2 { grid-column: span 4; }
 .es-tile--r3 { grid-column: span 4; }
@@ -998,7 +998,8 @@ body { background: var(--es-bg); }
    large monitors, and a readable floor for small mono labels.
    ===================================================================== */
 .es-wrap { max-width: 1440px; padding-left: clamp(16px, 4vw, 56px); padding-right: clamp(16px, 4vw, 56px); }
-.es-section { padding-top: clamp(56px, 7vw, 112px); padding-bottom: clamp(64px, 8vw, 128px); }
+/* Tighter on short laptop screens (vh) so PRESS START shows the whole first project */
+.es-section { padding-top: clamp(44px, min(4.5vw, 6.5vh), 80px); padding-bottom: clamp(52px, min(5vw, 9vh), 96px); }
 .es-kicker { margin-bottom: clamp(10px, 1.2vw, 18px); }
 .es-lede { margin-top: clamp(10px, 1.2vw, 16px); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.55; }
 
