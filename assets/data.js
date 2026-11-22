@@ -70,7 +70,7 @@ window.PROJECTS = [
     tools: ['Photoshop', 'Illustrator', 'Figma', 'Midjourney', 'HubSpot', 'Klaviyo', 'Canva', 'LinkedIn Ads', 'Google Ads', 'Google Analytics'],
     type: 'Web, email + social for B2B freight logistics', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
     tile: 'images/covers/warp-feature.jpg', /* home grid image */
-    cover: 'images/warp/25.jpg' /* project page hero: From Dock to Doorstep; was warp/19.jpg */, coverRatio: '1200 / 1200', video: '', images: []
+    cover: 'images/warp/25-hero.jpg' /* project page hero: From Dock to Doorstep with the corner logo removed (hero only); was warp/19.jpg */, coverRatio: '1200 / 1200', video: '', images: []
   },
   {
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes + logo reveal', era: '2023', season: 'SEASON 2023',
