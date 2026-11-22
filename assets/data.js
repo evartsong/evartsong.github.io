@@ -77,7 +77,7 @@ window.PROJECTS = [
     when: '2023', role: 'Designer + Animator', color: '#0F6E4D', badge: 'GALLERY PICK',
     desc: 'Spotify’s instant access, told through a reversed animal food chain.',
     brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
-    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Land it on a Spotify logo reveal'],
+    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Create most of the backgrounds and the lion’s details', 'Land it on a Spotify logo reveal'],
     tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
     type: 'Concept spot for Spotify', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/covers/soundtrack.png', /* home grid image */
@@ -87,8 +87,8 @@ window.PROJECTS = [
     id: 'label-lunacy', title: 'Label Lunacy', genre: '3D motion', era: '2023', season: 'SEASON 2023',
     when: '2023', role: '3D Designer + Animator', color: '#8A5F0E', badge: '',
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
-    brief: 'A satirical ad about how far a label can carry a product: some shoppers would buy almost anything with Louis Vuitton on it. We built the ad like a luxury reveal, with liquid gold and the LV mark, so viewers lean in to find out what is being unveiled. The payoff is a plain folding chair.',
-    did: ['Write the satire: a plain folding chair sold on the Louis Vuitton label alone', 'Build the reveal to keep viewers curious until the last shot', 'Model, light and animate the ad in 3D'],
+    brief: 'A satirical ad about the power of a label: some shoppers will buy almost anything as long as it says Louis Vuitton. We staged it like a luxury product reveal, building curiosity with liquid gold and the LV logo until the final shot. What gets revealed is a plain folding chair.',
+    did: ['Storyboard the scenes and plan the camera views', 'Build the reveal to keep viewers curious until the last shot', 'Model, light and animate the ad in 3D'],
     tools: ['Cinema 4D', 'After Effects'],
     type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
     tile: 'images/label-lunacy/05.jpg', /* home grid image */
