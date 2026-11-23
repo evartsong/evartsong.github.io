@@ -192,7 +192,7 @@
       /* meta: { label, focus } for one image, from the section's labels: {n: 'text'} and focus: {n: 'left'|'right'|'top'|...} */
       var macShot = function (im, alt, scroll, meta) {
         meta = meta || {};
-        var dur = scroll && im[1] ? Math.round(Math.min(40, Math.max(10, im[2] / im[1] * 2.2))) : 0;
+        var dur = scroll && im[1] ? Math.round(Math.min(40, Math.max(10, im[2] / im[1] * 2.2)) * (meta.pace || 1)) : 0; /* pace: section option, 1.6 = 60% slower scroll */
         var pic = imgTag(im, alt);
         if (meta.focus) pic = pic.replace(/^<(img|video) /, '<$1 style="object-position:' + esc(meta.focus) + ' top" ');
         return '<a class="es-mac' + (scroll ? ' es-mac--scroll' : '') + '" href="' + esc(im[0]) + '" target="_blank" rel="noopener"' + (dur ? ' style="--dur:' + dur + 's"' : '') + '>' +
@@ -281,7 +281,7 @@
           /* 'macbook-screens' frames screenshots (wide or long) but leaves square/portrait graphics as they are */
           var framed = s.frame === 'macbook' || (s.frame === 'macbook-pages' && r.k === 'tall') || (s.frame === 'macbook-screens' && r.k !== 'port');
           var cells = r.items.map(function (it) {
-            if (framed) return macShot(it[0], alt(it), r.k === 'tall', metaOf[it[0][0]]);
+            if (framed) return macShot(it[0], alt(it), r.k === 'tall', s.pace ? Object.assign({ pace: s.pace }, metaOf[it[0][0]]) : metaOf[it[0][0]]);
             /* frame: 'phone' -> app screens on a black phone drawn in CSS, the same materials as the MacBook */
             if (s.frame === 'phone') return '<a class="es-phone" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"><span class="es-phone__screen">' + imgTag(it[0], alt(it)) + '</span></a>';
             var st = (metaOf[it[0][0]] || {}).start, ov = (metaOf[it[0][0]] || {}).ov;
@@ -295,7 +295,7 @@
             var lab = (metaOf[it[0][0]] || {}).label; /* page name, shown as a hover title, e.g. 'Early Black Friday · Faire' */
             return r.k === 'tall' ? '<a class="es-long" href="' + esc(it[0][0]) + '" target="_blank" rel="noopener"' + (st ? ' data-start="' + (+st) + '"' : '') + (lab ? ' title="' + esc(lab) + '"' : '') + '>' + body + '</a>' : shot(it[0], alt(it));
           }).join('');
-          if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (n >= 3 ? 3 : 2) + '">' + cells + '</div>';
+          if (framed && r.k === 'tall') media += '<div class="es-set es-set--' + (s.cols || (n >= 3 ? 3 : 2)) + '">' + cells + '</div>';
           else if (r.k === 'tall') media +='<div class="es-longs" style="--n:' + (n === 1 ? 2 : Math.min(n, 3)) + '">' + cells + '</div>'; /* long pages: at most 3 per row */
           else if (s.layout) media += '<div class="es-set es-set--' + (+s.layout === 1 ? (r.k === 'port' ? 'one' : 'full') : s.layout) + '">' + cells + '</div>'; /* layout picked in the page editor */
           else if (r.k === 'mix' && s.row && n > 1) media += '<div class="es-set es-set--row" style="--cols:' + r.items.map(function (it) { return ((it[0][1] / it[0][2]) || 1.6).toFixed(3) + 'fr'; }).join(' ') + '">' + cells + '</div>'; /* row: one line, same height, widths follow each image's shape (nothing cropped) */
