@@ -527,8 +527,10 @@
   }
 
   /* ---------- Play: Story mode slideshows (arrows, dots, swipe, keyboard, autoplay) ---------- */
-  var storiesEl = document.getElementById('stories');
-  var S = window.STORIES || [];
+  /* the same slideshow cards serve Story mode (#stories) and Brand + web design (#webdesign) */
+  [['stories', window.STORIES], ['webdesign', window.WEBDESIGN]].forEach(function (grp) {
+  var storiesEl = document.getElementById(grp[0]);
+  var S = grp[1] || [];
   if (storiesEl && S.length) {
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
     storiesEl.innerHTML = S.map(function (st, si) {
@@ -590,6 +592,7 @@
       document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
     });
   }
+  });
 
   /* ---------- Play page ---------- */
   var boardEl = document.getElementById('quest-board');
@@ -604,7 +607,7 @@
     var current = TYPES.some(function (t) { return t[0] === want; }) ? want : 'all';
     var count = function (t) { return String(t === 'all' ? Q.length : Q.filter(function (q) { return q.type === t; }).length).padStart(2, '0'); };
     var setCount = document.getElementById('quest-total');
-    if (setCount) setCount.textContent = String(Q.length + (window.STORIES || []).length + (window.CUTSCENES || []).length).padStart(2, '0');
+    if (setCount) setCount.textContent = String(Q.length + (window.STORIES || []).length + (window.WEBDESIGN || []).length + (window.CUTSCENES || []).length).padStart(2, '0');
     var typeTotal = document.getElementById('type-total');
     if (typeTotal) typeTotal.textContent = String(TYPES.filter(function (t) { return t[0] !== 'all' && +count(t[0]) > 0; }).length).padStart(2, '0');
     /* One plain image (or a looping video) per piece. Click / tap flips the card to show
