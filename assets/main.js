@@ -6,6 +6,39 @@
   var L = window.LINKS || {};
   var X = window.EXTRAS || [];
   var M = window.MEDIA || {};
+
+  /* ---------- Clean URLs: evasong.info/work, /history, /play, /bibi ----------
+     Old links (history.html, project.html?id=bibi, /#work) still open; the address bar is tidied to the clean form. */
+  (function () {
+    var path = location.pathname, q = new URLSearchParams(location.search), clean = null, hash = location.hash;
+    if (/\/project(\.html)?$/.test(path) && q.get('id')) { clean = '/' + q.get('id'); q.delete('id'); }
+    else if (/\/index(\.html)?$/.test(path)) clean = path.replace(/index(\.html)?$/, '');
+    else if (/\.html$/.test(path)) clean = path.replace(/\.html$/, '');
+    if ((clean || path) === '/' && hash === '#work') { clean = '/work'; hash = ''; }
+    if (clean !== null) { var rest = q.toString(); history.replaceState(null, '', clean + (rest ? '?' + rest : '') + hash); }
+  })();
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  /* in-page links (#profile, #contact, the Work tab on the home page) scroll without adding #... to the address */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var href = a.getAttribute('href'), id = null;
+    if (/^#[\w-]+$/.test(href) && href !== '#main') id = href.slice(1);
+    else if (href === '/work' || href === '/#work') id = 'work';
+    else if (/^\/#[\w-]+$/.test(href) && (location.pathname === '/' || location.pathname === '/work')) id = href.slice(2);
+    var el = id && document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+    if (id === 'work') history.replaceState(null, '', '/work');
+    else if (location.pathname === '/work') history.replaceState(null, '', '/');
+  });
+  /* evasong.info/work is the home page opened at the Work section */
+  if (/^\/work\/?$/.test(location.pathname)) {
+    var workEl = document.getElementById('work');
+    if (workEl) { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; requestAnimationFrame(function () { workEl.scrollIntoView({ block: 'start' }); }); }
+  }
+
   /* attach generated media (covers, images [src, w, h], video clips) to each entry */
   P.concat(X).forEach(function (o) {
     var m = M[o.id] || {};
@@ -25,7 +58,7 @@
   }
   function num(i) { return String(i + 1).padStart(2, '0'); }
   function upper(s) { return String(s || '').toUpperCase(); }
-  function projectUrl(p) { return 'project.html?id=' + encodeURIComponent(p.id); }
+  function projectUrl(p) { return '/' + encodeURIComponent(p.id); }
   function artStyle(color, img) {
     return '--c:' + color + ';' + (img ? "background-image:url('" + esc(img) + "');" : '');
   }
@@ -137,7 +170,8 @@
   /* ---------- Project + side quest pages ---------- */
   var projEl = document.getElementById('project');
   if (projEl && (P.length || X.length)) {
-    var qid = new URLSearchParams(location.search).get('id');
+    /* the page id comes from the clean address (/bibi), or ?id= on old project.html links */
+    var qid = new URLSearchParams(location.search).get('id') || decodeURIComponent(location.pathname.replace(/^.*\//, '').replace(/\.html$/, ''));
     var list = P, isQuest = false;
     var idx = P.findIndex(function (p) { return p.id === qid; });
     if (idx < 0) {
@@ -149,7 +183,7 @@
     var pi = (idx - 1 + n) % n, ni = (idx + 1) % n;
     var prev = list[pi], next = list[ni];
     var unit = isQuest ? 'QUEST' : 'TIER';
-    var urlOf = function (t) { return 'project.html?id=' + encodeURIComponent(t.id); };
+    var urlOf = function (t) { return '/' + encodeURIComponent(t.id); };
     document.title = p.title + ' — Eva Song';
 
     var chips = isQuest ? '' : P.map(function (t, i) {
@@ -343,7 +377,7 @@
 
     projEl.innerHTML =
       '<div class="es-subbar"><div class="es-wrap">' +
-        '<a class="es-back" href="' + (isQuest ? 'play.html' : './#work') + '">← <span class="es-d">' + (isQuest ? 'SIDE QUESTS' : 'SEASON PASS') + '</span><span class="es-m">' + (isQuest ? 'ALL PLAY' : 'ALL WORK') + '</span></a>' +
+        '<a class="es-back" href="' + (isQuest ? '/play' : '/work') + '">← <span class="es-d">' + (isQuest ? 'SIDE QUESTS' : 'SEASON PASS') + '</span><span class="es-m">' + (isQuest ? 'ALL PLAY' : 'ALL WORK') + '</span></a>' +
         (isQuest ? '<span class="es-d es-count">QUEST ' + num(idx) + ' / ' + num(n - 1) + ' · ' + esc(upper(p.genre)) + '</span>' : '<nav class="es-chips" aria-label="Jump to a project">' + chips + '</nav>') +
         '<span class="es-m es-count">' + unit + ' ' + num(idx) + ' / ' + num(n - 1) + '</span>' +
         '<div class="es-stepper es-d">' +
@@ -403,7 +437,7 @@
           '<a class="es-cont es-cont--prev" href="' + urlOf(prev) + '"><span class="es-cont__label">← PREVIOUS ' + unit + ' · ' + num(pi) + '</span><span class="es-cont__title">' + esc(prev.title) + '</span><span class="es-cont__genre">' + esc(upper(prev.genre)) + '</span></a>' +
           '<a class="es-cont es-cont--next" style="--c:' + next.color + '" href="' + urlOf(next) + '"><span class="es-cont__num" aria-hidden="true">' + num(ni) + '</span><span class="es-cont__label">NEXT ' + unit + ' · ' + num(ni) + ' →</span><span class="es-cont__title">' + esc(next.title) + '</span><span class="es-cont__genre">' + esc(upper(next.genre)) + '</span></a>' +
         '</div>' +
-        '<div class="es-btnrow"><a class="es-btn" href="' + (isQuest ? 'play.html' : './#work') + '">' + (isQuest ? 'All side quests' : 'All projects') + '</a><a class="es-btn es-btn--ghost" href="./#contact">Contact me</a></div>' +
+        '<div class="es-btnrow"><a class="es-btn" href="' + (isQuest ? '/play' : '/work') + '">' + (isQuest ? 'All side quests' : 'All projects') + '</a><a class="es-btn es-btn--ghost" href="/#contact">Contact me</a></div>' +
       '</div></section>';
     projEl.closest('main').classList.add('has-pbar');
 

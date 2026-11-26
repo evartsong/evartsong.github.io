@@ -151,7 +151,7 @@ window.PROJECTS = [
   }
 ];
 
-/* Side quests that get their own page (project.html?id=...). Same fields as PROJECTS.
+/* Side quests that get their own page (evasong.info/<id>). Same fields as PROJECTS.
    Images come from assets/media.js; video can be a YouTube/Vimeo link or an .mp4 path. */
 window.EXTRAS = [
   {
@@ -386,7 +386,7 @@ window.LINKS = {
   email: 'mailto:evartsong@gmail.com',
   linkedin: 'https://www.linkedin.com/in/eva-song-5261561b7/',
   instagram: 'https://www.instagram.com/evartsong',
-  resume: 'evasong_resume.pdf?v=20261125' /* drop the PDF into the site folder with this name */
+  resume: '/evasong-resume.pdf' /* drop the PDF into the site folder with this name (keep evasong_resume.pdf too, for old links) */
 };
 
 /* How each project page is laid out, top to bottom:
