@@ -380,7 +380,7 @@ window.LINKS = {
   email: 'mailto:evartsong@gmail.com',
   linkedin: 'https://www.linkedin.com/in/eva-song-5261561b7/',
   instagram: 'https://www.instagram.com/evartsong',
-  resume: 'evasong_resume.pdf' /* drop the PDF into the site folder with this name */
+  resume: 'evasong_resume.pdf?v=20261125' /* drop the PDF into the site folder with this name */
 };
 
 /* How each project page is laid out, top to bottom:
