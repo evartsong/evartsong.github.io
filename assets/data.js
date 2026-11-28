@@ -63,7 +63,7 @@ window.PROJECTS = [
     results: [['18K → 25K', 'company LinkedIn followers while I was there'], ['20%', 'open rate on outbound sales emails that booked meetings and won new customers']],
     did: [
       'Worked directly with the co-founders to lead the marketing and revenue teams: ran meetings, assigned tasks, kept projects on deadline',
-      'Designed the website, landing pages and business decks, and led campaign asset design',
+      'Designed the website, landing pages and business decks in Figma, and led campaign asset design',
       'Ran weekly email campaigns in HubSpot and Klaviyo, with outbound sales emails averaging a 20% open rate and booking meetings that turned into customers',
       'Grew the company LinkedIn from 18K to 25K followers, managing social and B2B content: press releases, case studies and graphics'
     ],
