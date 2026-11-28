@@ -45,10 +45,10 @@ window.PROJECTS = [
     desc: 'Inviting streamers to find their inner conductor in live video.',
     brief: 'A rebrand concept for vMix, the live production and streaming software. To make professional broadcast tools feel inviting to a younger generation of streamers, I built the brand around one idea: everyone has an inner conductor. The conductor’s baton became the logo mark, conducting gestures became the brand shapes, and the system runs through posters, environment graphics, a website, an app and a brand montage.',
     did: [
-      'Design the identity: the baton logo mark, wordmark, color palette and a set of brand shapes drawn from conducting gestures',
-      'Animate the logo’s opening and closing and edit the brand montage',
-      'Create identity and content posters and place the system in real spaces, from street posters to billboards',
-      'Design the website and mobile app in Adobe XD, carrying the shapes and palette into the interface'
+      'Designed the identity: the baton logo mark, wordmark, color palette and a set of brand shapes drawn from conducting gestures',
+      'Animated the logo’s opening and closing and edited the brand montage',
+      'Created identity and content posters and placed the system in real spaces, from street posters to billboards',
+      'Designed the website and mobile app in Adobe XD, carrying the shapes and palette into the interface'
     ],
     tools: ['Illustrator', 'InDesign', 'Photoshop', 'Adobe XD', 'After Effects'],
     type: 'Rebrand concept for live streaming software', collaborators: '', recognition: '',
@@ -60,7 +60,7 @@ window.PROJECTS = [
     when: '03.2024 – 12.2024', role: 'Digital Marketing Specialist', color: '#3326B8', badge: '',
     desc: 'Website, landing pages, decks and B2B campaigns, leading the marketing and revenue teams with the co-founders.',
     brief: 'At WARP, a Los Angeles freight logistics company, I worked directly with the co-founders and led the marketing and revenue teams, while also designing the website, landing pages and campaign assets myself.',
-    results: [['18K → 25K', 'company LinkedIn followers while I was there'], ['20%', 'open rate on outbound sales emails, turning into sales meetings and new customers']],
+    results: [['18K → 25K', 'company LinkedIn followers while I was there'], ['20%', 'open rate on outbound sales emails that booked meetings and won new customers']],
     did: [
       'Worked directly with the co-founders to lead the marketing and revenue teams: ran meetings, assigned tasks, kept projects on deadline',
       'Designed the website, landing pages and business decks, and led campaign asset design',
@@ -76,8 +76,8 @@ window.PROJECTS = [
     id: 'soundtrack', title: 'Soundtrack Your Life', genre: 'Styleframes + logo reveal', era: '2023', season: 'SEASON 2023',
     when: '2023', role: 'Designer + Animator', color: '#0F6E4D', badge: 'GALLERY PICK',
     desc: 'Spotify’s instant access, told through a reversed animal food chain.',
-    brief: 'One-minute styleframes showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
-    did: ['Flip the animal food chain into a story about instant access', 'Design sequential styleframes for a one-minute spot', 'Create most of the backgrounds and the lion’s details', 'Land it on a Spotify logo reveal'],
+    brief: 'Styleframes for a one-minute spot showing how instantly accessible Spotify is, told through characters in a reversed animal food chain, ending on a Spotify logo reveal.',
+    did: ['Flipped the animal food chain into a story about instant access', 'Designed sequential styleframes for a one-minute spot', 'Created most of the backgrounds and the lion’s details', 'Landed it on a Spotify logo reveal'],
     tools: ['Photoshop', 'Procreate', 'Cinema 4D'],
     type: 'Concept spot for Spotify', collaborators: 'Elaine Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/covers/soundtrack.png', /* home grid image */
@@ -88,7 +88,7 @@ window.PROJECTS = [
     when: '2023', role: '3D Designer + Animator', color: '#8A5F0E', badge: '',
     desc: 'A satirical ad on how brands turn everyday items into must-haves.',
     brief: 'A satirical ad about the power of a label: some shoppers will buy almost anything as long as it says Louis Vuitton. We staged it like a luxury product reveal, building curiosity with liquid gold and the LV logo until the final shot. What gets revealed is a plain folding chair.',
-    did: ['Storyboard the scenes and plan the camera views', 'Build the reveal to keep viewers curious until the last shot', 'Model, light and animate the ad in 3D'],
+    did: ['Storyboarded the scenes and planned the camera views', 'Built the reveal to keep viewers curious until the last shot', 'Modeled, lit and animated the ad in 3D'],
     tools: ['Cinema 4D', 'After Effects'],
     type: 'Satirical ad', collaborators: 'Ewan Lee', recognition: '',
     tile: 'images/label-lunacy/05.jpg', /* home grid image */
@@ -99,7 +99,7 @@ window.PROJECTS = [
     when: '2022', role: 'Designer + Animator', color: '#8A3A1C', badge: '',
     desc: 'Light as imagination in Sam and Suzy’s runaway love story.',
     brief: 'A title sequence for Moonrise Kingdom. Sam and Suzy fall in love and run away into the wilderness; light becomes the symbol of imagination at the story’s turning point.',
-    did: ['Use light as the symbol of imagination', 'Storyboard the scenes in values to plan the lighting', 'Model, light and render the title sequence in Cinema 4D and Arnold'],
+    did: ['Used light as the symbol of imagination', 'Storyboarded the scenes in values to plan the lighting', 'Modeled, lit and rendered the title sequence in Cinema 4D and Arnold'],
     tools: ['Cinema 4D', 'Arnold', 'Photoshop'],
     type: 'Film title sequence', collaborators: 'Jason Kim', recognition: '',
     tile: 'images/moonrise/03.jpg', /* home grid image */
@@ -110,9 +110,9 @@ window.PROJECTS = [
     when: '2022', role: 'Brand Designer', color: '#9E1F18', badge: '',
     desc: 'An identity for an arena where gamers compete for prizes and rep.',
     brief: 'A brand identity for GSA, short for GameStop Arena: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
-    did: ['Name and position the venue: GSA, short for GameStop Arena', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
+    did: ['Named and positioned the venue: GSA, short for GameStop Arena', 'Designed rounded, expressive letterforms that feel approachable', 'Extended the identity into motion'],
     tools: ['InDesign', 'Photoshop', 'After Effects'],
-    type: 'Esports venue', collaborators: '', recognition: '',
+    type: 'Brand identity concept for an esports venue', collaborators: '', recognition: '',
     tile: 'images/gsa/15.jpg', /* home grid image */
     cover: 'images/gsa/01.jpg', coverRatio: '2000 / 900', video: '', images: []
   },
@@ -121,7 +121,7 @@ window.PROJECTS = [
     when: '2023', role: '3D Designer + Animator', color: '#146A75', badge: 'GALLERY PICK',
     desc: 'A 3D short nudging people from plastic bottles to waste-free bars.',
     brief: 'A short 3D animation encouraging people to switch from plastic bottles to waste-free shampoo bars, told through two characters with front-camera framing, facial expressions and body motion.',
-    did: ['Tell a sustainability message through two characters', 'Stage it in front-camera framing with expressive faces and body motion', 'Model, light and render in Cinema 4D and Redshift'],
+    did: ['Told a sustainability message through two characters', 'Staged it in front-camera framing with expressive faces and body motion', 'Modeled, lit and rendered it in Cinema 4D and Redshift'],
     tools: ['Cinema 4D', 'Redshift', 'After Effects'],
     type: 'Sustainability short', collaborators: 'Sarah Lee', recognition: 'ArtCenter Student Gallery, 2023',
     tile: 'images/shampoo-bar/03.jpg', /* home grid image */
@@ -132,7 +132,7 @@ window.PROJECTS = [
     when: '2021', role: 'Designer', color: '#3F6420', badge: '',
     desc: 'A seed carries growth and hope through the film’s burning-crops scene.',
     brief: 'A title sequence for Minari that visualizes growth and hope through a seed, framed around the scene where the crops burn and Jacob and Monica try to save them.',
-    did: ['Use a seed as the framing device for growth and hope', 'Build the sequence around the burning-crops scene', 'Set the credits in one simple sans serif, using scale for hierarchy'],
+    did: ['Used a seed as the framing device for growth and hope', 'Built the sequence around the burning-crops scene', 'Set the credits in one simple sans serif, using scale for hierarchy'],
     tools: ['Photoshop', 'Lightroom', 'InDesign'],
     type: 'Film title sequence', collaborators: '', recognition: '',
     tile: 'images/minari/06.jpg', /* home grid image */
@@ -143,7 +143,7 @@ window.PROJECTS = [
     when: '2021', role: 'Graphic Designer', color: '#7A2E5A', badge: '',
     desc: 'An exhibition and book for six contemporary South Korean artists, colored by traditional hanbok silk.',
     brief: 'A group exhibition and publication featuring six contemporary South Korean artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
-    did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
+    did: ['Designed the publication: cover, spreads and artist sections', 'Built a color and texture system from traditional hanbok silk', 'Extended the identity into the exhibition wall, promotional poster and an artist poster series'],
     tools: ['InDesign', 'Illustrator', 'Photoshop'],
     type: 'Exhibition + publication', collaborators: '', recognition: '',
     tile: 'images/hanbok/01.jpg', /* home grid image */
@@ -174,7 +174,7 @@ window.EXTRAS = [
   },
   {
     id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal project', role: '3D Artist', color: '#5B2BB5', badge: '',
-    desc: 'A dreamy 3D ride through a cloud world: a toy car rides a Ferris wheel above glossy bubble clouds.',
+    desc: 'A dreamy 3D trip through a cloud world: a toy car rides a Ferris wheel above glossy bubble clouds.',
     brief: 'A short 3D animation set in a soft, toy-like world of clouds, balloons and a Ferris wheel, modeled in Cinema 4D and rendered in Redshift.',
     did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D animation', collaborators: '', recognition: '', video: 'videos/voyage.mp4'
   },
@@ -197,14 +197,14 @@ window.EXTRAS = [
     did: [], tools: ['Procreate', 'Photoshop'], type: 'Illustrated frames', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'killjoy', title: 'Killjoy', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#C99BE8', badge: '',
+    id: 'killjoy', title: 'Killjoy × Adventure Time', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#C99BE8', badge: '',
     desc: 'Valorant’s Killjoy drawn in the Adventure Time style.',
     brief: 'Fan illustration mixing a Valorant agent with Adventure Time’s character style.',
     did: [], tools: ['Procreate'], type: 'Fan illustration', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'nicotine', title: 'Nicotine', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#2B2F7A', badge: '',
-    desc: 'A character illustration about smoking: cigarettes, scorched lungs and dripping pattern around a figure in a NICOTINE beanie.',
+    desc: 'A character illustration about smoking: cigarettes, scorched lungs and dripping patterns around a figure in a NICOTINE beanie.',
     brief: 'A character illustration on the damage smoking does, built from saturated color, dripping shapes and pattern.',
     did: [], tools: ['Procreate'], type: 'Illustration', collaborators: '', recognition: '', video: ''
   },
@@ -279,7 +279,7 @@ window.QUESTS = [
   { type: 'ink', title: 'Portrait in black', image: 'images/ig-ink/05.jpg', ratio: '1440 / 1440', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Face studies', image: 'images/play/026.jpg', ratio: '1080 / 857', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'painting', title: 'Coastal landscape', image: 'images/ig-paintings/11.jpg', ratio: '1080 / 903', tools: ['Acrylic'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Killjoy', image: 'images/killjoy/01.jpg', ratio: '1350 / 1771', tools: ['Procreate'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Killjoy × Adventure Time', image: 'images/killjoy/01.jpg', ratio: '1350 / 1771', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Line portrait', image: 'images/ig-ink/06.jpg', ratio: '1440 / 1721', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character sketches', image: 'images/play/027.jpg', ratio: '1080 / 1350', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'painting', title: 'Portrait studies', image: 'images/play/005.jpg', ratio: '1440 / 1440', tools: ['Mixed media'], color: '#2A2A2A' },
@@ -293,7 +293,7 @@ window.QUESTS = [
   { type: 'drawing', title: 'Seated figure', image: 'images/play/013.jpg', ratio: '1280 / 1600', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character concepts', image: 'images/play/029.jpg', ratio: '1080 / 683', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'painting', title: 'Seated figure', image: 'images/play/011.jpg', ratio: '1080 / 1350', tools: ['Acrylic'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Killjoy Valorant', image: 'images/ig-drawing/06.jpg', ratio: '1440 / 1440', tools: ['Procreate'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Killjoy', image: 'images/ig-drawing/06.jpg', ratio: '1440 / 1440', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Balloon girl', image: 'images/ig-ink/09.jpg', ratio: '1080 / 1286', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'graphic', title: 'Enlightenment', image: 'images/play/002.jpg', ratio: '1440 / 1079', tools: ['Typography'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Girl in static', image: 'images/play/015.jpg', ratio: '1080 / 1080', tools: ['Pen'], color: '#2A2A2A' },
@@ -370,15 +370,15 @@ window.STORIES = [
 
 /* Play: Brand + web design. Client sites, shown as slideshows like Story mode (same fields). */
 window.WEBDESIGN = [
-  { id: 'celita', title: 'Celita & Co', type: 'Web design', text: 'A website redesign for a La Jolla children’s boutique, with an online shop: the home page and a product page, built around the boutique’s logo. Work in progress.', tools: ['Adobe Creative Suite', 'Claude'] },
-  { id: 'persico', title: 'Limón Pérsico', type: 'Brand + web design', text: 'A bilingual Spanish and English website for a lime farm in El Salvador: the farm, its people and what it sells, with looping farm footage and one-tap WhatsApp and Instagram links.', tools: ['Adobe Creative Suite', 'Claude'] },
+  { id: 'celita', title: 'Celita & Co', type: 'Web design', text: 'An in-progress website redesign for a La Jolla children’s boutique, with an online shop: the home page and a product page, built around the boutique’s logo.', tools: ['Adobe Creative Cloud', 'Claude'] },
+  { id: 'persico', title: 'Limón Pérsico', type: 'Brand + web design', text: 'A bilingual Spanish and English website for a lime farm in El Salvador: the farm, its people and what it sells, with looping farm footage and one-tap WhatsApp and Instagram links.', tools: ['Adobe Creative Cloud', 'Claude'] },
   { id: 'woobofood', title: 'Woobofood + Bullbop', type: 'Brand + web design', text: 'Websites for the Korean food company Woobofood and its brands Purunchon, Lechi and Ocean Snack, plus the brand identity and website for Bullbop, its Korean BBQ food truck.', tools: ['Wix', 'Illustrator'], start: 7 },
   { id: 'squareone', title: 'SquareOne', type: 'Web design', text: 'A fashion resale marketplace: the home page, the menswear and womenswear shops and the page that invites people to sell.', tools: ['Adobe XD', 'Illustrator'], start: 6 }
 ];
 
 /* Play: Cutscenes. Animations shown as video players with sound (no autoplay). */
 window.CUTSCENES = [
-  { title: 'Voyage', type: '3D animation', text: 'A dreamy 3D ride through a cloud world: a toy car rides a Ferris wheel above glossy bubble clouds.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
+  { title: 'Voyage', type: '3D animation', text: 'A dreamy 3D trip through a cloud world: a toy car rides a Ferris wheel above glossy bubble clouds.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
   { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop: a record drops onto a turntable on a floating cube.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube.jpg', tools: ['Cinema 4D', 'Redshift'] }
 ];
 /* Links used across the site */
@@ -452,7 +452,7 @@ window.SECTIONS = {
   ],
   gsa: [
     { g: 'final', title: 'Logo + lockups', text: 'The GSA letters sit next to the full GameStop Arena name so the new venue is easy to recognize, with horizontal and stacked lockups and their clear space.', imgs: [2, 3, 4, 5], cols: 2 },
-    { g: 'final', title: 'Typography + color', text: 'Dubai in four weights, and a blue, purple and red palette that runs through every piece.', imgs: [6, 7], cols: 2 },
+    { g: 'final', title: 'Typography + color', text: 'The Dubai typeface in four weights, and a blue, purple and red palette that runs through every piece.', imgs: [6, 7], cols: 2 },
     { g: 'final', title: 'Promotional posters', phone: 2, text: 'Posters built from the GSA letterforms and the PLAY, COMPETE, ENJOY tagline.', imgs: [10, 11, 12] },
     { g: 'final', title: 'Motion', text: 'The GSA letters turning in 3D through PLAY, COMPETE, ENJOY, then a spinning GSA cube and the logo reveal.', imgs: [19, 20, 21], cols: 3 },
     { g: 'final', title: 'In the arena', text: 'The identity on the arena’s exterior and stage, a digital stand, a bus shelter ad and street banners.', imgs: [15, 16, 13, 14], cols: 2 },
