@@ -352,9 +352,9 @@ window.QUESTS = [
   { type: 'drawing', title: 'Gesture drawings · 2-minute poses in blue', image: 'images/play/037.jpg', ratio: '1252 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings · 5-minute poses', image: 'images/play/038.jpg', ratio: '1251 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings · 5-minute seated poses', image: 'images/play/039.jpg', ratio: '1253 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
-  { type: 'drawing', title: 'Gesture drawings · 2-minute poses in red', image: 'images/play/040.jpg', ratio: '1246 / 936', tools: ['Colored pencil'], color: '#2A2A2A' },
+  { type: 'drawing', title: 'Gesture drawings · 5-minute poses in red', image: 'images/play/040.jpg', ratio: '1246 / 936', tools: ['Colored pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings · 5-minute poses in blue', image: 'images/play/041.jpg', ratio: '1253 / 936', tools: ['Colored pencil'], color: '#2A2A2A' },
-  { type: 'drawing', title: 'Standing figures', image: 'images/play/042.jpg', ratio: '936 / 1244', tools: ['Charcoal'], color: '#2A2A2A' },
+  { type: 'drawing', title: 'Standing figures · 5-minute poses', image: 'images/play/042.jpg', ratio: '936 / 1244', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings · 10-minute poses', image: 'images/play/044.jpg', ratio: '1262 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Long pose · 15 minutes', image: 'images/play/047.jpg', ratio: '1247 / 936', tools: ['Charcoal'], color: '#2A2A2A' }
 ];
