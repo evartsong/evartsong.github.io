@@ -170,7 +170,7 @@ window.EXTRAS = [
     id: 'nyum', title: 'Nyum! Menu', genre: 'Graphic design', when: 'Personal project', role: 'Designer + Illustrator', color: '#E59BC4', badge: '',
     desc: 'An illustrated sushi menu with cat characters.',
     brief: 'An illustrated menu for a playful sushi spot, pairing each roll with its own character.',
-    did: [], tools: ['Procreate', 'Illustrator'], type: 'Menu design', collaborators: '', recognition: '', video: ''
+    did: [], tools: ['Procreate', 'Photoshop'], type: 'Menu design', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal project', role: '3D Artist', color: '#5B2BB5', badge: '',
@@ -212,7 +212,7 @@ window.EXTRAS = [
     id: 'portrait', title: 'Portrait study', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#8A5A4A', badge: '',
     desc: 'A digital painting portrait study.',
     brief: 'A painted portrait study focused on light and skin tones.',
-    did: [], tools: ['Procreate'], type: 'Digital painting', collaborators: '', recognition: '', video: ''
+    did: [], tools: ['Photoshop'], type: 'Digital painting', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'ig-characters', title: 'Character illustrations', genre: 'Illustration', when: '2020 – 2022', role: 'Illustrator', color: '#D94A6B', badge: '',
@@ -234,15 +234,15 @@ window.EXTRAS = [
   },
   {
     id: 'ig-ink', title: 'Ink drawings', genre: 'Illustration', when: '2017 – 2020', role: 'Illustrator', color: '#22252B', badge: '',
-    desc: 'Detailed pen-and-ink work: Kobe, crowded collages, statue heads, fashion figures and a gamer’s room.',
-    brief: 'Pen-and-ink drawings built from dense line work and pattern, from portrait studies to full collages and a one-point perspective gamer’s room.',
-    did: [], tools: ['Pen', 'Ink', 'Micron'], type: 'Ink illustration', collaborators: '', recognition: '', video: ''
+    desc: 'Detailed pen-and-ink work: Kobe, crowded collages, statue heads and fashion figures, plus pencil drawings like a gamer’s room.',
+    brief: 'Pen-and-ink drawings built from dense line work and pattern, from portrait studies to full collages, plus pencil pieces such as a one-point perspective gamer’s room.',
+    did: [], tools: ['Pen', 'Ink', 'Micron', 'Pencil'], type: 'Ink illustration', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'ig-drawing', title: 'Drawing studies', genre: 'Illustration', when: '2018 – 2021', role: 'Artist', color: '#6E6E6E', badge: '',
-    desc: 'Charcoal figures and drapery, a statue study and colored-pencil hands.',
-    brief: 'Observational drawing studies in charcoal and colored pencil.',
-    did: [], tools: ['Charcoal', 'Colored pencil'], type: 'Drawing studies', collaborators: '', recognition: '', video: ''
+    desc: 'Charcoal figures and drapery, a statue study and colored-pen hands.',
+    brief: 'Observational drawing studies in charcoal, colored pencil and colored pen.',
+    did: [], tools: ['Charcoal', 'Colored pencil', 'Colored pens'], type: 'Drawing studies', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'ig-sculpt', title: 'Sculpt study', genre: '3D', when: '2022', role: '3D Artist', color: '#2E2E33', badge: '',
@@ -263,7 +263,7 @@ window.QUESTS = [
   { type: 'sketch', title: 'Rhino studies', image: 'images/play/018.jpg', ratio: '1080 / 1080', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'painting', title: 'Blue portrait', image: 'images/ig-paintings/04.jpg', ratio: '1440 / 1800', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'ink', title: 'Crowd of faces', image: 'images/ig-ink/02.jpg', ratio: '1440 / 1800', tools: ['Pen'], color: '#2A2A2A' },
-  { type: 'drawing', title: 'Hand studies', image: 'images/ig-drawing/04.jpg', ratio: '1440 / 1117', tools: ['Ink', 'Colored pens'], color: '#2A2A2A' },
+  { type: 'drawing', title: 'Hand studies', image: 'images/ig-drawing/04.jpg', ratio: '1440 / 1117', tools: ['Colored pens'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Pattern studies', image: 'images/play/019.jpg', ratio: '1080 / 1080', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: '3d', title: 'Clay sculpture', image: 'images/college/17.jpg', ratio: '864 / 1296', tools: ['Clay'], color: '#2A2A2A' },
   { type: '3d', title: 'Creature sculpt', image: 'images/play/001.jpg', ratio: '1080 / 720', tools: ['Octane'], color: '#2A2A2A', video: 'videos/play/creature-sculpt.mp4' },
@@ -287,9 +287,9 @@ window.QUESTS = [
   { type: 'ink', title: 'Squad lineup', image: 'images/ig-ink/07.jpg', ratio: '1080 / 1080', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Anatomy studies', image: 'images/play/012.jpg', ratio: '1080 / 820', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Sketchbook spread', image: 'images/play/028.jpg', ratio: '1123 / 898', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Portrait study', image: 'images/portrait/01.jpg', ratio: '1841 / 2000', tools: ['Photoshop painting'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Portrait study', image: 'images/portrait/01.jpg', ratio: '1841 / 2000', tools: ['Photoshop'], color: '#2A2A2A' },
   { type: 'ink', title: 'Hanging out', image: 'images/ig-ink/08.jpg', ratio: '1080 / 977', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
-  { type: 'graphic', title: 'Nyum! Menu', image: 'images/nyum/01.jpg', ratio: '1800 / 1350', tools: ['Procreate'], color: '#2A2A2A' },
+  { type: 'graphic', title: 'Nyum! Menu', image: 'images/nyum/01.jpg', ratio: '1800 / 1350', tools: ['Procreate', 'Photoshop'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Seated figure', image: 'images/play/013.jpg', ratio: '1280 / 1600', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character concepts', image: 'images/play/029.jpg', ratio: '1080 / 683', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'painting', title: 'Seated figure', image: 'images/play/011.jpg', ratio: '1080 / 1350', tools: ['Acrylic'], color: '#2A2A2A' },
@@ -300,10 +300,10 @@ window.QUESTS = [
   { type: 'sketch', title: 'Constellations', image: 'images/play/031.jpg', ratio: '1080 / 1066', tools: ['White ink'], color: '#2A2A2A' },
   { type: 'painting', title: 'Cat collage', image: 'images/college/11.jpg', ratio: '1277 / 936', tools: ['Mixed media'], color: '#2A2A2A' },
   { type: 'digital', title: 'Portrait in green', image: 'images/ig-portraits/01.jpg', ratio: '1440 / 1800', tools: ['Photoshop'], color: '#2A2A2A' },
-  { type: 'ink', title: 'Piano dress', image: 'images/ig-ink/10.jpg', ratio: '1440 / 1440', tools: ['Pencil'], color: '#2A2A2A' },
+  { type: 'drawing', title: 'Piano dress', image: 'images/ig-ink/10.jpg', ratio: '1440 / 1440', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'painting', title: 'Jungle scene', image: 'images/college/15.jpg', ratio: '1237 / 936', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'digital', title: 'Portrait in blue', image: 'images/ig-portraits/02.jpg', ratio: '705 / 881', tools: ['Photoshop'], color: '#2A2A2A' },
-  { type: 'ink', title: 'Gamer’s room', image: 'images/ig-ink/11.jpg', ratio: '1440 / 1800', tools: ['Pencil'], color: '#2A2A2A' },
+  { type: 'drawing', title: 'Gamer’s room', image: 'images/ig-ink/11.jpg', ratio: '1440 / 1800', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Climber', image: 'images/play/020.jpg', ratio: '1080 / 1080', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Music collage', image: 'images/sketchbook/01.jpg', ratio: '1222 / 1600', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'painting', title: 'Still life with pitcher', image: 'images/college/16.jpg', ratio: '1163 / 936', tools: ['Acrylic'], color: '#2A2A2A' },
