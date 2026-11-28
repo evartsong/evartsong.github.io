@@ -397,7 +397,7 @@
           '<h1>' + esc(p.title) + '</h1>' +
           '<p class="es-phero__desc">' + esc(p.desc) + '</p>' +
         '</div>' +
-        '<dl><div><dt>ROLE</dt><dd>' + esc(p.role) + '</dd></div><div><dt>CLASS</dt><dd>' + esc(p.genre) + '</dd></div><div><dt>SEASON</dt><dd>' + esc(p.when) + '</dd></div>' +
+        '<dl><div><dt>ROLE</dt><dd>' + esc(p.role) + '</dd></div><div><dt>CLASS</dt><dd>' + esc(p.genre) + '</dd></div><div><dt>' + (/\d/.test(p.when) ? 'SEASON' : 'MADE AS') + '</dt><dd>' + esc(p.when) + '</dd></div>' +
           (p.tools && p.tools.length ? '<div class="es-phero__tools"><dt>TOOLS</dt><dd>' + esc(p.tools.join(' · ')) + '</dd></div>' : '') + '</dl>' +
         '</div>' +
         (heroImg ? '<a class="es-phero__art" href="' + esc(heroImg) + '" target="_blank" rel="noopener" style="aspect-ratio:' + heroRatio + '"><img src="' + esc(heroImg) + '" alt="' + esc(p.title) + ': the final result" decoding="async" fetchpriority="high"></a>' : '') +
@@ -635,7 +635,7 @@
     /* fresh random order on every visit / refresh (Fisher–Yates); filters keep this visit's order */
     Q = Q.slice();
     for (var si = Q.length - 1; si > 0; si--) { var sj = Math.floor(Math.random() * (si + 1)); var sw = Q[si]; Q[si] = Q[sj]; Q[sj] = sw; }
-    var TYPES = [['all', 'ALL'], ['painting', 'PAINTING'], ['drawing', 'DRAWING'], ['ink', 'INK'], ['digital', 'DIGITAL ART'], ['sketch', 'SKETCHBOOK'], ['3d', '3D, SCULPTURE'], ['graphic', 'GRAPHIC DESIGN'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
+    var TYPES = [['all', 'ALL'], ['painting', 'PAINTING'], ['drawing', 'DRAWING'], ['ink', 'INK'], ['digital', 'DIGITAL ART'], ['sketch', 'SKETCHBOOK'], ['3d', '3D + SCULPTURE'], ['graphic', 'GRAPHIC DESIGN'], ['editorial', 'EDITORIAL'], ['creator', 'CREATOR']];
     var NAME = {}; TYPES.forEach(function (t) { NAME[t[0]] = t[1]; });
     var want = new URLSearchParams(location.search).get('type');
     var current = TYPES.some(function (t) { return t[0] === want; }) ? want : 'all';

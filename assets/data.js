@@ -21,15 +21,15 @@ window.PROJECTS = [
     badge: 'NEW',
     desc: 'Brand visuals, weekly email campaigns, social video and marketplace ads for a fashion wholesale brand.',
     brief: 'BiBi sells fashion wholesale to retailers. I owned how the brand looks everywhere buyers meet it, from website banners and emails to marketplace ads, and ran the campaigns that put new products in front of them every week.',
-    results: [['30%', 'average open rate on weekly wholesale emails'], ['$25–30K', 'in Faire sales the week of each Faire email campaign'], ['100–130', 'new products uploaded every two weeks']],
+    results: [['30%', 'average open rate on weekly wholesale emails'], ['$25–30K', 'in Faire sales the week of each email campaign'], ['100–130', 'new products uploaded every two weeks']],
     did: [
       'Own brand design and visual assets: website banners, email graphics, promotional materials and photo editing',
       'Run weekly Mailchimp and Faire wholesale email campaigns: a 30% open rate and $25–⁠30K in Faire sales each campaign week',
-      'Build an AI workflow with Gemini, Higgsfield and Motioncast for on-model product shots and social video, with no new photoshoots',
-      'Manage the e-commerce catalog: 100–⁠130 new products uploaded every two weeks, accurate pricing and inventory, Photoshop color variants',
+      'Build an AI workflow (Gemini, Higgsfield, MotionCast) for on-model product shots and social video, with no new photoshoots',
+      'Manage the e-commerce catalog and merchandising: 100–⁠130 new products uploaded every two weeks, accurate pricing and inventory, Photoshop color variants',
       'Run FashionGO front-page ads and SEO, tracking sales and traffic to optimize product placement'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Mailchimp', 'Faire', 'FashionGO', 'Shopify', 'Gemini (Nano Banana)', 'Higgsfield AI', 'Motioncast AI'],
+    tools: ['Photoshop', 'Illustrator', 'Mailchimp', 'Faire', 'FashionGO', 'Shopify', 'Gemini (Nano Banana)', 'Higgsfield', 'MotionCast'],
     type: 'Fashion wholesale + e-commerce',
     collaborators: '',
     recognition: '',
@@ -58,14 +58,14 @@ window.PROJECTS = [
   {
     id: 'warp', title: 'WARP', genre: 'Digital marketing', era: '2024', season: 'SEASON 2024',
     when: '03.2024 – 12.2024', role: 'Digital Marketing Specialist', color: '#3326B8', badge: '',
-    desc: 'Website, landing pages, decks and B2B campaigns, leading marketing and revenue with the co-founders.',
+    desc: 'Website, landing pages, decks and B2B campaigns, leading the marketing and revenue teams with the co-founders.',
     brief: 'At WARP, a Los Angeles freight logistics company, I worked directly with the co-founders and led the marketing and revenue teams, while also designing the website, landing pages and campaign assets myself.',
     results: [['18K → 25K', 'company LinkedIn followers while I was there'], ['20%', 'open rate on outbound sales emails, turning into sales meetings and new customers']],
     did: [
-      'Lead the marketing and revenue teams with the co-founders: run meetings, assign tasks and hit deadlines',
-      'Design the website, landing pages and business decks, and lead campaign design',
-      'Run weekly email campaigns in HubSpot and Klaviyo, plus outbound sales emails that book meetings with new customers',
-      'Manage social and create B2B content: press releases, case studies and graphics'
+      'Worked directly with the co-founders to lead the marketing and revenue teams: ran meetings, assigned tasks, kept projects on deadline',
+      'Designed the website, landing pages and business decks, and led campaign asset design',
+      'Ran weekly email campaigns in HubSpot and Klaviyo, with outbound sales emails averaging a 20% open rate and booking meetings that turned into customers',
+      'Grew the company LinkedIn from 18K to 25K followers, managing social and B2B content: press releases, case studies and graphics'
     ],
     tools: ['Photoshop', 'Illustrator', 'Figma', 'Midjourney', 'HubSpot', 'Klaviyo', 'Canva', 'LinkedIn Ads', 'Google Ads', 'Google Analytics'],
     type: 'Web, email + social for B2B freight logistics', collaborators: 'Co-founders, marketing and revenue teams', recognition: '',
@@ -109,8 +109,8 @@ window.PROJECTS = [
     id: 'gsa', title: 'GSA: GameStop Arena', genre: 'Brand identity + motion', era: '2022', season: 'SEASON 2022',
     when: '2022', role: 'Brand Designer', color: '#9E1F18', badge: '',
     desc: 'An identity for an arena where gamers compete for prizes and rep.',
-    brief: 'A brand identity for GSArena, powered by GameStop: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
-    did: ['Name and position the venue: GSArena, powered by GameStop', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
+    brief: 'A brand identity for GSA, short for GameStop Arena: a new venue where local and global gamers and esports players compete for prizes and reputation. Rounded, expressive letters keep it approachable.',
+    did: ['Name and position the venue: GSA, short for GameStop Arena', 'Design rounded, expressive letterforms that feel approachable', 'Extend the identity into motion'],
     tools: ['InDesign', 'Photoshop', 'After Effects'],
     type: 'Esports venue', collaborators: '', recognition: '',
     tile: 'images/gsa/15.jpg', /* home grid image */
@@ -141,8 +141,8 @@ window.PROJECTS = [
   {
     id: 'hanbok', title: 'Hanbok', genre: 'Exhibition + publication', era: '2021', season: 'SEASON 2021',
     when: '2021', role: 'Graphic Designer', color: '#7A2E5A', badge: '',
-    desc: 'An exhibition and book for six South Korean contemporary artists, colored by traditional hanbok silk.',
-    brief: 'A group exhibition and publication featuring six South Korean contemporary artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
+    desc: 'An exhibition and book for six contemporary South Korean artists, colored by traditional hanbok silk.',
+    brief: 'A group exhibition and publication featuring six contemporary South Korean artists who weave history and culture into their work. The book covers the exhibition introduction, Korean art history, artist sections and interviews, with colors and silk textures drawn from traditional Korean clothing.',
     did: ['Design the publication: cover, spreads and artist sections', 'Build a color and texture system from traditional hanbok silk', 'Extend the identity into the exhibition wall, promotional poster and an artist poster series'],
     tools: ['InDesign', 'Illustrator', 'Photoshop'],
     type: 'Exhibition + publication', collaborators: '', recognition: '',
@@ -155,70 +155,70 @@ window.PROJECTS = [
    Images come from assets/media.js; video can be a YouTube/Vimeo link or an .mp4 path. */
 window.EXTRAS = [
   {
-    id: 'eve-arnold', title: 'Eve Arnold', genre: 'Editorial design', when: 'ArtCenter', role: 'Designer', color: '#3B3F46', badge: '',
-    desc: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.',
+    id: 'eve-arnold', title: 'Eve Arnold', genre: 'Editorial design', when: 'ArtCenter project', role: 'Designer', color: '#3B3F46', badge: '',
+    desc: 'Book spreads for a Great Photographer Series volume on Eve Arnold.',
     brief: 'An editorial layout for a photographer monograph: essays, captions and full-bleed photography paced across a run of spreads.',
     did: [], tools: ['InDesign'], type: 'Book spreads', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'akkurat', title: 'Akkurat type specimen', genre: 'Graphic design', when: 'ArtCenter', role: 'Designer', color: '#E8573A', badge: '',
+    id: 'akkurat', title: 'Akkurat type specimen', genre: 'Graphic design', when: 'ArtCenter project', role: 'Designer', color: '#E8573A', badge: '',
     desc: 'A type specimen for LL Akkurat: its history, weights and glyphs.',
     brief: 'A type specimen series for the typeface LL Akkurat, mixing its history and character with expressive typographic layouts.',
     did: [], tools: ['InDesign', 'Illustrator'], type: 'Type specimen', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'nyum', title: 'Nyum! Menu', genre: 'Graphic design', when: 'Personal', role: 'Designer + Illustrator', color: '#E59BC4', badge: '',
+    id: 'nyum', title: 'Nyum! Menu', genre: 'Graphic design', when: 'Personal project', role: 'Designer + Illustrator', color: '#E59BC4', badge: '',
     desc: 'An illustrated sushi menu with cat characters.',
     brief: 'An illustrated menu for a playful sushi spot, pairing each roll with its own character.',
     did: [], tools: ['Procreate', 'Illustrator'], type: 'Menu design', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal', role: '3D Artist', color: '#5B2BB5', badge: '',
-    desc: 'A short 3D motion piece.',
-    brief: 'A short 3D motion experiment.',
+    id: 'voyage', title: 'Voyage', genre: '3D motion', when: 'Personal project', role: '3D Artist', color: '#5B2BB5', badge: '',
+    desc: 'A dreamy 3D ride through a cloud world: a toy car rides a Ferris wheel above glossy bubble clouds.',
+    brief: 'A short 3D animation set in a soft, toy-like world of clouds, balloons and a Ferris wheel, modeled in Cinema 4D and rendered in Redshift.',
     did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D animation', collaborators: '', recognition: '', video: 'videos/voyage.mp4'
   },
   {
-    id: 'karaoke-cube', title: 'Karaoke Cube', genre: '3D motion', when: 'Personal', role: '3D Artist', color: '#3E2A8C', badge: '',
-    desc: 'A 10-second 3D loop.',
-    brief: 'A short 3D motion loop.',
+    id: 'karaoke-cube', title: 'Karaoke Cube', genre: '3D motion', when: 'Personal project', role: '3D Artist', color: '#3E2A8C', badge: '',
+    desc: 'A 10-second 3D loop: a record drops onto a turntable on a floating cube.',
+    brief: 'A 10-second 3D motion loop built around a turntable cube and a falling record, in a warm pink-to-orange palette.',
     did: [], tools: ['Cinema 4D', 'Redshift'], type: '3D loop', collaborators: '', recognition: '', video: 'videos/karaoke-cube.mp4'
   },
   {
-    id: 'metamorphosis', title: 'Metamorphosis', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#6B3FB8', badge: '',
+    id: 'metamorphosis', title: 'Metamorphosis', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#6B3FB8', badge: '',
     desc: 'Illustrated frames of a transformation, ending on a Riot Games reveal.',
-    brief: 'A sequence of illustrated frames built around light, hands and transformation.',
+    brief: 'A sequence of illustrated frames built around light, hands and transformation, ending on a Riot Games reveal.',
     did: [], tools: ['Procreate', 'Photoshop'], type: 'Illustrated frames', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'snowstorm', title: 'Snowstorm', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#1F4F8A', badge: '',
+    id: 'snowstorm', title: 'Snowstorm', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#1F4F8A', badge: '',
     desc: 'Illustrated frames of a climber facing a mountain storm.',
     brief: 'Two illustrated frames: a mountain storm and the figure walking into it.',
     did: [], tools: ['Procreate', 'Photoshop'], type: 'Illustrated frames', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'killjoy', title: 'Killjoy × Adventure Time', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#C99BE8', badge: '',
+    id: 'killjoy', title: 'Killjoy', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#C99BE8', badge: '',
     desc: 'Valorant’s Killjoy drawn in the Adventure Time style.',
     brief: 'Fan illustration mixing a Valorant agent with Adventure Time’s character style.',
     did: [], tools: ['Procreate'], type: 'Fan illustration', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'nicotine', title: 'Nicotine', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#2B2F7A', badge: '',
-    desc: 'A bold character illustration.',
-    brief: 'A character illustration with saturated color and pattern.',
+    id: 'nicotine', title: 'Nicotine', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#2B2F7A', badge: '',
+    desc: 'A character illustration about smoking: cigarettes, scorched lungs and dripping pattern around a figure in a NICOTINE beanie.',
+    brief: 'A character illustration on the damage smoking does, built from saturated color, dripping shapes and pattern.',
     did: [], tools: ['Procreate'], type: 'Illustration', collaborators: '', recognition: '', video: ''
   },
   {
-    id: 'portrait', title: 'Portrait study', genre: 'Illustration', when: 'Personal', role: 'Illustrator', color: '#8A5A4A', badge: '',
+    id: 'portrait', title: 'Portrait study', genre: 'Illustration', when: 'Personal project', role: 'Illustrator', color: '#8A5A4A', badge: '',
     desc: 'A digital painting portrait study.',
     brief: 'A painted portrait study focused on light and skin tones.',
     did: [], tools: ['Procreate'], type: 'Digital painting', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'ig-characters', title: 'Character illustrations', genre: 'Illustration', when: '2020 – 2022', role: 'Illustrator', color: '#D94A6B', badge: '',
-    desc: 'Original characters: a girl in a beanie, a duck with a knife, a starry space bird and a robot.',
+    desc: 'Original characters: a girl in a beanie, a duck with a knife, a propeller bird and a robot.',
     brief: 'A set of original character illustrations from my Instagram, mixing flat digital color with playful shapes.',
-    did: [], tools: ['Procreate', 'Photoshop'], type: 'Character design', collaborators: '', recognition: '', video: ''
+    did: [], tools: ['Procreate', 'Photoshop', 'Cinema 4D', 'Ballpoint pen'], type: 'Character design', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'ig-portraits', title: 'Digital portraits', genre: 'Illustration', when: '2017 – 2019', role: 'Illustrator', color: '#4E6E7A', badge: '',
@@ -236,7 +236,7 @@ window.EXTRAS = [
     id: 'ig-ink', title: 'Ink drawings', genre: 'Illustration', when: '2017 – 2020', role: 'Illustrator', color: '#22252B', badge: '',
     desc: 'Detailed pen-and-ink work: Kobe, crowded collages, statue heads, fashion figures and a gamer’s room.',
     brief: 'Pen-and-ink drawings built from dense line work and pattern, from portrait studies to full collages and a one-point perspective gamer’s room.',
-    did: [], tools: ['Pen + ink', 'Micron'], type: 'Ink illustration', collaborators: '', recognition: '', video: ''
+    did: [], tools: ['Pen', 'Ink', 'Micron'], type: 'Ink illustration', collaborators: '', recognition: '', video: ''
   },
   {
     id: 'ig-drawing', title: 'Drawing studies', genre: 'Illustration', when: '2018 – 2021', role: 'Artist', color: '#6E6E6E', badge: '',
@@ -257,29 +257,29 @@ window.EXTRAS = [
    image + ratio: the picture on the card. tools: shown as MADE WITH on the back.
    id: a video side quest above (Voyage, Karaoke Cube). */
 window.QUESTS = [
-  { type: 'painting', title: 'Viking portrait', image: 'images/ig-paintings/01.jpg', ratio: '1440 / 1800', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Viking portrait', image: 'images/ig-paintings/01.jpg', ratio: '1440 / 1800', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'ink', title: 'RIP Kobe', image: 'images/ig-ink/01.jpg', ratio: '1439 / 1669', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Statue study', image: 'images/ig-drawing/03.jpg', ratio: '1080 / 1080', tools: ['Charcoal', 'Colored pencil'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Rhino studies', image: 'images/play/018.jpg', ratio: '1080 / 1080', tools: ['Pen'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Blue portrait', image: 'images/ig-paintings/04.jpg', ratio: '1440 / 1800', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Blue portrait', image: 'images/ig-paintings/04.jpg', ratio: '1440 / 1800', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'ink', title: 'Crowd of faces', image: 'images/ig-ink/02.jpg', ratio: '1440 / 1800', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Hand studies', image: 'images/ig-drawing/04.jpg', ratio: '1440 / 1117', tools: ['Ink', 'Colored pens'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Pattern studies', image: 'images/play/019.jpg', ratio: '1080 / 1080', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: '3d', title: 'Clay sculpture', image: 'images/college/17.jpg', ratio: '864 / 1296', tools: ['Clay'], color: '#2A2A2A' },
   { type: '3d', title: 'Creature sculpt', image: 'images/play/001.jpg', ratio: '1080 / 720', tools: ['Octane'], color: '#2A2A2A', video: 'videos/play/creature-sculpt.mp4' },
-  { type: 'painting', title: 'Gentleman portrait', image: 'images/ig-paintings/05.jpg', ratio: '1440 / 1800', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Gentleman portrait', image: 'images/ig-paintings/05.jpg', ratio: '1440 / 1800', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'ink', title: 'Creatures', image: 'images/ig-ink/03.jpg', ratio: '1440 / 1800', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Figure study', image: 'images/play/007.jpg', ratio: '1284 / 1600', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Billie Eilish tour merch', image: 'images/play/022.jpg', ratio: '1080 / 657', tools: ['Pen'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Seated man', image: 'images/ig-paintings/06.jpg', ratio: '1026 / 1171', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Seated man', image: 'images/ig-paintings/06.jpg', ratio: '1026 / 1171', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'ink', title: 'Shattered portraits', image: 'images/ig-ink/04.jpg', ratio: '937 / 1171', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Two figures', image: 'images/play/008.jpg', ratio: '1284 / 1600', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Monkey studies', image: 'images/play/024.jpg', ratio: '1080 / 865', tools: ['Colored pencil'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Valley landscape', image: 'images/ig-paintings/07.jpg', ratio: '1440 / 1092', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Valley landscape', image: 'images/ig-paintings/07.jpg', ratio: '1440 / 1092', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'ink', title: 'Portrait in black', image: 'images/ig-ink/05.jpg', ratio: '1440 / 1440', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Face studies', image: 'images/play/026.jpg', ratio: '1080 / 857', tools: ['Pen'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Coastal landscape', image: 'images/ig-paintings/11.jpg', ratio: '1080 / 903', tools: ['Acrylic painting'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Killjoy x Adventure Time', image: 'images/killjoy/01.jpg', ratio: '1350 / 1771', tools: ['Procreate'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Coastal landscape', image: 'images/ig-paintings/11.jpg', ratio: '1080 / 903', tools: ['Acrylic'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Killjoy', image: 'images/killjoy/01.jpg', ratio: '1350 / 1771', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Line portrait', image: 'images/ig-ink/06.jpg', ratio: '1440 / 1721', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character sketches', image: 'images/play/027.jpg', ratio: '1080 / 1350', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'painting', title: 'Portrait studies', image: 'images/play/005.jpg', ratio: '1440 / 1440', tools: ['Mixed media'], color: '#2A2A2A' },
@@ -292,21 +292,21 @@ window.QUESTS = [
   { type: 'graphic', title: 'Nyum! Menu', image: 'images/nyum/01.jpg', ratio: '1800 / 1350', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Seated figure', image: 'images/play/013.jpg', ratio: '1280 / 1600', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character concepts', image: 'images/play/029.jpg', ratio: '1080 / 683', tools: ['Pen'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Seated figure', image: 'images/play/011.jpg', ratio: '1080 / 1350', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Seated figure', image: 'images/play/011.jpg', ratio: '1080 / 1350', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'digital', title: 'Killjoy Valorant', image: 'images/ig-drawing/06.jpg', ratio: '1440 / 1440', tools: ['Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Balloon girl', image: 'images/ig-ink/09.jpg', ratio: '1080 / 1286', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'graphic', title: 'Enlightenment', image: 'images/play/002.jpg', ratio: '1440 / 1079', tools: ['Typography'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Girl in static', image: 'images/play/015.jpg', ratio: '1080 / 1080', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Constellations', image: 'images/play/031.jpg', ratio: '1080 / 1066', tools: ['White ink'], color: '#2A2A2A' },
   { type: 'painting', title: 'Cat collage', image: 'images/college/11.jpg', ratio: '1277 / 936', tools: ['Mixed media'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Portrait in green', image: 'images/ig-portraits/01.jpg', ratio: '1440 / 1800', tools: ['Photoshop painting'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Portrait in green', image: 'images/ig-portraits/01.jpg', ratio: '1440 / 1800', tools: ['Photoshop'], color: '#2A2A2A' },
   { type: 'ink', title: 'Piano dress', image: 'images/ig-ink/10.jpg', ratio: '1440 / 1440', tools: ['Pencil'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Jungle scene', image: 'images/college/15.jpg', ratio: '1237 / 936', tools: ['Acrylic painting'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Portrait in blue', image: 'images/ig-portraits/02.jpg', ratio: '705 / 881', tools: ['Photoshop painting'], color: '#2A2A2A' },
-  { type: 'ink', title: 'Gamer\'s room', image: 'images/ig-ink/11.jpg', ratio: '1440 / 1800', tools: ['Pencil'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Jungle scene', image: 'images/college/15.jpg', ratio: '1237 / 936', tools: ['Acrylic'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Portrait in blue', image: 'images/ig-portraits/02.jpg', ratio: '705 / 881', tools: ['Photoshop'], color: '#2A2A2A' },
+  { type: 'ink', title: 'Gamer’s room', image: 'images/ig-ink/11.jpg', ratio: '1440 / 1800', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Climber', image: 'images/play/020.jpg', ratio: '1080 / 1080', tools: ['Pen'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Music collage', image: 'images/sketchbook/01.jpg', ratio: '1222 / 1600', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Still life with pitcher', image: 'images/college/16.jpg', ratio: '1163 / 936', tools: ['Acrylic painting'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Still life with pitcher', image: 'images/college/16.jpg', ratio: '1163 / 936', tools: ['Acrylic'], color: '#2A2A2A' },
   { type: 'digital', title: 'Checkerboard portrait', image: 'images/ig-portraits/03.jpg', ratio: '1080 / 701', tools: ['Mixed media'], color: '#2A2A2A' },
   { type: 'ink', title: 'Comic page', image: 'images/ig-ink/12.jpg', ratio: '1440 / 1711', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Reclining on checkers', image: 'images/play/021.jpg', ratio: '654 / 1080', tools: ['Pen', 'Colored pencil'], color: '#2A2A2A' },
@@ -315,15 +315,15 @@ window.QUESTS = [
   { type: 'ink', title: 'Comic page II', image: 'images/ig-ink/13.jpg', ratio: '1440 / 1440', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Tree study', image: 'images/play/023.jpg', ratio: '723 / 723', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Portrait on orange', image: 'images/sketchbook/03.jpg', ratio: '1120 / 1600', tools: ['Graphite'], color: '#2A2A2A' },
-  { type: 'painting', title: 'Coastal landscape', image: 'images/college/18.jpg', ratio: '1161 / 936', tools: ['Acrylic painting'], color: '#2A2A2A' },
-  { type: 'digital', title: 'Space whale', image: 'images/ig-characters/03.jpg', ratio: '759 / 720', tools: ['Cinema 4D', 'Procreate'], color: '#2A2A2A' },
+  { type: 'painting', title: 'Coastal landscape', image: 'images/college/18.jpg', ratio: '1161 / 936', tools: ['Acrylic'], color: '#2A2A2A' },
+  { type: 'digital', title: 'Propeller bird', image: 'images/ig-characters/03.jpg', ratio: '759 / 720', tools: ['Cinema 4D', 'Procreate'], color: '#2A2A2A' },
   { type: 'ink', title: 'Seated figure', image: 'images/play/003.jpg', ratio: '1281 / 1600', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Portrait in pen', image: 'images/play/030.jpg', ratio: '1080 / 1080', tools: ['Ballpoint pen'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character outfits', image: 'images/sketchbook/04.jpg', ratio: '1600 / 1313', tools: ['Pen', 'Ink', 'Color'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Robot', image: 'images/ig-characters/04.jpg', ratio: '1080 / 1349', tools: ['Ballpoint pen'], color: '#2A2A2A' },
   { type: 'ink', title: 'Reclining figure', image: 'images/play/004.jpg', ratio: '1312 / 1600', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Roman soldier', image: 'images/college/01.jpg', ratio: '936 / 1240', tools: ['Graphite'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Plants, birds', image: 'images/sketchbook/05.jpg', ratio: '1600 / 1295', tools: ['Ballpoint pen'], color: '#2A2A2A' },
+  { type: 'sketch', title: 'Plants + birds', image: 'images/sketchbook/05.jpg', ratio: '1600 / 1295', tools: ['Ballpoint pen'], color: '#2A2A2A' },
   { type: 'ink', title: 'Streetwear character', image: 'images/play/014.jpg', ratio: '1080 / 1080', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Still life with lantern', image: 'images/college/02.jpg', ratio: '1232 / 936', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Character lineup', image: 'images/sketchbook/06.jpg', ratio: '1600 / 1294', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
@@ -342,13 +342,13 @@ window.QUESTS = [
   { type: 'sketch', title: 'Monkey studies', image: 'images/sketchbook/11.jpg', ratio: '1600 / 1285', tools: ['Pen', 'Colored pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Bust and pattern', image: 'images/college/08.jpg', ratio: '864 / 1320', tools: ['Graphite', 'Colored pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Underwater study', image: 'images/college/09.jpg', ratio: '864 / 1296', tools: ['Graphite'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Drapery, dancer', image: 'images/sketchbook/13.jpg', ratio: '1600 / 1306', tools: ['Graphite'], color: '#2A2A2A' },
+  { type: 'sketch', title: 'Drapery + dancer', image: 'images/sketchbook/13.jpg', ratio: '1600 / 1306', tools: ['Graphite'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Portrait with a spoon', image: 'images/college/10.jpg', ratio: '936 / 1291', tools: ['Colored pencil'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Face studies', image: 'images/sketchbook/14.jpg', ratio: '1038 / 1600', tools: ['Pen'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Lettering, character', image: 'images/sketchbook/15.jpg', ratio: '1600 / 1258', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
+  { type: 'sketch', title: 'Lettering + character', image: 'images/sketchbook/15.jpg', ratio: '1600 / 1258', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
   { type: 'drawing', title: 'The Robe book cover', image: 'images/college/14.jpg', ratio: '936 / 1247', tools: ['Mixed media'], color: '#2A2A2A' },
   { type: 'sketch', title: 'Texture studies', image: 'images/sketchbook/17.jpg', ratio: '787 / 1600', tools: ['Pen', 'Ink'], color: '#2A2A2A' },
-  { type: 'sketch', title: 'Form studies, spaceships', image: 'images/sketchbook/16.jpg', ratio: '1063 / 1600', tools: ['Pencil'], color: '#2A2A2A' },
+  { type: 'sketch', title: 'Form studies + spaceships', image: 'images/sketchbook/16.jpg', ratio: '1063 / 1600', tools: ['Pencil'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings', image: 'images/play/037.jpg', ratio: '1252 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings', image: 'images/play/038.jpg', ratio: '1251 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
   { type: 'drawing', title: 'Gesture drawings', image: 'images/play/039.jpg', ratio: '1253 / 936', tools: ['Charcoal'], color: '#2A2A2A' },
@@ -362,24 +362,24 @@ window.QUESTS = [
 /* Play: Story mode. Multi-part pieces shown as slideshows (arrows, swipe, autoplay).
    id: images come from assets/media.js for that id. Order here = order on the page. */
 window.STORIES = [
-  { id: 'snowstorm', title: 'Snowstorm', type: 'Digital art', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'], start: 1 },
+  { id: 'snowstorm', title: 'Snowstorm', type: 'Illustration', text: 'Two frames: a mountain storm, then the climber walking into it.', tools: ['Procreate', 'Photoshop'], start: 1 },
   { id: 'akkurat', title: 'Akkurat type specimen', type: 'Graphic design', text: 'A type specimen for LL Akkurat: its history, weights and glyphs, told across seven spreads.', tools: ['InDesign', 'Illustrator'], start: 4 },
-  { id: 'eve-arnold', title: 'Eve Arnold', type: 'Editorial', text: 'Book spreads for a Great Photographer Series volume on photographer Eve Arnold.', tools: ['InDesign'], start: 4 },
-  { id: 'metamorphosis', title: 'Riot Games: Metamorphosis', type: 'Digital art', text: 'Illustrated frames of light, hands and transformation, ending on a Riot Games reveal.', tools: ['Procreate', 'Photoshop'], start: 2 }
+  { id: 'eve-arnold', title: 'Eve Arnold', type: 'Editorial design', text: 'Book spreads for a Great Photographer Series volume on Eve Arnold.', tools: ['InDesign'], start: 4 },
+  { id: 'metamorphosis', title: 'Metamorphosis', type: 'Illustration', text: 'Illustrated frames of light, hands and transformation, ending on a Riot Games reveal.', tools: ['Procreate', 'Photoshop'], start: 2 }
 ];
 
 /* Play: Brand + web design. Client sites, shown as slideshows like Story mode (same fields). */
 window.WEBDESIGN = [
-  { id: 'celita', title: 'Celita & Co', type: 'Web design', text: 'A website redesign for a La Jolla children’s boutique, with an online shop: the home page and a product page, built around the boutique’s logo. Work in progress.' },
-  { id: 'persico', title: 'Limón Pérsico', type: 'Brand + web design', text: 'A bilingual Spanish and English website for a lime farm in El Salvador: the farm, its people and what it sells, with looping farm footage and one-tap WhatsApp and Instagram.' },
-  { id: 'woobofood', title: 'Woobofood, Bullbop', type: 'Web design', text: 'Websites for Woobofood, an international Korean food company, its brands Purunchon, Lechi and Ocean Snack, and Bullbop, its Korean BBQ food truck.', tools: ['Wix', 'Illustrator'], start: 7 },
-  { id: 'squareone', title: 'SquareOne', type: 'Web design', text: 'A fashion resale marketplace: the homepage, menswear and womenswear shops, and the page that invites people to sell.', tools: ['Adobe XD', 'Illustrator'], start: 6 }
+  { id: 'celita', title: 'Celita & Co', type: 'Web design', text: 'A website redesign for a La Jolla children’s boutique, with an online shop: the home page and a product page, built around the boutique’s logo. Work in progress.', tools: ['Adobe Creative Suite', 'Claude'] },
+  { id: 'persico', title: 'Limón Pérsico', type: 'Brand + web design', text: 'A bilingual Spanish and English website for a lime farm in El Salvador: the farm, its people and what it sells, with looping farm footage and one-tap WhatsApp and Instagram links.', tools: ['Adobe Creative Suite', 'Claude'] },
+  { id: 'woobofood', title: 'Woobofood + Bullbop', type: 'Brand + web design', text: 'Websites for the Korean food company Woobofood and its brands Purunchon, Lechi and Ocean Snack, plus the brand identity and website for Bullbop, its Korean BBQ food truck.', tools: ['Wix', 'Illustrator'], start: 7 },
+  { id: 'squareone', title: 'SquareOne', type: 'Web design', text: 'A fashion resale marketplace: the home page, the menswear and womenswear shops and the page that invites people to sell.', tools: ['Adobe XD', 'Illustrator'], start: 6 }
 ];
 
 /* Play: Cutscenes. Animations shown as video players with sound (no autoplay). */
 window.CUTSCENES = [
-  { title: 'Voyage', type: '3D animation', text: 'A short 3D motion piece.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
-  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube.jpg', tools: ['Cinema 4D', 'Redshift'] }
+  { title: 'Voyage', type: '3D animation', text: 'A dreamy 3D ride through a cloud world: a toy car rides a Ferris wheel above glossy bubble clouds.', video: 'videos/voyage.mp4', poster: 'images/covers/voyage.jpg', tools: ['Cinema 4D', 'Redshift'] },
+  { title: 'Karaoke Cube', type: '3D loop', text: 'A 10-second 3D loop: a record drops onto a turntable on a floating cube.', video: 'videos/karaoke-cube.mp4', poster: 'images/covers/karaoke-cube.jpg', tools: ['Cinema 4D', 'Redshift'] }
 ];
 /* Links used across the site */
 window.LINKS = {
@@ -398,11 +398,11 @@ window.LINKS = {
    Titles and captions come from the old Cargo pages. */
 window.SECTIONS = {
   bibi: [
-    { g: 'final', title: 'Email campaigns', phone: 2, text: 'Weekly wholesale emails for Faire Campaigns and FashionGO through Mailchimp, averaging a 30% open rate. The GIFs play in place, just as customers saw them.', imgs: [8, 9, 10, 11, 13], labels: { '8': 'Early Black Friday · Faire', '9': 'Early Black Friday · FashionGO', '10': 'Spring Summer pre-order', '11': 'Dallas Market Show best sellers', '13': 'Santa’s Final Order List' }, start: { '8': 0.019, '9': 0.0631, '10': 0.0206, '11': 0.0212, '13': 0.0222 }, overlays: { '8': [['images/bibi/email/faire-bf.gif', 0.06289, 0.06289], [['images/bibi/email/faire-leopard-1.jpg', 'images/bibi/email/faire-leopard-2.jpg', 'images/bibi/email/faire-leopard-3.jpg'], 0.41507, 0.12578]], '9': [['images/bibi/email/fg-bf.gif', 0.06289, 0.06294], [['images/bibi/email/fg-cargo-1.jpg', 'images/bibi/email/fg-cargo-2.jpg', 'images/bibi/email/fg-cargo-3.jpg', 'images/bibi/email/fg-cargo-4.jpg'], 0.27043, 0.12578]], '10': [[['images/bibi/email/ss-sweater-1.jpg', 'images/bibi/email/ss-sweater-2.jpg', 'images/bibi/email/ss-sweater-3.jpg', 'images/bibi/email/ss-sweater-4.jpg'], 0.246, 0.13666]], '13': [['images/bibi/20.gif', 0.022, 0.07334]] } },
-    { g: 'final', title: 'Store + marketplace banners', text: 'Homepage banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 3, 2, 5] },
-    { g: 'final', title: 'Instagram posts, stories + reels', phone: 2, text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [16, 18, 17, 15, 14, 19, 20, 21, 22, 29, 30, 31, 35], clips: [1, 2, 3], frame: 'macbook-screens', labels: { '29': 'Higgsfield AI', '30': 'Higgsfield AI', '31': 'Higgsfield AI', '35': 'Instagram' }, focus: { '29': 'right', '30': 'right', '31': 'right', '35': 'left' } },
-    { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers, and the collection pages on the BiBi and So-Me Faire storefronts.', imgs: [7, 27, 23, 6], frame: 'macbook-screens', labels: { '23': 'Faire Storefront · So-Me', '27': 'Faire Storefront · BiBi' }, layout: 'pairs' },
-    { g: 'final', title: 'Running the storefronts', text: 'The day-to-day behind the storefronts: FashionGO ads and storefront, the ERP catalog, Motioncast AI video and the clone schedule sheet.', imgs: [25, 26, 28, 32, 33, 34], frame: 'macbook', labels: { '25': 'FashionGO Ads', '26': 'ERP Software', '28': 'FashionGO Storefront', '32': 'Motioncast AI', '33': 'Motioncast AI', '34': 'FashionGO Clone Schedule Sheet' } },
+    { g: 'final', title: 'Email campaigns', phone: 2, text: 'Weekly wholesale emails through Mailchimp and Faire Campaigns for Faire and FashionGO buyers, averaging a 30% open rate. The GIFs play in place, just as customers saw them.', imgs: [8, 9, 10, 11, 13], labels: { '8': 'Early Black Friday · Faire', '9': 'Early Black Friday · FashionGO', '10': 'Spring/Summer pre-order', '11': 'Dallas Market Show best sellers', '13': 'Santa’s Final Order List' }, start: { '8': 0.019, '9': 0.0631, '10': 0.0206, '11': 0.0212, '13': 0.0222 }, overlays: { '8': [['images/bibi/email/faire-bf.gif', 0.06289, 0.06289], [['images/bibi/email/faire-leopard-1.jpg', 'images/bibi/email/faire-leopard-2.jpg', 'images/bibi/email/faire-leopard-3.jpg'], 0.41507, 0.12578]], '9': [['images/bibi/email/fg-bf.gif', 0.06289, 0.06294], [['images/bibi/email/fg-cargo-1.jpg', 'images/bibi/email/fg-cargo-2.jpg', 'images/bibi/email/fg-cargo-3.jpg', 'images/bibi/email/fg-cargo-4.jpg'], 0.27043, 0.12578]], '10': [[['images/bibi/email/ss-sweater-1.jpg', 'images/bibi/email/ss-sweater-2.jpg', 'images/bibi/email/ss-sweater-3.jpg', 'images/bibi/email/ss-sweater-4.jpg'], 0.246, 0.13666]], '13': [['images/bibi/20.gif', 0.022, 0.07334]] } },
+    { g: 'final', title: 'Store + marketplace banners', text: 'Home page banners for Shopify, FashionGO and Faire, desktop and mobile.', imgs: [1, 3, 2, 5] },
+    { g: 'final', title: 'Instagram posts, stories + reels', phone: 2, text: 'Posts, stories and reels for Instagram, including AI-styled product videos and the Dallas Market Center booth.', imgs: [16, 18, 17, 15, 14, 19, 20, 21, 22, 29, 30, 31, 35], clips: [1, 2, 3], frame: 'macbook-screens', labels: { '29': 'Higgsfield', '30': 'Higgsfield', '31': 'Higgsfield', '35': 'Instagram' }, focus: { '29': 'right', '30': 'right', '31': 'right', '35': 'left' } },
+    { g: 'final', title: 'Collections', text: 'Collection graphics, including Early Black Friday and Best Sellers, and the collection pages on the BiBi and So-Me Faire storefronts.', imgs: [7, 27, 23, 6], frame: 'macbook-screens', labels: { '23': 'Faire storefront · So-Me', '27': 'Faire storefront · BiBi' }, layout: 'pairs' },
+    { g: 'final', title: 'Running the storefronts', text: 'The day-to-day behind the storefronts: FashionGO ads and storefront, the product catalog software, MotionCast video and the product launch schedule.', imgs: [25, 26, 28, 32, 33, 34], frame: 'macbook', labels: { '25': 'FashionGO ads', '26': 'Catalog software', '28': 'FashionGO storefront', '32': 'MotionCast', '33': 'MotionCast', '34': 'FashionGO launch schedule' } },
     { g: 'process', title: 'AI styling', text: 'No model shoot, just a design reference and a fabric swatch. I put each look on a model with Gemini (Nano Banana) and polished it in Photoshop.', imgs: [107, 106, 90, 91, 92, 93, 94, 108, 103, 85, 83, 84, 109, 105, 88, 89, 104, 86, 87, 102, 70, 71, 72, 73, 74, 110, 66, 67, 68, 69], layout: '4', recipes: [{ ref: 102, refLabel: 'Product reference', out: [70, 71, 72, 73, 74], outLabel: 'AI result · grey half-zip' }, { ref: 110, refLabel: 'Product reference', out: [66, 67, 68, 69], outLabel: 'AI result · bunny sweater' }, { ref: 107, refLabel: 'Product reference', fabric: 106, out: [90, 91, 92, 93, 94] }, { ref: 108, refLabel: 'Back reference', fabric: 103, out: [85, 83, 84] }, { ref: 109, refLabel: 'Product reference', fabric: 105, out: [88, 89] }, { ref: 109, refLabel: 'Product reference', fabric: 104, out: [86, 87] }] },
     { g: 'process', title: 'Same pose, two styles', text: 'New design, old photoshoot: I put the new shorts into an existing shoot, pose for pose, with Gemini and Photoshop, so they went live without a reshoot.', imgs: [75, 79, 76, 80, 77, 81, 78, 82], layout: '4', sets: [[76, 80], [77, 81], [75, 79], [78, 82]], setWord: 'STYLES' },
     { g: 'process', title: 'Photoshop color variants', text: 'One product shoot, every colorway: color variants made in Photoshop for BiBi and its sister label So-Me.', imgs: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 37, 36, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 96, 97, 98, 99, 100, 101], layout: '4', sets: [[36, 37], [38, 39, 40, 41], [42, 43, 44, 45], [46, 47, 48, 49, 50], [51, 52, 53], [54, 55, 56, 57], [58, 59, 60, 61, 62, 63, 64, 65], [96, 97, 98, 99, 100, 101]] }
@@ -414,20 +414,20 @@ window.SECTIONS = {
     { g: 'final', title: 'Blog illustrations', text: 'Isometric illustrations and product visuals for blog headers, case studies and the WARP apps.', imgs: [47, 52, 53, 54], cols: 2 }
   ],
   soundtrack: [
-    { g: 'final', title: 'Styleframes', layout: 'poster', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten about how strong his ancestors used to be. As Pet Lion gets instant access to his favorite music, he awakens his instinct and feels empowered to become the king.', imgs: [1, 2, 3, 4, 5] },
+    { g: 'final', title: 'Styleframes', layout: 'poster', text: 'Our story focuses on animal characters that exist in an unconventional food chain. In this world, carnivores are now the pets of herbivores and are considered weak. Our main character, Pet Lion, has forgotten how strong his ancestors were. With instant access to his favorite music, Pet Lion awakens his instincts and feels empowered to become king.', imgs: [1, 2, 3, 4, 5] },
     { g: 'process', title: 'Storyboard + 3D process', text: 'The storyboard went from line sketches to values to flat colors. For the details, we blocked out the supermarket, the characters and the flying objects in Cinema 4D, so every frame had the right perspective and scale before we illustrated it.', imgs: [9, 10, 11, 12, 13, 14], sets: [[9, 10, 11], [12, 13, 14]], setWord: 'STAGES' },
-    { g: 'ref', title: 'Moodboard', layout: 'trio', text: 'Taking inspiration from the execution of flat colors with hard light and shadow forms, we incorporated playful color palettes and shape language into our styleframes.', imgs: [6, 8, 7] }
+    { g: 'ref', title: 'Moodboard', layout: 'trio', text: 'Inspired by flat color with hard light and shadow, we brought playful palettes and shape language into our styleframes.', imgs: [6, 8, 7] }
   ],
   'label-lunacy': [
     { g: 'final', title: 'The ad', video: true },
     { g: 'final', title: 'Styleframes', text: 'Frames from the finished ad: liquid gold resolving into the Louis Vuitton mark, then an everyday folding chair staged as a luxury object.', imgs: [5, 6, 7, 8, 9, 10, 11, 12], cols: 2 },
     { g: 'process', title: 'Storyboard', imgs: [4] },
-    { g: 'ref', title: 'Moodboard', row: true, text: 'Liquid gold and brushed metal close-ups, dark luxury lighting and textures, and surreal 3D sets with a single piece of furniture as the centerpiece.', imgs: [1, 2, 3] }
+    { g: 'ref', title: 'Moodboard', row: true, text: 'Liquid gold and brushed metal close-ups, dark luxury lighting and textures, plus surreal 3D sets with a single piece of furniture as the centerpiece.', imgs: [1, 2, 3] }
   ],
   moonrise: [
-    { g: 'final', title: 'Title sequence frames', layout: 'poster-b', text: 'We used a warm yellow tone for inside the tent, where Sam and Suzy feel the most comfort and true love. In contrast, we used a cool tone of blue and purple for the final scene, where it is revealed that the tent is placed in the room that represents the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },
+    { g: 'final', title: 'Title sequence frames', layout: 'poster-b', text: 'We used a warm yellow tone inside the tent, where Sam and Suzy feel safest and most in love. In contrast, the final scene turns cool blue and purple, revealing that the tent sits inside a room: the cold reality.', imgs: [1, 2, 3, 4, 5, 6] },
     { g: 'process', title: 'Storyboard, render + type', text: 'Before modeling, we sketched the scenes in values to plan the lighting and details, then set up the first renders before adding texture and adjusting the light. The type stays soft and consistent in size to match the mood.', imgs: [11, 12, 10], sets: [[11, 12]], setWord: 'STAGES' },
-    { g: 'ref', title: 'Moodboard', text: 'Warm references for the cozy feeling inside the tent, cold night tones against cozy light for the reality outside it, and 3D film titles that inspired our backlit title reveal.', imgs: [7, 8, 9] }
+    { g: 'ref', title: 'Moodboard', text: 'Warm references for the cozy feeling inside the tent, cold night tones against soft light for the reality outside it, plus the 3D film titles that inspired our backlit title reveal.', imgs: [7, 8, 9] }
   ],
   vmix: [
     { g: 'final', title: 'Brand video', video: true },
@@ -451,12 +451,12 @@ window.SECTIONS = {
     { g: 'ref', title: 'Moodboard', text: 'Photo references to study the intense lighting I wanted to capture.', imgs: [8] }
   ],
   gsa: [
-    { g: 'final', title: 'Logo + lockups', text: 'GSA is spelled out to help recognize the new GameStop Arena, with horizontal and stacked lockups and their clear space.', imgs: [2, 3, 4, 5], cols: 2 },
+    { g: 'final', title: 'Logo + lockups', text: 'The GSA letters sit next to the full GameStop Arena name so the new venue is easy to recognize, with horizontal and stacked lockups and their clear space.', imgs: [2, 3, 4, 5], cols: 2 },
     { g: 'final', title: 'Typography + color', text: 'Dubai in four weights, and a blue, purple and red palette that runs through every piece.', imgs: [6, 7], cols: 2 },
     { g: 'final', title: 'Promotional posters', phone: 2, text: 'Posters built from the GSA letterforms and the PLAY, COMPETE, ENJOY tagline.', imgs: [10, 11, 12] },
-    { g: 'final', title: 'Motion', text: 'The GSA letters turning in 3D through PLAY, COMPETE, ENJOY, a spinning GSA cube, and the logo reveal.', imgs: [19, 20, 21], cols: 3 },
+    { g: 'final', title: 'Motion', text: 'The GSA letters turning in 3D through PLAY, COMPETE, ENJOY, then a spinning GSA cube and the logo reveal.', imgs: [19, 20, 21], cols: 3 },
     { g: 'final', title: 'In the arena', text: 'The identity on the arena’s exterior and stage, a digital stand, a bus shelter ad and street banners.', imgs: [15, 16, 13, 14], cols: 2 },
-    { g: 'final', title: 'Website + app', imgs: [17, 18], cols: 2 },
+    { g: 'final', title: 'Website + app', text: 'The arena website and app, carrying the GSA cube, the palette and the PLAY, COMPETE, ENJOY tagline.', imgs: [17, 18], cols: 2 },
     { g: 'process', title: 'Brand strategy', text: 'The brand steering wheel, keywords and brand driver that set the tone: professional, visionary, competitive, entertaining.', imgs: [8, 9], cols: 2 }
   ],
   hanbok: [
